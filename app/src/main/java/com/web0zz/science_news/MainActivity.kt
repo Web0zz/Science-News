@@ -1,11 +1,16 @@
 package com.web0zz.science_news
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import com.web0zz.science_news.base.BaseActivity
+import com.web0zz.science_news.databinding.ActivityMainBinding
+import com.web0zz.science_news.screen.splash.SplashFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<ActivityMainBinding>() {
+    override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
+    override fun getFrameLayoutID() = R.id.main_FrameLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        makeTransaction(SplashFragment.newInstance())
     }
 }

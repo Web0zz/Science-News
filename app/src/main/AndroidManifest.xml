@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ScienceNews">
         <activity
-            android:name=".splash.SplashActivity"
+            android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:exported="true"
             tools:ignore="LockedOrientationActivity">
@@ -22,10 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>
