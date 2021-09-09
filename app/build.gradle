@@ -6,6 +6,7 @@ plugins {
 
 ext {
     lottieVersion = "4.1.0"
+    glideVersion = "4.12.0"
 }
 
 android {
@@ -51,4 +52,8 @@ dependencies {
 
     // Lottie - Airbnb
     implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
 }

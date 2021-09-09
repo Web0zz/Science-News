@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/dark_background"
-        android:fitsSystemWindows="true">
+        android:background="@color/dark_background">
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/dna_animationView"
@@ -31,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/pinto"
-            android:text="@string/sciencenews"
+            android:text="@string/science_news"
             android:textColor="@color/white"
             android:textSize="44sp"
             app:layout_constraintEnd_toEndOf="parent"

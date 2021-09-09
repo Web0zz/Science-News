@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="article1"
+            type="com.web0zz.science_news.data.Article" />
+
+        <variable
+            name="article2"
+            type="com.web0zz.science_news.data.Article" />
+
+        <variable
+            name="article3"
+            type="com.web0zz.science_news.data.Article" />
+
+        <variable
+            name="article4"
+            type="com.web0zz.science_news.data.Article" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_background"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:paddingHorizontal="10dp"
+            android:paddingTop="10dp"
+            android:text="@string/what_to_read"
+            android:textColor="@color/white"
+            android:textSize="23sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp">
+
+                    <ImageView
+                        android:id="@+id/section_thumbnail_imageView_1"
+                        LoadRoundedImage="@{article1.thumbnail}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/article_thumbnail"
+                        tools:src="@drawable/news1" />
+
+                    <TextView
+                        android:id="@+id/section_title_textView_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="@{article1.title}"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
+
+                    <TextView
+                        android:id="@+id/section_date_author_textView_1"
+                        author="@{article1.author}"
+                        date="@{article1.date}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:alpha="0.7"
+                        android:fontFamily="@font/roboto_light"
+                        android:paddingTop="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        tools:text="September 2, 2021 • Joe Bishop" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp">
+
+                    <ImageView
+                        android:id="@+id/section_thumbnail_imageView_2"
+                        LoadRoundedImage="@{article2.thumbnail}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/article_thumbnail"
+                        tools:src="@drawable/news1" />
+
+                    <TextView
+                        android:id="@+id/section_title_textView_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="@{article2.title}"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
+
+                    <TextView
+                        android:id="@+id/section_date_author_textView_2"
+                        author="@{article2.author}"
+                        date="@{article2.date}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_thin"
+                        android:paddingTop="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        tools:text="September 2, 2021 • Joe Bishop" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp">
+
+                    <ImageView
+                        android:id="@+id/section_thumbnail_imageView_3"
+                        LoadRoundedImage="@{article3.thumbnail}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/article_thumbnail"
+                        tools:src="@drawable/news1" />
+
+                    <TextView
+                        android:id="@+id/section_title_textView_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="@{article3.title}"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
+
+                    <TextView
+                        android:id="@+id/section_date_author_textView_3"
+                        author="@{article3.author}"
+                        date="@{article3.date}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_thin"
+                        android:paddingTop="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        tools:text="September 2, 2021 • Joe Bishop" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp">
+
+                    <ImageView
+                        android:id="@+id/section_thumbnail_imageView_4"
+                        LoadRoundedImage="@{article4.thumbnail}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/article_thumbnail"
+                        tools:src="@drawable/news1" />
+
+                    <TextView
+                        android:id="@+id/section_title_textView_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_light"
+                        android:text="@{article4.title}"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
+
+                    <TextView
+                        android:id="@+id/section_date_author_textView_4"
+                        author="@{article4.author}"
+                        date="@{article4.date}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_thin"
+                        android:paddingTop="10dp"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        tools:text="September 2, 2021 • Joe Bishop" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </HorizontalScrollView>
+    </LinearLayout>
+</layout>

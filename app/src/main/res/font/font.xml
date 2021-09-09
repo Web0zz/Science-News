@@ -4,4 +4,20 @@
         app:font="@font/pinto"
         app:fontStyle="normal"
         app:fontWeight="400" />
+    <font
+        app:font="@font/roboto_thin"
+        app:fontStyle="normal"
+        app:fontWeight="200" />
+    <font
+        app:font="@font/roboto_medium"
+        app:fontStyle="normal"
+        app:fontWeight="200" />
+    <font
+        app:font="@font/roboto_light"
+        app:fontStyle="normal"
+        app:fontWeight="200" />
+    <font
+        app:font="@font/roboto_bold"
+        app:fontStyle="normal"
+        app:fontWeight="200" />
 </font-family>

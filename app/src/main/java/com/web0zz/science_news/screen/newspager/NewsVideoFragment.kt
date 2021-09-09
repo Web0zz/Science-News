@@ -6,4 +6,7 @@ import com.web0zz.science_news.databinding.FragmentNewsVideoScreenBinding
 
 class NewsVideoFragment : BaseFragment<FragmentNewsVideoScreenBinding>() {
     override fun getLayoutId() = R.layout.fragment_news_video_screen
+    override fun initUi() {
+        TODO("Not yet implemented")
+    }
 }

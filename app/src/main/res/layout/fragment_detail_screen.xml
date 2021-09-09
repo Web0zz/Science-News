@@ -1,10 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="article"
+            type="com.web0zz.science_news.data.Article" />
+    </data>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/dark_background">
+        android:background="@color/dark_background"
+        android:fillViewport="false">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/thumbnail_imageView"
+                    LoadImage="@{article.thumbnail}"
+                    android:layout_width="match_parent"
+                    android:layout_height="240dp"
+                    android:contentDescription="@string/thumbnail"
+                    android:scaleType="fitXY"
+                    tools:src="@drawable/news1" />
+
+                <ImageButton
+                    android:id="@+id/back_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@null"
+                    android:contentDescription="@string/back_button"
+                    android:minWidth="48dp"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_back" />
+
+                <ImageButton
+                    android:id="@+id/extra_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@null"
+                    android:contentDescription="@string/menu_button"
+                    android:minWidth="48dp"
+                    android:minHeight="48dp"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_menu" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/body_linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/background"
+                android:orientation="vertical"
+                android:translationY="-18dp">
+
+                <TextView
+                    android:id="@+id/dateAuthor_textView"
+                    author="@{article.author}"
+                    date="@{article.date}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginTop="10dp"
+                    android:alpha="0.9"
+                    android:fontFamily="@font/roboto_light"
+                    android:textColor="@color/white"
+                    android:textIsSelectable="true"
+                    android:textSize="15sp"
+                    tools:text="February 14, 2021 • Joe Bishop" />
+
+                <TextView
+                    android:id="@+id/title_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="5dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:lineSpacingExtra="6dp"
+                    android:text="@{article.title}"
+                    android:textColor="@color/white"
+                    android:textIsSelectable="true"
+                    android:textSize="26sp"
+                    tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
+
+                <TextView
+                    android:id="@+id/article_body_first_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="10dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@{article.bodyFirst}"
+                    android:textColor="@color/white"
+                    android:textIsSelectable="true"
+                    android:textSize="18sp"
+                    tools:text="@string/body_text_tmp1" />
+
+                <ImageView
+                    android:id="@+id/content_imageView"
+                    LoadRoundedImage="@{article.contentImage}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:contentDescription="@string/content_image"
+                    android:scaleType="fitXY"
+                    tools:src="@drawable/news1" />
+
+                <TextView
+                    android:id="@+id/article_body_second_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="10dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@{article.bodySecond}"
+                    android:textColor="@color/white"
+                    android:textIsSelectable="true"
+                    android:textSize="18sp"
+                    tools:text="@string/body_text_tmp" />
+            </LinearLayout>
+        </LinearLayout>
     </ScrollView>
 </layout>

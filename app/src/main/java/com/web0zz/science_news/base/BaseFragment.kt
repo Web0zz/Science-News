@@ -9,7 +9,8 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
 abstract class BaseFragment<B : ViewDataBinding> : Fragment() {
-    protected lateinit var fragmentDataBinding: B
+    private var _fragmentDataBinding: B? = null
+    protected val fragmentDataBinding get() = _fragmentDataBinding!!
 
     abstract fun getLayoutId(): Int
 
@@ -19,9 +20,21 @@ abstract class BaseFragment<B : ViewDataBinding> : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // View is created using layout Id
-        fragmentDataBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
+        _fragmentDataBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
         return fragmentDataBinding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initUi()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _fragmentDataBinding = null
+    }
+
     fun getDataBinding() = fragmentDataBinding
+
+    abstract fun initUi()
 }
