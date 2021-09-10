@@ -1,8 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/dark_background"></LinearLayout>
+        android:background="@color/dark_background"
+        android:orientation="vertical"
+        android:paddingVertical="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/overview"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:paddingHorizontal="10dp"/>
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp"
+            android:paddingHorizontal="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/customborder"
+                    android:padding="1dp"
+                    android:layout_marginHorizontal="5dp">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/article_thumbnail"
+                        android:scaleType="centerCrop"
+                        LoadRoundedImage=""
+                        CornerRadius="15"
+                        Width="100"
+                        Height="100"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/white"
+                        tools:text="Space" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/customborder"
+                    android:padding="1dp"
+                    android:layout_marginHorizontal="5dp">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/article_thumbnail"
+                        android:scaleType="centerCrop"
+                        LoadRoundedImage=""
+                        CornerRadius="15"
+                        Width="100"
+                        Height="100"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/white"
+                        tools:text="Space" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/customborder"
+                    android:padding="1dp"
+                    android:layout_marginHorizontal="5dp">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/article_thumbnail"
+                        android:scaleType="centerCrop"
+                        LoadRoundedImage=""
+                        CornerRadius="15"
+                        Width="100"
+                        Height="100"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/white"
+                        tools:text="Space" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/customborder"
+                    android:padding="1dp"
+                    android:layout_marginHorizontal="5dp">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/article_thumbnail"
+                        android:scaleType="centerCrop"
+                        LoadRoundedImage=""
+                        CornerRadius="15"
+                        Width="100"
+                        Height="100"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/white"
+                        tools:text="Space" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/customborder"
+                    android:padding="1dp"
+                    android:layout_marginHorizontal="5dp">
+
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:contentDescription="@string/article_thumbnail"
+                        android:scaleType="centerCrop"
+                        LoadRoundedImage=""
+                        CornerRadius="15"
+                        Width="100"
+                        Height="100"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/white"
+                        tools:text="Space" />
+                </RelativeLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
 </layout>

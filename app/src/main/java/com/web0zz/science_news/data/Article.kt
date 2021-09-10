@@ -15,7 +15,7 @@ data class Article(
 
 val newsList = listOf(
     Article(
-        1,
+        0,
         "Astronmy",
         "September 2, 2021",
         "Adam Mann",

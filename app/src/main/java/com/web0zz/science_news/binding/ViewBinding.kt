@@ -17,11 +17,11 @@ object ViewBinding {
     }
 
     @JvmStatic
-    @BindingAdapter("LoadRoundedImage")
-    fun ImageView.bindLoadRoundedImage(article_image_url: String) {
+    @BindingAdapter(value = ["LoadRoundedImage", "CornerRadius", "Width", "Height"], requireAll = false)
+    fun ImageView.bindLoadRoundedImage(article_image_url: String, radius: Int = 30, width: Int = 1000, height: Int = 650) {
         Glide.with(this.context)
             .load(article_image_url)
-            .apply(RequestOptions().override(1000, 650).transform(RoundedCorners(30)))
+            .apply(RequestOptions().override(width, height).transform(RoundedCorners(radius)))
             .into(this)
     }
 

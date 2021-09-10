@@ -3,16 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
-            name="article"
-            type="com.web0zz.science_news.data.Article" />
+            name="SectionHandler"
+            type="com.web0zz.science_news.screen.home.sections.handler.SectionHandler" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/dark_background"
+        android:onClick="@{SectionHandler::getIntoDetail}"
         android:orientation="vertical">
 
         <View
@@ -25,7 +25,7 @@
 
         <ImageView
             android:id="@+id/section_thumbnail_imageView"
-            LoadRoundedImage="@{article.thumbnail}"
+            LoadRoundedImage="@{SectionHandler.article.thumbnail}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="@string/article_thumbnail"
@@ -40,7 +40,7 @@
             android:fontFamily="@font/roboto_bold"
             android:paddingHorizontal="10dp"
             android:paddingBottom="10dp"
-            android:text="@{article.section}"
+            android:text="@{SectionHandler.article.section}"
             android:textColor="@color/white"
             tools:text="SPACE" />
 
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_light"
             android:paddingHorizontal="10dp"
-            android:text="@{article.title}"
+            android:text="@{SectionHandler.article.title}"
             android:textColor="@color/white"
             tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
 
@@ -62,8 +62,8 @@
             android:weightSum="6">
 
             <TextView
-                author="@{article.author}"
-                date="@{article.date}"
+                author="@{SectionHandler.article.author}"
+                date="@{SectionHandler.article.date}"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"

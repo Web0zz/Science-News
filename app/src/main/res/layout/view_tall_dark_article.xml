@@ -5,27 +5,28 @@
     <data>
 
         <variable
-            name="article1"
-            type="com.web0zz.science_news.data.Article" />
+            name="SectionHandler1"
+            type="com.web0zz.science_news.screen.home.sections.handler.SectionHandler" />
 
         <variable
-            name="article2"
-            type="com.web0zz.science_news.data.Article" />
+            name="SectionHandler2"
+            type="com.web0zz.science_news.screen.home.sections.handler.SectionHandler" />
 
         <variable
-            name="article3"
-            type="com.web0zz.science_news.data.Article" />
+            name="SectionHandler3"
+            type="com.web0zz.science_news.screen.home.sections.handler.SectionHandler" />
 
         <variable
-            name="article4"
-            type="com.web0zz.science_news.data.Article" />
+            name="SectionHandler4"
+            type="com.web0zz.science_news.screen.home.sections.handler.SectionHandler" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/light_background"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -51,11 +52,12 @@
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:paddingHorizontal="10dp">
+                    android:paddingHorizontal="10dp"
+                    android:onClick="@{SectionHandler1::getIntoDetail}">
 
                     <ImageView
                         android:id="@+id/section_thumbnail_imageView_1"
-                        LoadRoundedImage="@{article1.thumbnail}"
+                        LoadRoundedImage="@{SectionHandler1.article.thumbnail}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/article_thumbnail"
@@ -66,15 +68,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="@{article1.title}"
+                        android:text="@{SectionHandler1.article.title}"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
 
                     <TextView
                         android:id="@+id/section_date_author_textView_1"
-                        author="@{article1.author}"
-                        date="@{article1.date}"
+                        author="@{SectionHandler1.article.author}"
+                        date="@{SectionHandler1.article.date}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:alpha="0.7"
@@ -89,11 +91,12 @@
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:paddingHorizontal="10dp">
+                    android:paddingHorizontal="10dp"
+                    android:onClick="@{SectionHandler2::getIntoDetail}">
 
                     <ImageView
                         android:id="@+id/section_thumbnail_imageView_2"
-                        LoadRoundedImage="@{article2.thumbnail}"
+                        LoadRoundedImage="@{SectionHandler2.article.thumbnail}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/article_thumbnail"
@@ -104,15 +107,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="@{article2.title}"
+                        android:text="@{SectionHandler2.article.title}"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
 
                     <TextView
                         android:id="@+id/section_date_author_textView_2"
-                        author="@{article2.author}"
-                        date="@{article2.date}"
+                        author="@{SectionHandler2.article.author}"
+                        date="@{SectionHandler2.article.date}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_thin"
@@ -126,11 +129,12 @@
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:paddingHorizontal="10dp">
+                    android:paddingHorizontal="10dp"
+                    android:onClick="@{SectionHandler3::getIntoDetail}">
 
                     <ImageView
                         android:id="@+id/section_thumbnail_imageView_3"
-                        LoadRoundedImage="@{article3.thumbnail}"
+                        LoadRoundedImage="@{SectionHandler3.article.thumbnail}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/article_thumbnail"
@@ -141,15 +145,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="@{article3.title}"
+                        android:text="@{SectionHandler3.article.title}"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
 
                     <TextView
                         android:id="@+id/section_date_author_textView_3"
-                        author="@{article3.author}"
-                        date="@{article3.date}"
+                        author="@{SectionHandler3.article.author}"
+                        date="@{SectionHandler3.article.date}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_thin"
@@ -163,11 +167,12 @@
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:paddingHorizontal="10dp">
+                    android:paddingHorizontal="10dp"
+                    android:onClick="@{SectionHandler4::getIntoDetail}">
 
                     <ImageView
                         android:id="@+id/section_thumbnail_imageView_4"
-                        LoadRoundedImage="@{article4.thumbnail}"
+                        LoadRoundedImage="@{SectionHandler4.article.thumbnail}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/article_thumbnail"
@@ -178,15 +183,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="@{article4.title}"
+                        android:text="@{SectionHandler4.article.title}"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
 
                     <TextView
                         android:id="@+id/section_date_author_textView_4"
-                        author="@{article4.author}"
-                        date="@{article4.date}"
+                        author="@{SectionHandler4.article.author}"
+                        date="@{SectionHandler4.article.date}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_thin"
@@ -196,7 +201,6 @@
                         tools:text="September 2, 2021 • Joe Bishop" />
                 </LinearLayout>
             </LinearLayout>
-
         </HorizontalScrollView>
     </LinearLayout>
 </layout>

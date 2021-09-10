@@ -3,10 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
-            name="article"
-            type="com.web0zz.science_news.data.Article" />
+            name="SectionHandler"
+            type="com.web0zz.science_news.screen.home.sections.handler.SectionHandler" />
     </data>
 
     <LinearLayout
@@ -14,7 +13,8 @@
         android:layout_height="wrap_content"
         android:background="@color/dark_background"
         android:orientation="vertical"
-        android:paddingVertical="12dp">
+        android:paddingVertical="12dp"
+        android:onClick="@{SectionHandler::getIntoDetail}">
 
         <View
             android:id="@+id/divider"
@@ -44,7 +44,7 @@
                     android:alpha="0.8"
                     android:fontFamily="@font/roboto_bold"
                     android:paddingBottom="10dp"
-                    android:text="@{article.section}"
+                    android:text="@{SectionHandler.article.section}"
                     android:textColor="@color/white"
                     tools:text="SPACE" />
 
@@ -53,7 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_light"
-                    android:text="@{article.title}"
+                    android:text="@{SectionHandler.article.title}"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
@@ -62,7 +62,7 @@
 
             <ImageView
                 android:id="@+id/section_thumbnail_imageView"
-                LoadRoundedImage="@{article.thumbnail}"
+                LoadRoundedImage="@{SectionHandler.article.thumbnail}"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -78,8 +78,8 @@
             android:weightSum="6">
 
             <TextView
-                author="@{article.author}"
-                date="@{article.date}"
+                author="@{SectionHandler.article.author}"
+                date="@{SectionHandler.article.date}"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"

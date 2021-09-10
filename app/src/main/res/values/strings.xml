@@ -28,8 +28,11 @@ While theorists have previously envisioned such a scenario, dubbed a merger-trig
 <br /><br />
 The final stages of these systems are exactly what observatories like the Advanced Laser Interferometer Gravitational-Wave Observatory, or LIGO, detect when capturing spacetime’s ripples, Dong says (SN: 8/4/21). Now that astronomers know to look for these multiple lines of evidence, he expects them to find more examples this strange phenomenon.</string>
 
-    <string name="article_thumbnail">Article Thumbnail</string>
     <string name="save_button">Save</string>
     <string name="extra_section_button">Extra Section</string>
     <string name="what_to_read">What to read</string>
+    <string name="user">User</string>
+    <string name="search">Search</string>
+    <string name="overview">Overview</string>
+    <string name="article_thumbnail">Article Thumbnail</string>
 </resources>

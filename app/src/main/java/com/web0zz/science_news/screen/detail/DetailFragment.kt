@@ -32,11 +32,13 @@ class DetailFragment : BaseFragment<FragmentDetailScreenBinding>() {
 
         fragmentDataBinding.backButton.setOnClickListener { moveBack() }
 
-        activity?.onBackPressedDispatcher?.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                moveBack()
-            }
-        })
+        activity?.onBackPressedDispatcher?.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    moveBack()
+                }
+            })
     }
 
     private fun moveBack() {

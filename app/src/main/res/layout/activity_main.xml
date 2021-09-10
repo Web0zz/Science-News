@@ -2,9 +2,11 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ScrollView
+        android:id="@+id/main_scrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/dark_background">
+        android:layout_height="match_parent"
+        android:background="@color/dark_background"
+        android:fitsSystemWindows="false">
 
         <LinearLayout
             android:id="@+id/main_linearLayout"
@@ -20,6 +22,11 @@
 
             <FrameLayout
                 android:id="@+id/detail_frameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <FrameLayout
+                android:id="@+id/top_bar_frameLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
