@@ -109,7 +109,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     /**
      *  Responsible with waking up the Detail Fragment, or remove.
-     *
      */
     fun initDetail(willDelete: Boolean, articleId: Int? = null) {
         this.makeTransaction {
