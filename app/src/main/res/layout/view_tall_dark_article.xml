@@ -51,13 +51,16 @@
                 <LinearLayout
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
+                    android:onClick="@{SectionHandler1::getIntoDetail}"
                     android:orientation="vertical"
-                    android:paddingHorizontal="10dp"
-                    android:onClick="@{SectionHandler1::getIntoDetail}">
+                    android:paddingHorizontal="10dp">
 
                     <ImageView
                         android:id="@+id/section_thumbnail_imageView_1"
+                        CornerRadius="@{30}"
+                        Height="@{650}"
                         LoadRoundedImage="@{SectionHandler1.article.thumbnail}"
+                        Width="@{1000}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/article_thumbnail"
@@ -90,13 +93,16 @@
                 <LinearLayout
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
+                    android:onClick="@{SectionHandler2::getIntoDetail}"
                     android:orientation="vertical"
-                    android:paddingHorizontal="10dp"
-                    android:onClick="@{SectionHandler2::getIntoDetail}">
+                    android:paddingHorizontal="10dp">
 
                     <ImageView
                         android:id="@+id/section_thumbnail_imageView_2"
+                        CornerRadius="@{30}"
+                        Height="@{650}"
                         LoadRoundedImage="@{SectionHandler2.article.thumbnail}"
+                        Width="@{1000}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/article_thumbnail"
@@ -128,13 +134,16 @@
                 <LinearLayout
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
+                    android:onClick="@{SectionHandler3::getIntoDetail}"
                     android:orientation="vertical"
-                    android:paddingHorizontal="10dp"
-                    android:onClick="@{SectionHandler3::getIntoDetail}">
+                    android:paddingHorizontal="10dp">
 
                     <ImageView
                         android:id="@+id/section_thumbnail_imageView_3"
+                        CornerRadius="@{30}"
+                        Height="@{650}"
                         LoadRoundedImage="@{SectionHandler3.article.thumbnail}"
+                        Width="@{1000}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/article_thumbnail"
@@ -166,13 +175,16 @@
                 <LinearLayout
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
+                    android:onClick="@{SectionHandler4::getIntoDetail}"
                     android:orientation="vertical"
-                    android:paddingHorizontal="10dp"
-                    android:onClick="@{SectionHandler4::getIntoDetail}">
+                    android:paddingHorizontal="10dp">
 
                     <ImageView
                         android:id="@+id/section_thumbnail_imageView_4"
+                        CornerRadius="@{30}"
+                        Height="@{650}"
                         LoadRoundedImage="@{SectionHandler4.article.thumbnail}"
+                        Width="@{1000}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/article_thumbnail"

@@ -22,7 +22,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
      *
      *  Problem: When moving to detail screen scroll position stays as like on home view.
      */
-    private var lastScrollPosition: List<Int> = listOf(0,0)
+    private var lastScrollPosition: List<Int> = listOf(0, 0)
 
     override fun initUi() {
         initSplash(false)
@@ -72,35 +72,36 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                     /** Wakes up the Tall Article Section fragment. */
                     this.add(
                         activityBinding.tallArticleFrameLayout1.id,
-                        TallArticleFragment.newInstance().also { fragmentList.add(it) })
+                        TallArticleFragment.newInstance(0).also { fragmentList.add(it) })
                     this.add(
                         activityBinding.tallArticleFrameLayout2.id,
-                        TallArticleFragment.newInstance().also { fragmentList.add(it) })
+                        TallArticleFragment.newInstance(1).also { fragmentList.add(it) })
 
                     /** Wakes up the Short Article Section fragment. */
                     this.add(
                         activityBinding.shortArticleFrameLayout1.id,
-                        ShortArticleFragment.newInstance().also { fragmentList.add(it) })
+                        ShortArticleFragment.newInstance(2).also { fragmentList.add(it) })
                     this.add(
                         activityBinding.shortArticleFrameLayout2.id,
-                        ShortArticleFragment.newInstance().also { fragmentList.add(it) })
+                        ShortArticleFragment.newInstance(3).also { fragmentList.add(it) })
                     this.add(
                         activityBinding.shortArticleFrameLayout3.id,
-                        ShortArticleFragment.newInstance().also { fragmentList.add(it) })
+                        ShortArticleFragment.newInstance(4).also { fragmentList.add(it) })
                     this.add(
                         activityBinding.shortArticleFrameLayout4.id,
-                        ShortArticleFragment.newInstance().also { fragmentList.add(it) })
+                        ShortArticleFragment.newInstance(5).also { fragmentList.add(it) })
                     this.add(
                         activityBinding.shortArticleFrameLayout5.id,
-                        ShortArticleFragment.newInstance().also { fragmentList.add(it) })
+                        ShortArticleFragment.newInstance(6).also { fragmentList.add(it) })
                     this.add(
                         activityBinding.shortArticleFrameLayout6.id,
-                        ShortArticleFragment.newInstance().also { fragmentList.add(it) })
+                        ShortArticleFragment.newInstance(7).also { fragmentList.add(it) })
 
                     /** Wakes up the Tall Light Article Section fragment. */
                     this.add(
                         activityBinding.tallDarkArticleFrameLayout.id,
-                        TallDarkArticleFragment.newInstance().also { fragmentList.add(it) })
+                        TallDarkArticleFragment.newInstance(8, 9, 10, 11)
+                            .also { fragmentList.add(it) })
                 }
             }
         }
@@ -117,7 +118,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                     /**
                      *  Set last scroll position,
                      */
-                    activityBinding.mainScrollView.scrollTo(lastScrollPosition[0], lastScrollPosition[1])
+                    activityBinding.mainScrollView.scrollTo(lastScrollPosition[0],
+                        lastScrollPosition[1])
 
                     this.remove(fragmentList.removeAt(0))
                     fragmentList.clear()
@@ -127,8 +129,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                      *  Get last scroll position and save it,
                      *  Scroll layout to start.
                      */
-                    lastScrollPosition = listOf(activityBinding.mainScrollView.scrollX, activityBinding.mainScrollView.scrollY)
-                    activityBinding.mainScrollView.scrollTo(0,0)
+                    lastScrollPosition = listOf(activityBinding.mainScrollView.scrollX,
+                        activityBinding.mainScrollView.scrollY)
+                    activityBinding.mainScrollView.scrollTo(0, 0)
 
                     this.add(
                         activityBinding.detailFrameLayout.id,
@@ -139,7 +142,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     private fun makeTransaction(
-        config: (FragmentTransaction.() -> Unit)? = null
+        config: (FragmentTransaction.() -> Unit)? = null,
     ) {
         val transaction = supportFragmentManager.beginTransaction()
         config?.let { config(transaction) }

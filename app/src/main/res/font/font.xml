@@ -20,4 +20,8 @@
         app:font="@font/roboto_bold"
         app:fontStyle="normal"
         app:fontWeight="200" />
+    <font
+        app:font="@font/roboto_light_italic"
+        app:fontStyle="normal"
+        app:fontWeight="200" />
 </font-family>

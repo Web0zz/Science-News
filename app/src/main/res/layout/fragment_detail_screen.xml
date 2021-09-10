@@ -3,6 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
+        <import type="com.web0zz.science_news.screen.detail.handler.ActionHandler" />
+
+        <variable
+            name="activity"
+            type="com.web0zz.science_news.MainActivity" />
+
         <variable
             name="article"
             type="com.web0zz.science_news.data.Article" />
@@ -41,6 +48,7 @@
                     android:contentDescription="@string/back_button"
                     android:minWidth="48dp"
                     android:minHeight="48dp"
+                    android:onClick="@{() -> ActionHandler.moveBack(activity)}"
                     android:padding="10dp"
                     android:src="@drawable/ic_back" />
 
@@ -97,11 +105,26 @@
                     tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
 
                 <TextView
-                    android:id="@+id/article_body_first_textView"
+                    android:id="@+id/article_short_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="15dp"
                     android:layout_marginVertical="10dp"
+                    android:fontFamily="@font/roboto_light_italic"
+                    android:lineSpacingExtra="4dp"
+                    android:text="@{article.shortBody}"
+                    android:textColor="@color/white"
+                    android:textIsSelectable="true"
+                    android:textSize="18sp"
+                    tools:text="It’s the first firm evidence of a rare cosmic phenomenon" />
+
+
+                <TextView
+                    android:id="@+id/article_body_first_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="15dp"
+                    android:layout_marginVertical="15dp"
                     android:fontFamily="@font/roboto_light"
                     android:lineSpacingExtra="4dp"
                     android:text="@{article.bodyFirst}"
@@ -112,7 +135,10 @@
 
                 <ImageView
                     android:id="@+id/content_imageView"
+                    CornerRadius="@{30}"
+                    Height="@{650}"
                     LoadRoundedImage="@{article.contentImage}"
+                    Width="@{1000}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"

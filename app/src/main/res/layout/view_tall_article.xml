@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="SectionHandler"
             type="com.web0zz.science_news.screen.home.sections.handler.SectionHandler" />
@@ -25,7 +26,10 @@
 
         <ImageView
             android:id="@+id/section_thumbnail_imageView"
+            CornerRadius="@{30}"
+            Height="@{600}"
             LoadRoundedImage="@{SectionHandler.article.thumbnail}"
+            Width="@{1000}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:contentDescription="@string/article_thumbnail"

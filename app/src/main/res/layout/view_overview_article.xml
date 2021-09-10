@@ -2,6 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="Overview"
+            type="com.web0zz.science_news.screen.home.sections.handler.OverviewHandler" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,16 +19,17 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
             android:text="@string/overview"
             android:textColor="@color/white"
-            android:textSize="23sp"
-            android:paddingHorizontal="10dp"/>
+            android:textSize="23sp" />
 
         <HorizontalScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingHorizontal="5dp"
             android:paddingVertical="10dp"
-            android:paddingHorizontal="5dp">
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -30,19 +38,20 @@
                 <RelativeLayout
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:layout_marginHorizontal="5dp"
                     android:background="@drawable/customborder"
-                    android:padding="1dp"
-                    android:layout_marginHorizontal="5dp">
+                    android:padding="1dp">
 
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        CornerRadius="@{18}"
+                        Height="@{100}"
+                        LoadRoundedImage="@{Overview.overview1.thumbnail_image}"
+                        Width="@{100}"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerInParent="true"
                         android:contentDescription="@string/article_thumbnail"
-                        android:scaleType="centerCrop"
-                        LoadRoundedImage=""
-                        CornerRadius="15"
-                        Width="100"
-                        Height="100"/>
+                        android:scaleType="fitXY" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -50,7 +59,9 @@
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="10dp"
+                        android:background="@color/text_background"
                         android:fontFamily="@font/roboto_bold"
+                        android:text="@{Overview.overview1.name}"
                         android:textColor="@color/white"
                         tools:text="Space" />
                 </RelativeLayout>
@@ -58,19 +69,20 @@
                 <RelativeLayout
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:layout_marginHorizontal="5dp"
                     android:background="@drawable/customborder"
-                    android:padding="1dp"
-                    android:layout_marginHorizontal="5dp">
+                    android:padding="1dp">
 
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        CornerRadius="@{18}"
+                        Height="@{100}"
+                        LoadRoundedImage="@{Overview.overview2.thumbnail_image}"
+                        Width="@{100}"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerInParent="true"
                         android:contentDescription="@string/article_thumbnail"
-                        android:scaleType="centerCrop"
-                        LoadRoundedImage=""
-                        CornerRadius="15"
-                        Width="100"
-                        Height="100"/>
+                        android:scaleType="fitXY" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -78,7 +90,9 @@
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="10dp"
+                        android:background="@color/text_background"
                         android:fontFamily="@font/roboto_bold"
+                        android:text="@{Overview.overview2.name}"
                         android:textColor="@color/white"
                         tools:text="Space" />
                 </RelativeLayout>
@@ -86,19 +100,20 @@
                 <RelativeLayout
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:layout_marginHorizontal="5dp"
                     android:background="@drawable/customborder"
-                    android:padding="1dp"
-                    android:layout_marginHorizontal="5dp">
+                    android:padding="1dp">
 
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        CornerRadius="@{18}"
+                        Height="@{100}"
+                        LoadRoundedImage="@{Overview.overview3.thumbnail_image}"
+                        Width="@{100}"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerInParent="true"
                         android:contentDescription="@string/article_thumbnail"
-                        android:scaleType="centerCrop"
-                        LoadRoundedImage=""
-                        CornerRadius="15"
-                        Width="100"
-                        Height="100"/>
+                        android:scaleType="fitXY" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -106,7 +121,9 @@
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="10dp"
+                        android:background="@color/text_background"
                         android:fontFamily="@font/roboto_bold"
+                        android:text="@{Overview.overview3.name}"
                         android:textColor="@color/white"
                         tools:text="Space" />
                 </RelativeLayout>
@@ -114,19 +131,20 @@
                 <RelativeLayout
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:layout_marginHorizontal="5dp"
                     android:background="@drawable/customborder"
-                    android:padding="1dp"
-                    android:layout_marginHorizontal="5dp">
+                    android:padding="1dp">
 
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        CornerRadius="@{18}"
+                        Height="@{100}"
+                        LoadRoundedImage="@{Overview.overview4.thumbnail_image}"
+                        Width="@{100}"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerInParent="true"
                         android:contentDescription="@string/article_thumbnail"
-                        android:scaleType="centerCrop"
-                        LoadRoundedImage=""
-                        CornerRadius="15"
-                        Width="100"
-                        Height="100"/>
+                        android:scaleType="fitXY" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -134,7 +152,9 @@
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="10dp"
+                        android:background="@color/text_background"
                         android:fontFamily="@font/roboto_bold"
+                        android:text="@{Overview.overview4.name}"
                         android:textColor="@color/white"
                         tools:text="Space" />
                 </RelativeLayout>
@@ -142,19 +162,20 @@
                 <RelativeLayout
                     android:layout_width="100dp"
                     android:layout_height="100dp"
+                    android:layout_marginHorizontal="5dp"
                     android:background="@drawable/customborder"
-                    android:padding="1dp"
-                    android:layout_marginHorizontal="5dp">
+                    android:padding="1dp">
 
                     <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        CornerRadius="@{18}"
+                        Height="@{100}"
+                        LoadRoundedImage="@{Overview.overview5.thumbnail_image}"
+                        Width="@{100}"
+                        android:layout_width="95dp"
+                        android:layout_height="95dp"
+                        android:layout_centerInParent="true"
                         android:contentDescription="@string/article_thumbnail"
-                        android:scaleType="centerCrop"
-                        LoadRoundedImage=""
-                        CornerRadius="15"
-                        Width="100"
-                        Height="100"/>
+                        android:scaleType="fitXY" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -162,7 +183,9 @@
                         android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="10dp"
+                        android:background="@color/text_background"
                         android:fontFamily="@font/roboto_bold"
+                        android:text="@{Overview.overview5.name}"
                         android:textColor="@color/white"
                         tools:text="Space" />
                 </RelativeLayout>

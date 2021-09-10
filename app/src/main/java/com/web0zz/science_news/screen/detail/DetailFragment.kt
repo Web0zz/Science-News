@@ -1,13 +1,13 @@
 package com.web0zz.science_news.screen.detail
 
 import android.os.Bundle
-import android.transition.TransitionInflater
 import androidx.activity.OnBackPressedCallback
 import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
 import com.web0zz.science_news.data.newsList
 import com.web0zz.science_news.databinding.FragmentDetailScreenBinding
+import com.web0zz.science_news.screen.detail.handler.ActionHandler.moveBack
 import kotlin.properties.Delegates
 
 private const val NEWS_ID = "newsId"
@@ -17,35 +17,23 @@ class DetailFragment : BaseFragment<FragmentDetailScreenBinding>() {
 
     private var selectedNewsId by Delegates.notNull<Int>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val inflater = TransitionInflater.from(requireContext())
-        enterTransition = inflater.inflateTransition(R.transition.slide_right)
-
-        arguments?.let {
-            selectedNewsId = it.getInt(NEWS_ID)
-        }
+    override fun Bundle.getArgumentsToVariable() {
+        selectedNewsId = this.getInt(NEWS_ID)
     }
 
     override fun initUi() {
-        fragmentDataBinding.article = getSelectedArticle(selectedNewsId)
+        val mainActivity = (activity as MainActivity)
 
-        fragmentDataBinding.backButton.setOnClickListener { moveBack() }
+        fragmentDataBinding.article = getSelectedArticle(selectedNewsId)
+        fragmentDataBinding.activity = mainActivity
 
         activity?.onBackPressedDispatcher?.addCallback(
             viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    moveBack()
+                    moveBack(mainActivity)
                 }
             })
-    }
-
-    private fun moveBack() {
-        val mainActivity = (activity as MainActivity)
-
-        mainActivity.initDetail(true)
-        mainActivity.initHome(false)
     }
 
     companion object {
