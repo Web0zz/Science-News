@@ -1,48 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
+        <import type="java.util.List"/>
+        <import type="com.web0zz.science_news.data.model.Article"/>
         <variable
-            name="SectionHandler1"
-            type="com.web0zz.science_news.screen.home.sections.handler.SectionHandler" />
-
-        <variable
-            name="SectionHandler2"
-            type="com.web0zz.science_news.screen.home.sections.handler.SectionHandler" />
-
-        <variable
-            name="SectionHandler3"
-            type="com.web0zz.science_news.screen.home.sections.handler.SectionHandler" />
-
-        <variable
-            name="SectionHandler4"
-            type="com.web0zz.science_news.screen.home.sections.handler.SectionHandler" />
+            name="articleList"
+            type="List&lt;Article" />
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/light_background"
-        android:orientation="vertical"
-        android:paddingBottom="10dp">
+        android:background="@color/light_background">
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_bold"
-            android:paddingHorizontal="10dp"
-            android:paddingTop="10dp"
             android:text="@string/what_to_read"
             android:textColor="@color/white"
-            android:textSize="23sp" />
+            android:textSize="23sp"
+            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            app:layout_constraintTop_toTopOf="@+id/tall_top_guideline" />
 
         <HorizontalScrollView
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingBottom="10dp"
-            android:scrollbars="none">
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
+            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            app:layout_constraintEnd_toStartOf="@id/tall_right_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -59,7 +52,7 @@
                         android:id="@+id/section_thumbnail_imageView_1"
                         CornerRadius="@{30}"
                         Height="@{650}"
-                        LoadRoundedImage="@{SectionHandler1.article.thumbnail}"
+                        LoadRoundedImage="@{articleList[0].thumbnail}"
                         Width="@{1000}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -71,15 +64,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="@{SectionHandler1.article.title}"
+                        android:text="@{articleList[0].title}"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
 
                     <TextView
                         android:id="@+id/section_date_author_textView_1"
-                        author="@{SectionHandler1.article.author}"
-                        date="@{SectionHandler1.article.date}"
+                        author="@{articleList[0].author}"
+                        date="@{articleList[0].date}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:alpha="0.7"
@@ -101,7 +94,7 @@
                         android:id="@+id/section_thumbnail_imageView_2"
                         CornerRadius="@{30}"
                         Height="@{650}"
-                        LoadRoundedImage="@{SectionHandler2.article.thumbnail}"
+                        LoadRoundedImage="@{articleList[1].thumbnail}"
                         Width="@{1000}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -113,15 +106,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="@{SectionHandler2.article.title}"
+                        android:text="@{articleList[1].title}"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
 
                     <TextView
                         android:id="@+id/section_date_author_textView_2"
-                        author="@{SectionHandler2.article.author}"
-                        date="@{SectionHandler2.article.date}"
+                        author="@{articleList[1].author}"
+                        date="@{articleList[1].date}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_thin"
@@ -142,7 +135,7 @@
                         android:id="@+id/section_thumbnail_imageView_3"
                         CornerRadius="@{30}"
                         Height="@{650}"
-                        LoadRoundedImage="@{SectionHandler3.article.thumbnail}"
+                        LoadRoundedImage="@{articleList[2].thumbnail}"
                         Width="@{1000}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -154,15 +147,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="@{SectionHandler3.article.title}"
+                        android:text="@{articleList[2].title}"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
 
                     <TextView
                         android:id="@+id/section_date_author_textView_3"
-                        author="@{SectionHandler3.article.author}"
-                        date="@{SectionHandler3.article.date}"
+                        author="@{articleList[2].author}"
+                        date="@{articleList[2].date}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_thin"
@@ -183,7 +176,7 @@
                         android:id="@+id/section_thumbnail_imageView_4"
                         CornerRadius="@{30}"
                         Height="@{650}"
-                        LoadRoundedImage="@{SectionHandler4.article.thumbnail}"
+                        LoadRoundedImage="@{articleList[3].thumbnail}"
                         Width="@{1000}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -195,15 +188,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_light"
-                        android:text="@{SectionHandler4.article.title}"
+                        android:text="@{articleList[3].title}"
                         android:textColor="@color/white"
                         android:textSize="16sp"
                         tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
 
                     <TextView
                         android:id="@+id/section_date_author_textView_4"
-                        author="@{SectionHandler4.article.author}"
-                        date="@{SectionHandler4.article.date}"
+                        author="@{articleList[3].author}"
+                        date="@{articleList[3].date}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_thin"
@@ -213,6 +206,36 @@
                         tools:text="September 2, 2021 • Joe Bishop" />
                 </LinearLayout>
             </LinearLayout>
+
         </HorizontalScrollView>
-    </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/tall_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/tall_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="10dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/tall_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="10dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="20dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -9,28 +9,118 @@
             name="article"
             type="com.web0zz.science_news.data.model.Article" />
     </data>
+
     <!-- TODO move hard coded values to res-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/dark_background">
 
+        <TextView
+            android:id="@+id/tall_section_category_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.8"
+            android:fontFamily="@font/roboto_bold"
+            android:paddingBottom="10dp"
+            android:text="@{article.section}"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toStartOf="@id/text_right_barrier"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            app:layout_constraintTop_toTopOf="@+id/tall_top_guideline"
+            tools:text="SPACE" />
+
+        <TextView
+            android:id="@+id/tall_section_title_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light"
+            android:text="@{article.title}"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/title_bottom_barrier"
+            app:layout_constraintEnd_toStartOf="@+id/text_right_barrier"
+            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/tall_section_category_textView"
+            tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
+
+        <ImageView
+            android:id="@+id/tall_section_thumbnail_imageView"
+            CornerRadius="@{30}"
+            Height="@{600}"
+            LoadRoundedImage="@{article.thumbnail}"
+            Width="@{600}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_max="150dp"
+            android:contentDescription="@string/article_thumbnail"
+            app:layout_constraintBottom_toTopOf="@+id/title_bottom_barrier"
+            app:layout_constraintDimensionRatio="w,16:9"
+            app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
+            app:layout_constraintTop_toTopOf="@+id/tall_top_guideline"
+            tools:src="@drawable/news1" />
+
+        <TextView
+            android:id="@+id/short_info_textView"
+            author="@{article.author}"
+            date="@{article.date}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:fontFamily="@font/roboto_light"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
+            app:layout_constraintEnd_toStartOf="@id/text_right_barrier"
+            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            app:layout_constraintTop_toTopOf="@+id/tall_save_imageButton"
+            tools:text="September 2, 2021 • Joe Bishop" />
+
+        <ImageButton
+            android:id="@+id/tall_save_imageButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:background="@null"
+            android:contentDescription="@string/save_button"
+            android:minHeight="48dp"
+            android:src="@drawable/ic_save"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
+            app:layout_constraintEnd_toStartOf="@+id/tall_extra_imageButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/short_info_textView" />
+
+        <ImageButton
+            android:id="@+id/tall_extra_imageButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:background="@null"
+            android:contentDescription="@string/extra_section_button"
+            android:minHeight="48dp"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tall_save_imageButton" />
+
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_top"
+            android:id="@+id/tall_top_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="20dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_left"
+            android:id="@+id/tall_left_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="10dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_right"
+            android:id="@+id/tall_right_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -48,7 +138,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="left"
-            app:constraint_referenced_ids="section_thumbnail_imageView,extra_imageButton,save_imageButton"
+            app:constraint_referenced_ids="tall_section_thumbnail_imageView,tall_extra_imageButton,tall_save_imageButton"
             tools:layout_editor_absoluteX="392dp"
             tools:layout_editor_absoluteY="98dp" />
 
@@ -57,205 +147,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="top"
-            app:constraint_referenced_ids="extra_imageButton,textView,save_imageButton"
+            app:constraint_referenced_ids="tall_extra_imageButton,short_info_textView,tall_save_imageButton"
             tools:layout_editor_absoluteX="183dp"
             tools:layout_editor_absoluteY="657dp" />
 
-        <TextView
-            android:id="@+id/section_category_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0.8"
-            android:fontFamily="@font/roboto_bold"
-            android:paddingBottom="10dp"
-            android:text="@{article.section}"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toTopOf="@+id/guideline_top"
-            tools:text="SPACE" />
-
-        <TextView
-            android:id="@+id/section_title_textView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_light"
-            android:text="@{article.title}"
-            android:textColor="@color/white"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/title_bottom_barrier"
-            app:layout_constraintEnd_toStartOf="@+id/text_right_barrier"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/section_category_textView"
-            tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
-
-        <ImageView
-            android:id="@+id/section_thumbnail_imageView"
-            CornerRadius="@{30}"
-            Height="@{600}"
-            LoadRoundedImage="@{article.thumbnail}"
-            Width="@{600}"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:contentDescription="@string/article_thumbnail"
-            app:layout_constraintBottom_toTopOf="@+id/title_bottom_barrier"
-            app:layout_constraintDimensionRatio="w,16:9"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
-            app:layout_constraintTop_toTopOf="@+id/guideline_top"
-            tools:src="@drawable/news1" />
-
-        <TextView
-            android:id="@+id/textView"
-            author="@{article.author}"
-            date="@{article.date}"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:alpha="0.7"
-            android:fontFamily="@font/roboto_light"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
-            app:layout_constraintEnd_toStartOf="@id/text_right_barrier"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toTopOf="@+id/save_imageButton"
-            tools:text="September 2, 2021 • Joe Bishop" />
-
-        <ImageButton
-            android:id="@+id/save_imageButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:alpha="0.7"
-            android:background="@null"
-            android:contentDescription="@string/save_button"
-            android:minHeight="48dp"
-            android:padding="2dp"
-            android:src="@drawable/ic_save"
-            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
-            app:layout_constraintEnd_toStartOf="@+id/extra_imageButton"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/textView" />
-
-        <ImageButton
-            android:id="@+id/extra_imageButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:alpha="0.7"
-            android:background="@null"
-            android:contentDescription="@string/extra_section_button"
-            android:minHeight="48dp"
-            android:padding="2dp"
-            android:src="@drawable/ic_menu"
-            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/save_imageButton" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!--<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/dark_background"
-        android:onClick="@{SectionHandler::getIntoDetail}"
-        android:orientation="vertical"
-        android:paddingVertical="12dp">
-
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:alpha="0.3"
-            android:background="@color/white" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            android:weightSum="3">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/section_category_textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:alpha="0.8"
-                    android:fontFamily="@font/roboto_bold"
-                    android:paddingBottom="10dp"
-                    android:text="@{article.section}"
-                    android:textColor="@color/white"
-                    tools:text="SPACE" />
-
-                <TextView
-                    android:id="@+id/section_title_textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_light"
-                    android:text="@{article.title}"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
-
-            </LinearLayout>
-
-            <ImageView
-                android:id="@+id/section_thumbnail_imageView"
-                CornerRadius="@{30}"
-                Height="@{600}"
-                LoadRoundedImage="@{article.thumbnail}"
-                Width="@{600}"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:contentDescription="@string/article_thumbnail"
-                tools:src="@drawable/news1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingHorizontal="10dp"
-            android:weightSum="6">
-
-            <TextView
-                author="@{article.author}"
-                date="@{article.date}"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="5"
-                android:alpha="0.7"
-                android:fontFamily="@font/roboto_light"
-                android:textColor="@color/white"
-                tools:text="September 2, 2021 • Joe Bishop" />
-
-            <ImageButton
-                android:id="@+id/save_imageButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:alpha="0.7"
-                android:background="@null"
-                android:contentDescription="@string/save_button"
-                android:padding="2dp"
-                android:src="@drawable/ic_save" />
-
-            <ImageButton
-                android:id="@+id/extra_imageButton"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:alpha="0.7"
-                android:background="@null"
-                android:contentDescription="@string/extra_section_button"
-                android:padding="2dp"
-                android:src="@drawable/ic_menu" />
-        </LinearLayout>
-    </LinearLayout>-->
 </layout>

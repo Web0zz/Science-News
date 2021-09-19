@@ -2,39 +2,28 @@ package com.web0zz.science_news.screen.home.sections
 
 
 import android.os.Bundle
-import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
-import com.web0zz.science_news.data.model.newsList
+import com.web0zz.science_news.data.dummySource.dummyData.newsList
 import com.web0zz.science_news.databinding.ViewTallLightArticleBinding
-import com.web0zz.science_news.screen.home.sections.handler.SectionHandler
-import kotlin.properties.Delegates
 
 
 class TallLightArticleFragment : BaseFragment<ViewTallLightArticleBinding>() {
     override fun getLayoutId() = R.layout.view_tall_light_article
 
-    private var articleId1 by Delegates.notNull<Int>()
-    private var articleId2 by Delegates.notNull<Int>()
-    private var articleId3 by Delegates.notNull<Int>()
-    private var articleId4 by Delegates.notNull<Int>()
+    private lateinit var articles: List<HashMap<String, Int>>
 
     override fun Bundle.getArgumentsToVariable() {
-        articleId1 = this.getInt(ARTICLE_ID_1)
-        articleId2 = this.getInt(ARTICLE_ID_2)
-        articleId3 = this.getInt(ARTICLE_ID_3)
-        articleId4 = this.getInt(ARTICLE_ID_4)
+        articles = listOf(
+            hashMapOf(Pair("articleId1", this.getInt(ARTICLE_ID_1))),
+            hashMapOf(Pair("articleId2", this.getInt(ARTICLE_ID_1))),
+            hashMapOf(Pair("articleId3", this.getInt(ARTICLE_ID_1))),
+            hashMapOf(Pair("articleId4", this.getInt(ARTICLE_ID_1)))
+        )
     }
 
     override fun initUi() {
-        fragmentDataBinding.sectionHandler1 =
-            SectionHandler(newsList[articleId1], (activity as MainActivity))
-        fragmentDataBinding.sectionHandler2 =
-            SectionHandler(newsList[articleId2], (activity as MainActivity))
-        fragmentDataBinding.sectionHandler3 =
-            SectionHandler(newsList[articleId3], (activity as MainActivity))
-        fragmentDataBinding.sectionHandler4 =
-            SectionHandler(newsList[articleId4], (activity as MainActivity))
+        fragmentDataBinding.articleList = newsList.subList(articles[0]["articleId1"]!!, articles[3]["articleId1"]!! + 1)
     }
 
     companion object {
