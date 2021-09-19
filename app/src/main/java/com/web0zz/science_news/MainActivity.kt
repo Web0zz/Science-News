@@ -1,36 +1,31 @@
 package com.web0zz.science_news
 
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.web0zz.science_news.base.BaseActivity
 import com.web0zz.science_news.databinding.ActivityMainBinding
 import com.web0zz.science_news.screen.detail.DetailFragment
 import com.web0zz.science_news.screen.home.sections.OverviewArticleFragment
 import com.web0zz.science_news.screen.home.sections.ShortArticleFragment
 import com.web0zz.science_news.screen.home.sections.TallArticleFragment
-import com.web0zz.science_news.screen.home.sections.TallDarkArticleFragment
+import com.web0zz.science_news.screen.home.sections.TallLightArticleFragment
 import com.web0zz.science_news.screen.home.topbar.TopBarFragment
 import com.web0zz.science_news.screen.splash.SplashFragment
+import com.web0zz.science_news.util.ActivityUtil.makeTransaction
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
 
     private val fragmentList: MutableList<Fragment> = mutableListOf()
 
-    /**
-     *  It used to solve scrolling problem.
-     *
-     *  Problem: When moving to detail screen scroll position stays as like on home view.
-     */
-    private var lastScrollPosition: List<Int> = listOf(0, 0)
+    // It used to solve scrolling problem.
+    // Problem: When moving to detail screen scroll position stays as like on home view.
+    private var lastScrollPosition: Int = 0
 
     override fun initUi() {
         initSplash(false)
     }
 
-    /**
-     *   Responsible with waking up the Splash Screen Fragment, or remove.
-     */
+    // Responsible with waking up the Splash Screen Fragment, or remove.
     fun initSplash(willDelete: Boolean) {
         this.makeTransaction {
             when (willDelete) {
@@ -46,9 +41,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
     }
 
-    /**
-     *  Responsible with waking up the Article Fragments, or remove.
-     */
+    // Responsible with waking up the Article Fragments, or remove.
     fun initHome(willDelete: Boolean) {
         this.makeTransaction {
             when (willDelete) {
@@ -59,17 +52,17 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                     fragmentList.clear()
                 }
                 false -> {
-                    /** Wakes up the Top bar fragment.*/
+                    // Wakes up the Top bar fragment.
                     this.add(
                         activityBinding.topBarFrameLayout.id,
                         TopBarFragment.newInstance().also { fragmentList.add(it) })
 
-                    /** Wakes up the Overview fragment. */
+                    // Wakes up the Overview fragment.
                     this.add(
                         activityBinding.overviewFrameLayout.id,
                         OverviewArticleFragment.newInstance().also { fragmentList.add(it) })
 
-                    /** Wakes up the Tall Article Section fragment. */
+                    // Wakes up the Tall Article Section fragment.
                     this.add(
                         activityBinding.tallArticleFrameLayout1.id,
                         TallArticleFragment.newInstance(0).also { fragmentList.add(it) })
@@ -77,7 +70,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                         activityBinding.tallArticleFrameLayout2.id,
                         TallArticleFragment.newInstance(1).also { fragmentList.add(it) })
 
-                    /** Wakes up the Short Article Section fragment. */
+                    // Wakes up the Short Article Section fragment.
                     this.add(
                         activityBinding.shortArticleFrameLayout1.id,
                         ShortArticleFragment.newInstance(2).also { fragmentList.add(it) })
@@ -97,39 +90,31 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                         activityBinding.shortArticleFrameLayout6.id,
                         ShortArticleFragment.newInstance(7).also { fragmentList.add(it) })
 
-                    /** Wakes up the Tall Light Article Section fragment. */
+                    // Wakes up the Tall Light Article Section fragment.
                     this.add(
                         activityBinding.tallDarkArticleFrameLayout.id,
-                        TallDarkArticleFragment.newInstance(8, 9, 10, 11)
+                        TallLightArticleFragment.newInstance(8, 9, 10, 11)
                             .also { fragmentList.add(it) })
                 }
             }
         }
     }
 
-    /**
-     *  Responsible with waking up the Detail Fragment, or remove.
-     */
+    // Responsible with waking up the Detail Fragment, or remove.
     fun initDetail(willDelete: Boolean, articleId: Int? = null) {
         this.makeTransaction {
             when (willDelete) {
                 true -> {
-                    /**
-                     *  Set last scroll position,
-                     */
-                    activityBinding.mainScrollView.scrollTo(lastScrollPosition[0],
-                        lastScrollPosition[1])
+                    // Set last scroll position,
+                    activityBinding.mainScrollView.scrollTo(0, lastScrollPosition)
 
                     this.remove(fragmentList.removeAt(0))
                     fragmentList.clear()
                 }
                 false -> {
-                    /**
-                     *  Get last scroll position and save it,
-                     *  Scroll layout to start.
-                     */
-                    lastScrollPosition = listOf(activityBinding.mainScrollView.scrollX,
-                        activityBinding.mainScrollView.scrollY)
+                    // Get last scroll position and save it,
+                    // Scroll layout to start.
+                    lastScrollPosition = activityBinding.mainScrollView.scrollY
                     activityBinding.mainScrollView.scrollTo(0, 0)
 
                     this.add(
@@ -138,13 +123,5 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 }
             }
         }
-    }
-
-    private fun makeTransaction(
-        config: (FragmentTransaction.() -> Unit)? = null,
-    ) {
-        val transaction = supportFragmentManager.beginTransaction()
-        config?.let { config(transaction) }
-        transaction.commit()
     }
 }

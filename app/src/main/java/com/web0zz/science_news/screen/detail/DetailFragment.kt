@@ -5,12 +5,9 @@ import androidx.activity.OnBackPressedCallback
 import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
-import com.web0zz.science_news.data.newsList
+import com.web0zz.science_news.data.model.newsList
 import com.web0zz.science_news.databinding.FragmentDetailScreenBinding
-import com.web0zz.science_news.screen.detail.handler.ActionHandler.moveBack
 import kotlin.properties.Delegates
-
-private const val NEWS_ID = "newsId"
 
 class DetailFragment : BaseFragment<FragmentDetailScreenBinding>() {
     override fun getLayoutId() = R.layout.fragment_detail_screen
@@ -25,18 +22,25 @@ class DetailFragment : BaseFragment<FragmentDetailScreenBinding>() {
         val mainActivity = (activity as MainActivity)
 
         fragmentDataBinding.article = getSelectedArticle(selectedNewsId)
-        fragmentDataBinding.activity = mainActivity
+        fragmentDataBinding.fragInterface = this
 
         activity?.onBackPressedDispatcher?.addCallback(
             viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    moveBack(mainActivity)
+                    mainActivity.moveBack()
                 }
             })
     }
 
+    fun MainActivity.moveBack() {
+        this.initDetail(true)
+        this.initHome(false)
+    }
+
     companion object {
+        private const val NEWS_ID = "newsId"
+
         fun newInstance(newsID: Int): DetailFragment =
             DetailFragment().apply {
                 arguments = Bundle().apply {

@@ -1,15 +1,157 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
-            name="SectionHandler"
-            type="com.web0zz.science_news.screen.home.sections.handler.SectionHandler" />
+            name="article"
+            type="com.web0zz.science_news.data.model.Article" />
     </data>
+    <!-- TODO move hard coded values to res-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dark_background">
 
-    <LinearLayout
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="10dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="10dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="20dp" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/text_right_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="left"
+            app:constraint_referenced_ids="section_thumbnail_imageView,extra_imageButton,save_imageButton"
+            tools:layout_editor_absoluteX="392dp"
+            tools:layout_editor_absoluteY="98dp" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/title_bottom_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="extra_imageButton,textView,save_imageButton"
+            tools:layout_editor_absoluteX="183dp"
+            tools:layout_editor_absoluteY="657dp" />
+
+        <TextView
+            android:id="@+id/section_category_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.8"
+            android:fontFamily="@font/roboto_bold"
+            android:paddingBottom="10dp"
+            android:text="@{article.section}"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toTopOf="@+id/guideline_top"
+            tools:text="SPACE" />
+
+        <TextView
+            android:id="@+id/section_title_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light"
+            android:text="@{article.title}"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/title_bottom_barrier"
+            app:layout_constraintEnd_toStartOf="@+id/text_right_barrier"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toBottomOf="@+id/section_category_textView"
+            tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
+
+        <ImageView
+            android:id="@+id/section_thumbnail_imageView"
+            CornerRadius="@{30}"
+            Height="@{600}"
+            LoadRoundedImage="@{article.thumbnail}"
+            Width="@{600}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/article_thumbnail"
+            app:layout_constraintBottom_toTopOf="@+id/title_bottom_barrier"
+            app:layout_constraintDimensionRatio="w,16:9"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+            app:layout_constraintTop_toTopOf="@+id/guideline_top"
+            tools:src="@drawable/news1" />
+
+        <TextView
+            android:id="@+id/textView"
+            author="@{article.author}"
+            date="@{article.date}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:fontFamily="@font/roboto_light"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
+            app:layout_constraintEnd_toStartOf="@id/text_right_barrier"
+            app:layout_constraintStart_toStartOf="@+id/guideline_left"
+            app:layout_constraintTop_toTopOf="@+id/save_imageButton"
+            tools:text="September 2, 2021 • Joe Bishop" />
+
+        <ImageButton
+            android:id="@+id/save_imageButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:background="@null"
+            android:contentDescription="@string/save_button"
+            android:minHeight="48dp"
+            android:padding="2dp"
+            android:src="@drawable/ic_save"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
+            app:layout_constraintEnd_toStartOf="@+id/extra_imageButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView" />
+
+        <ImageButton
+            android:id="@+id/extra_imageButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:background="@null"
+            android:contentDescription="@string/extra_section_button"
+            android:minHeight="48dp"
+            android:padding="2dp"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_right"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/save_imageButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/dark_background"
@@ -45,7 +187,7 @@
                     android:alpha="0.8"
                     android:fontFamily="@font/roboto_bold"
                     android:paddingBottom="10dp"
-                    android:text="@{SectionHandler.article.section}"
+                    android:text="@{article.section}"
                     android:textColor="@color/white"
                     tools:text="SPACE" />
 
@@ -54,7 +196,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_light"
-                    android:text="@{SectionHandler.article.title}"
+                    android:text="@{article.title}"
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
@@ -65,7 +207,7 @@
                 android:id="@+id/section_thumbnail_imageView"
                 CornerRadius="@{30}"
                 Height="@{600}"
-                LoadRoundedImage="@{SectionHandler.article.thumbnail}"
+                LoadRoundedImage="@{article.thumbnail}"
                 Width="@{600}"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -82,8 +224,8 @@
             android:weightSum="6">
 
             <TextView
-                author="@{SectionHandler.article.author}"
-                date="@{SectionHandler.article.date}"
+                author="@{article.author}"
+                date="@{article.date}"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -115,5 +257,5 @@
                 android:padding="2dp"
                 android:src="@drawable/ic_menu" />
         </LinearLayout>
-    </LinearLayout>
+    </LinearLayout>-->
 </layout>

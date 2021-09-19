@@ -1,6 +1,7 @@
 package com.web0zz.science_news.binding
 
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
@@ -37,5 +38,12 @@ object ViewBinding {
             .load(user_image_url)
             .apply(RequestOptions().circleCrop())
             .into(this)
+    }
+
+    @JvmStatic
+    @BindingAdapter(value = ["date", "author"], requireAll = true)
+    fun TextView.setDateAuthorText(date: String, author: String) {
+        val dateAuthor = "$date • $author"
+        this.text = dateAuthor
     }
 }

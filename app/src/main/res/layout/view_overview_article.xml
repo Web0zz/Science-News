@@ -3,10 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <import type="com.web0zz.science_news.data.model.Overview"/>
+        <import type="java.util.List" />
         <variable
-            name="Overview"
-            type="com.web0zz.science_news.screen.home.sections.handler.OverviewHandler" />
+            name="overviewList"
+            type="List&lt;Overview" />
     </data>
 
     <LinearLayout
@@ -45,7 +46,7 @@
                     <ImageView
                         CornerRadius="@{18}"
                         Height="@{100}"
-                        LoadRoundedImage="@{Overview.overview1.thumbnail_image}"
+                        LoadRoundedImage="@{overviewList[0].thumbnail_image}"
                         Width="@{100}"
                         android:layout_width="95dp"
                         android:layout_height="95dp"
@@ -61,7 +62,7 @@
                         android:layout_marginBottom="10dp"
                         android:background="@color/text_background"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="@{Overview.overview1.name}"
+                        android:text="@{overviewList[0].name}"
                         android:textColor="@color/white"
                         tools:text="Space" />
                 </RelativeLayout>
@@ -76,7 +77,7 @@
                     <ImageView
                         CornerRadius="@{18}"
                         Height="@{100}"
-                        LoadRoundedImage="@{Overview.overview2.thumbnail_image}"
+                        LoadRoundedImage="@{overviewList[1].thumbnail_image}"
                         Width="@{100}"
                         android:layout_width="95dp"
                         android:layout_height="95dp"
@@ -92,7 +93,7 @@
                         android:layout_marginBottom="10dp"
                         android:background="@color/text_background"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="@{Overview.overview2.name}"
+                        android:text="@{overviewList[1].name}"
                         android:textColor="@color/white"
                         tools:text="Space" />
                 </RelativeLayout>
@@ -107,7 +108,7 @@
                     <ImageView
                         CornerRadius="@{18}"
                         Height="@{100}"
-                        LoadRoundedImage="@{Overview.overview3.thumbnail_image}"
+                        LoadRoundedImage="@{overviewList[2].thumbnail_image}"
                         Width="@{100}"
                         android:layout_width="95dp"
                         android:layout_height="95dp"
@@ -123,7 +124,7 @@
                         android:layout_marginBottom="10dp"
                         android:background="@color/text_background"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="@{Overview.overview3.name}"
+                        android:text="@{overviewList[2].name}"
                         android:textColor="@color/white"
                         tools:text="Space" />
                 </RelativeLayout>
@@ -138,7 +139,7 @@
                     <ImageView
                         CornerRadius="@{18}"
                         Height="@{100}"
-                        LoadRoundedImage="@{Overview.overview4.thumbnail_image}"
+                        LoadRoundedImage="@{overviewList[3].thumbnail_image}"
                         Width="@{100}"
                         android:layout_width="95dp"
                         android:layout_height="95dp"
@@ -154,7 +155,7 @@
                         android:layout_marginBottom="10dp"
                         android:background="@color/text_background"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="@{Overview.overview4.name}"
+                        android:text="@{overviewList[3].name}"
                         android:textColor="@color/white"
                         tools:text="Space" />
                 </RelativeLayout>
@@ -169,7 +170,7 @@
                     <ImageView
                         CornerRadius="@{18}"
                         Height="@{100}"
-                        LoadRoundedImage="@{Overview.overview5.thumbnail_image}"
+                        LoadRoundedImage="@{overviewList[4].thumbnail_image}"
                         Width="@{100}"
                         android:layout_width="95dp"
                         android:layout_height="95dp"
@@ -185,7 +186,7 @@
                         android:layout_marginBottom="10dp"
                         android:background="@color/text_background"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="@{Overview.overview5.name}"
+                        android:text="@{overviewList[4].name}"
                         android:textColor="@color/white"
                         tools:text="Space" />
                 </RelativeLayout>

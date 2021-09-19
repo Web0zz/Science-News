@@ -5,12 +5,11 @@ import android.os.Bundle
 import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
-import com.web0zz.science_news.data.newsList
+import com.web0zz.science_news.data.dummySource.dummyData.newsList
 import com.web0zz.science_news.databinding.ViewShortArticleBinding
 import com.web0zz.science_news.screen.home.sections.handler.SectionHandler
 import kotlin.properties.Delegates
 
-private const val ARTICLE_ID = "articleId"
 
 class ShortArticleFragment : BaseFragment<ViewShortArticleBinding>() {
     override fun getLayoutId() = R.layout.view_short_article
@@ -27,6 +26,8 @@ class ShortArticleFragment : BaseFragment<ViewShortArticleBinding>() {
     }
 
     companion object {
+        private const val ARTICLE_ID = "articleId"
+
         fun newInstance(articleId: Int): ShortArticleFragment =
             ShortArticleFragment().apply {
                 arguments = Bundle().apply {

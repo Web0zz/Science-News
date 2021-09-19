@@ -4,15 +4,13 @@
 
     <data>
 
-        <import type="com.web0zz.science_news.screen.detail.handler.ActionHandler" />
-
         <variable
-            name="activity"
-            type="com.web0zz.science_news.MainActivity" />
+            name="fragInterface"
+            type="com.web0zz.science_news.screen.detail.DetailFragment" />
 
         <variable
             name="article"
-            type="com.web0zz.science_news.data.Article" />
+            type="com.web0zz.science_news.data.model.Article" />
     </data>
 
     <ScrollView
@@ -48,7 +46,7 @@
                     android:contentDescription="@string/back_button"
                     android:minWidth="48dp"
                     android:minHeight="48dp"
-                    android:onClick="@{() -> ActionHandler.moveBack(activity)}"
+                    android:onClick="@{() -> fragInterface.moveBack()}"
                     android:padding="10dp"
                     android:src="@drawable/ic_back" />
 

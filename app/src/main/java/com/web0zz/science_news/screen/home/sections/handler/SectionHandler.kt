@@ -2,7 +2,7 @@ package com.web0zz.science_news.screen.home.sections.handler
 
 import android.view.View
 import com.web0zz.science_news.MainActivity
-import com.web0zz.science_news.data.Article
+import com.web0zz.science_news.data.model.Article
 
 class SectionHandler(
     val article: Article,

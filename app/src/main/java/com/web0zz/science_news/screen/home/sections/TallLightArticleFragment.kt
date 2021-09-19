@@ -5,18 +5,14 @@ import android.os.Bundle
 import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
-import com.web0zz.science_news.data.newsList
-import com.web0zz.science_news.databinding.ViewTallDarkArticleBinding
+import com.web0zz.science_news.data.model.newsList
+import com.web0zz.science_news.databinding.ViewTallLightArticleBinding
 import com.web0zz.science_news.screen.home.sections.handler.SectionHandler
 import kotlin.properties.Delegates
 
-private const val ARTICLE_ID_1 = "articleId1"
-private const val ARTICLE_ID_2 = "articleId2"
-private const val ARTICLE_ID_3 = "articleId3"
-private const val ARTICLE_ID_4 = "articleId4"
 
-class TallDarkArticleFragment : BaseFragment<ViewTallDarkArticleBinding>() {
-    override fun getLayoutId() = R.layout.view_tall_dark_article
+class TallLightArticleFragment : BaseFragment<ViewTallLightArticleBinding>() {
+    override fun getLayoutId() = R.layout.view_tall_light_article
 
     private var articleId1 by Delegates.notNull<Int>()
     private var articleId2 by Delegates.notNull<Int>()
@@ -42,13 +38,18 @@ class TallDarkArticleFragment : BaseFragment<ViewTallDarkArticleBinding>() {
     }
 
     companion object {
+        private const val ARTICLE_ID_1 = "articleId1"
+        private const val ARTICLE_ID_2 = "articleId2"
+        private const val ARTICLE_ID_3 = "articleId3"
+        private const val ARTICLE_ID_4 = "articleId4"
+
         fun newInstance(
             articleId1: Int,
             articleId2: Int,
             articleId3: Int,
             articleId4: Int,
-        ): TallDarkArticleFragment {
-            return TallDarkArticleFragment().apply {
+        ): TallLightArticleFragment {
+            return TallLightArticleFragment().apply {
                 arguments = Bundle().apply {
                     putInt(ARTICLE_ID_1, articleId1)
                     putInt(ARTICLE_ID_2, articleId2)
