@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="onClickDetail"
+            type="com.web0zz.science_news.util.FragmentUtil.OnClickDetail" />
         <variable
             name="article"
             type="com.web0zz.science_news.data.model.Article" />
@@ -13,8 +15,9 @@
     <!-- TODO move hard coded values to res-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/dark_background">
+        android:layout_height="wrap_content"
+        android:background="@color/dark_background"
+        android:onClick="@{_ -> onClickDetail.onClick(article)}">
 
         <TextView
             android:id="@+id/tall_section_category_textView"

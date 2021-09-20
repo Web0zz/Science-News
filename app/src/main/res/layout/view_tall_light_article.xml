@@ -4,6 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <variable
+            name="onClickDetail"
+            type="com.web0zz.science_news.util.FragmentUtil.OnClickDetail" />
 
         <import type="java.util.List"/>
         <import type="com.web0zz.science_news.data.model.Article"/>
@@ -44,7 +47,7 @@
                 <LinearLayout
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:onClick="@{SectionHandler1::getIntoDetail}"
+                    android:onClick="@{_ -> onClickDetail.onClick(articleList[0])}"
                     android:orientation="vertical"
                     android:paddingHorizontal="10dp">
 
@@ -86,7 +89,7 @@
                 <LinearLayout
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:onClick="@{SectionHandler2::getIntoDetail}"
+                    android:onClick="@{_ -> onClickDetail.onClick(articleList[1])}"
                     android:orientation="vertical"
                     android:paddingHorizontal="10dp">
 
@@ -127,7 +130,7 @@
                 <LinearLayout
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:onClick="@{SectionHandler3::getIntoDetail}"
+                    android:onClick="@{_ -> onClickDetail.onClick(articleList[2])}"
                     android:orientation="vertical"
                     android:paddingHorizontal="10dp">
 
@@ -168,7 +171,7 @@
                 <LinearLayout
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:onClick="@{SectionHandler4::getIntoDetail}"
+                    android:onClick="@{_ -> onClickDetail.onClick(articleList[3])}"
                     android:orientation="vertical"
                     android:paddingHorizontal="10dp">
 

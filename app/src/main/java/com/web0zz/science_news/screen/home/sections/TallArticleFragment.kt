@@ -4,9 +4,9 @@ import android.os.Bundle
 import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
-import com.web0zz.science_news.data.model.newsList
+import com.web0zz.science_news.data.dummySource.dummyData
 import com.web0zz.science_news.databinding.ViewTallArticleBinding
-import com.web0zz.science_news.screen.home.sections.handler.SectionHandler
+import com.web0zz.science_news.util.FragmentUtil
 import kotlin.properties.Delegates
 
 class TallArticleFragment : BaseFragment<ViewTallArticleBinding>() {
@@ -19,8 +19,11 @@ class TallArticleFragment : BaseFragment<ViewTallArticleBinding>() {
     }
 
     override fun initUi() {
-        fragmentDataBinding.sectionHandler =
-            SectionHandler(newsList[articleId], (activity as MainActivity))
+        fragmentDataBinding.article = dummyData.newsList[articleId]
+        fragmentDataBinding.onClickDetail = object : FragmentUtil.OnClickDetail {
+            override val mainActivity: MainActivity
+                get() = (requireActivity() as MainActivity)
+        }
     }
 
     companion object {

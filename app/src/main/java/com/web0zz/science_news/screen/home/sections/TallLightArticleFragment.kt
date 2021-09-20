@@ -2,11 +2,12 @@ package com.web0zz.science_news.screen.home.sections
 
 
 import android.os.Bundle
+import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
 import com.web0zz.science_news.data.dummySource.dummyData.newsList
 import com.web0zz.science_news.databinding.ViewTallLightArticleBinding
-
+import com.web0zz.science_news.util.FragmentUtil
 
 class TallLightArticleFragment : BaseFragment<ViewTallLightArticleBinding>() {
     override fun getLayoutId() = R.layout.view_tall_light_article
@@ -24,6 +25,10 @@ class TallLightArticleFragment : BaseFragment<ViewTallLightArticleBinding>() {
 
     override fun initUi() {
         fragmentDataBinding.articleList = newsList.subList(articles[0]["articleId1"]!!, articles[3]["articleId1"]!! + 1)
+        fragmentDataBinding.onClickDetail = object : FragmentUtil.OnClickDetail {
+            override val mainActivity: MainActivity
+                get() = (requireActivity() as MainActivity)
+        }
     }
 
     companion object {

@@ -4,23 +4,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
-            name="SectionHandler"
-            type="com.web0zz.science_news.screen.home.sections.handler.SectionHandler" />
+            name="onClickDetail"
+            type="com.web0zz.science_news.util.FragmentUtil.OnClickDetail" />
+        <variable
+            name="article"
+            type="com.web0zz.science_news.data.model.Article" />
     </data>
 
     <!-- TODO move hard coded values to res-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/dark_background">
+        android:background="@color/dark_background"
+        android:onClick="@{_ -> onClickDetail.onClick(article)}">
 
         <ImageView
             android:id="@+id/tall_section_thumbnail_imageView"
             CornerRadius="@{30}"
             Height="@{600}"
-            LoadRoundedImage="@{SectionHandler.article.thumbnail}"
+            LoadRoundedImage="@{article.thumbnail}"
             Width="@{1000}"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -38,7 +41,7 @@
             android:layout_marginTop="10dp"
             android:alpha="0.8"
             android:fontFamily="@font/roboto_bold"
-            android:text="@{SectionHandler.article.section}"
+            android:text="@{article.section}"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
             app:layout_constraintTop_toBottomOf="@+id/tall_section_thumbnail_imageView"
@@ -50,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/roboto_light"
-            android:text="@{SectionHandler.article.title}"
+            android:text="@{article.title}"
             android:textColor="@color/white"
             app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
             app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
@@ -60,8 +63,8 @@
 
         <TextView
             android:id="@+id/tall_short_info_textView"
-            author="@{SectionHandler.article.author}"
-            date="@{SectionHandler.article.date}"
+            author="@{article.author}"
+            date="@{article.date}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:alpha="0.7"
