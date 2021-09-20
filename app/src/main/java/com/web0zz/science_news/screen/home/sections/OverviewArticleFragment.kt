@@ -3,7 +3,7 @@ package com.web0zz.science_news.screen.home.sections
 
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
-import com.web0zz.science_news.data.dummySource.dummyData.overviewList
+import com.web0zz.science_news.data.dummySource.DummyData.overviewList
 import com.web0zz.science_news.databinding.ViewOverviewArticleBinding
 
 class OverviewArticleFragment : BaseFragment<ViewOverviewArticleBinding>() {

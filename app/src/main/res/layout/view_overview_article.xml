@@ -3,11 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <import type="com.web0zz.science_news.data.model.Overview"/>
+
+        <import type="com.web0zz.science_news.data.model.Overview" />
+
         <import type="java.util.List" />
+
         <variable
             name="overviewList"
-            type="List&lt;Overview" />
+            type="List&lt;Overview&gt;" />
     </data>
 
     <LinearLayout

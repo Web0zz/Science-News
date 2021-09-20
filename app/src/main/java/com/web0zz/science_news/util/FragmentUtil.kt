@@ -7,7 +7,7 @@ object FragmentUtil {
     interface OnClickDetail {
         val mainActivity: MainActivity
 
-        fun onClick(articleId: Int) {
+        fun onClickArticle(articleId: Int) {
             mainActivity.initHome(true)
             mainActivity.initDetail(false, articleId)
         }

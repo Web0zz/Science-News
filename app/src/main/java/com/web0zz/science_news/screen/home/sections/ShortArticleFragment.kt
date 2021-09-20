@@ -1,15 +1,13 @@
 package com.web0zz.science_news.screen.home.sections
 
-
 import android.os.Bundle
 import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
-import com.web0zz.science_news.data.dummySource.dummyData.newsList
+import com.web0zz.science_news.data.dummySource.DummyData.newsList
 import com.web0zz.science_news.databinding.ViewShortArticleBinding
 import com.web0zz.science_news.util.FragmentUtil
 import kotlin.properties.Delegates
-
 
 class ShortArticleFragment : BaseFragment<ViewShortArticleBinding>() {
     override fun getLayoutId() = R.layout.view_short_article

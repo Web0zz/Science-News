@@ -5,7 +5,7 @@ import androidx.activity.OnBackPressedCallback
 import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
-import com.web0zz.science_news.data.model.newsList
+import com.web0zz.science_news.data.dummySource.DummyData.newsList
 import com.web0zz.science_news.databinding.FragmentDetailScreenBinding
 import kotlin.properties.Delegates
 
@@ -19,8 +19,6 @@ class DetailFragment : BaseFragment<FragmentDetailScreenBinding>() {
     }
 
     override fun initUi() {
-        val mainActivity = (activity as MainActivity)
-
         fragmentDataBinding.article = getSelectedArticle(selectedNewsId)
         fragmentDataBinding.fragInterface = this
 
@@ -28,14 +26,16 @@ class DetailFragment : BaseFragment<FragmentDetailScreenBinding>() {
             viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    mainActivity.moveBack()
+                    moveBack()
                 }
             })
     }
 
-    fun MainActivity.moveBack() {
-        this.initDetail(true)
-        this.initHome(false)
+    fun moveBack() {
+        val mainActivity = (activity as MainActivity)
+
+        mainActivity.initDetail(true)
+        mainActivity.initHome(false)
     }
 
     companion object {
