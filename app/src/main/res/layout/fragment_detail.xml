@@ -20,10 +20,12 @@
         android:layout_height="match_parent"
         android:background="@color/dark_background">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/detail_constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/dark_background">
+            android:background="@color/dark_background"
+            app:layoutDescription="@xml/fragment_detail_screen_xml_constraintlayout_scene">
 
             <ImageView
                 android:id="@+id/thumbnail_imageView"
@@ -191,6 +193,6 @@
                 android:orientation="horizontal"
                 app:layout_constraintGuide_end="20dp" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.motion.widget.MotionLayout>
     </ScrollView>
 </layout>

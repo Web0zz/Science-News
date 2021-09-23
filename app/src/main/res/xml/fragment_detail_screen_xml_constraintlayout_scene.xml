@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:autoTransition="animateToEnd"
+        motion:duration="1000">
+       <KeyFrameSet>
+       </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/thumbnail_imageView"
+            motion:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="@+id/tall_top_guideline"
+            motion:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/extra_button"
+            motion:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toTopOf="@+id/tall_top_guideline"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/dateAuthor_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            motion:layout_constraintBottom_toBottomOf="@+id/thumbnail_imageView"
+            motion:layout_constraintTop_toBottomOf="@+id/thumbnail_imageView"
+            motion:layout_constraintHorizontal_bias="1.0"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/title_textView"
+            motion:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/dateAuthor_textView"
+            motion:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/article_short_textView"
+            motion:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/title_textView"
+            motion:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            android:layout_marginTop="10dp"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/article_body_first_textView"
+            motion:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/article_short_textView"
+            motion:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/content_imageView"
+            motion:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/article_body_first_textView"
+            motion:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            android:alpha="0" />
+        <Constraint
+            android:id="@+id/article_body_second_textView"
+            motion:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            motion:layout_constraintTop_toBottomOf="@+id/content_imageView"
+            motion:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            android:alpha="0" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+    </ConstraintSet>
+</MotionScene>

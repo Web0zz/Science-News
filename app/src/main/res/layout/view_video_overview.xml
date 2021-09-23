@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="shortVideo"
+            type="com.web0zz.science_news.data.model.ShortVideo" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark_background">
+
+        <ProgressBar
+            android:id="@+id/loading_progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/video_title_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@{shortVideo.videoArticle.shortBody}"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_marginBottom="15dp"
+            app:layout_constraintBottom_toTopOf="@+id/video_shortBody_textView"
+            app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
+            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
+
+        <TextView
+            android:id="@+id/video_shortBody_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light"
+            android:text="@{shortVideo.videoArticle.shortBody}"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/video_short_info_textView"
+            app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
+            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            tools:text="It’s the first firm evidence of a rare cosmic phenomenon" />
+
+        <TextView
+            android:id="@+id/video_short_info_textView"
+            author="@{shortVideo.videoArticle.author}"
+            date="@{shortVideo.videoArticle.date}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:fontFamily="@font/roboto_light"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
+            app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
+            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            tools:text="September 2, 2021 • Joe Bishop" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/video_group"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="video_short_info_textView,video_title_textView,video_shortBody_textView,videoView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/tall_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="10dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/tall_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="10dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="20dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
