@@ -11,6 +11,7 @@ import com.web0zz.science_news.data.dummySource.DummyData
 import com.web0zz.science_news.data.model.Overview
 import com.web0zz.science_news.databinding.FragmentOverviewBinding
 import com.web0zz.science_news.screen.overview.video.VideoFragment
+import com.web0zz.science_news.util.AdapterUtil
 import kotlin.properties.Delegates
 
 class OverviewFragment : BaseFragment<FragmentOverviewBinding>() {
@@ -31,6 +32,7 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>() {
 
         val pagerAdapter = VideoSlidePagerAdapter(this)
         viewPager.adapter = pagerAdapter
+        viewPager.setPageTransformer(AdapterUtil.DepthPageTransformer())
 
         activity?.onBackPressedDispatcher?.addCallback(
             viewLifecycleOwner,
