@@ -17,6 +17,7 @@ class OverviewArticleFragment : BaseFragment<ViewOverviewArticleBinding>() {
         overviewList.let {
             it.forEach { overview ->
                 overview.videos = listOf(
+                    // TODO will declare values outside
                     ShortVideo(0, DummyData.newsList[0]),
                     ShortVideo(1, DummyData.newsList[1]),
                     ShortVideo(2, DummyData.newsList[2]),

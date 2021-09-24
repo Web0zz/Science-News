@@ -90,7 +90,7 @@ class VideoFragment : BaseFragment<ViewVideoOverviewBinding>() {
 
     private fun playbackStateListener() = object : Player.Listener {
         override fun onPlaybackStateChanged(playbackState: Int) {
-            if(playbackState == ExoPlayer.STATE_READY) {
+            if (playbackState == ExoPlayer.STATE_READY) {
                 fragmentDataBinding.videoGroup.visibility = View.VISIBLE
                 fragmentDataBinding.loadingProgressBar.visibility = View.GONE
             }
