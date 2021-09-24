@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="shortVideo"
             type="com.web0zz.science_news.data.model.ShortVideo" />
     </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,8 +25,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <VideoView
-            android:id="@+id/videoView"
+        <com.google.android.exoplayer2.ui.PlayerView
+            android:id="@+id/short_exoPlayer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -35,11 +38,11 @@
             android:id="@+id/video_title_textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:fontFamily="@font/roboto_bold"
             android:text="@{shortVideo.videoArticle.shortBody}"
             android:textColor="@color/white"
             android:textSize="24sp"
-            android:layout_marginBottom="15dp"
             app:layout_constraintBottom_toTopOf="@+id/video_shortBody_textView"
             app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
             app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
@@ -49,11 +52,11 @@
             android:id="@+id/video_shortBody_textView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/roboto_light"
             android:text="@{shortVideo.videoArticle.shortBody}"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toTopOf="@+id/video_short_info_textView"
             app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
             app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
@@ -75,10 +78,10 @@
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/video_group"
-            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:constraint_referenced_ids="video_short_info_textView,video_title_textView,video_shortBody_textView,videoView" />
+            android:visibility="gone"
+            app:constraint_referenced_ids="video_short_info_textView,video_title_textView,video_shortBody_textView,short_exoPlayer" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/tall_left_guideline"

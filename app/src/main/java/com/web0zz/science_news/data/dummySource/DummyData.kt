@@ -4,27 +4,32 @@ import com.web0zz.science_news.data.model.Article
 import com.web0zz.science_news.data.model.Overview
 
 object DummyData {
-    const val user_image_url =
+    const val userImageUrl =
         "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
 
     val overviewList = listOf(
         Overview(
+            0,
             "https://www.sciencenews.org/wp-content/uploads/2021/08/082821_reviews_fringe_feat-1030x580.jpg",
-            "History"
+            "History",
         ),
         Overview(
+            1,
             "https://www.sciencenews.org/wp-content/uploads/2018/02/030318_organoids_main.jpg",
             "Human"
         ),
         Overview(
+            2,
             "https://www.sciencenews.org/wp-content/uploads/2017/09/091617_reviews_quake_main.jpg",
             "Earth"
         ),
         Overview(
+            3,
             "https://www.sciencenews.org/wp-content/uploads/2021/09/090221_rc_wildfire-smoke_feat-1030x580.jpg",
             "Weather"
         ),
         Overview(
+            4,
             "https://www.sciencenews.org/wp-content/uploads/2021/09/090721_jb_metal-mandibles_feat-1030x580.jpg",
             "Animals"
         )

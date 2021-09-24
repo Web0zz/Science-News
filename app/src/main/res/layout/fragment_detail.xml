@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/dark_background"
-            app:layoutDescription="@xml/fragment_detail_screen_xml_constraintlayout_scene">
+            app:layoutDescription="@xml/fragment_detail_screen_xml_constraint_layout_scene">
 
             <ImageView
                 android:id="@+id/thumbnail_imageView"

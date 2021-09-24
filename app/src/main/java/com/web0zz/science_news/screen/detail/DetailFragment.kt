@@ -32,7 +32,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
     }
 
     fun moveBack() {
-        val mainActivity = (activity as MainActivity)
+        val mainActivity = (requireActivity() as MainActivity)
 
         mainActivity.initDetail(true)
         mainActivity.initHome(false)

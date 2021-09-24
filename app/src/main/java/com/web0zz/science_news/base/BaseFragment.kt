@@ -19,6 +19,30 @@ abstract class BaseFragment<B : ViewDataBinding> : Fragment() {
     open fun Bundle.getArgumentsToVariable() {}
 
     open fun initUi() {}
+    open fun initStart() {}
+    open fun initResume() {}
+    open fun initPause() {}
+    open fun initStop() {}
+
+    override fun onStart() {
+        super.onStart()
+        initStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        initResume()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        initPause()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        initStop()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

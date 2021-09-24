@@ -9,6 +9,7 @@ import com.web0zz.science_news.screen.home.sections.ShortArticleFragment
 import com.web0zz.science_news.screen.home.sections.TallArticleFragment
 import com.web0zz.science_news.screen.home.sections.TallLightArticleFragment
 import com.web0zz.science_news.screen.home.topbar.TopBarFragment
+import com.web0zz.science_news.screen.overview.OverviewFragment
 import com.web0zz.science_news.screen.splash.SplashFragment
 import com.web0zz.science_news.util.ActivityUtil.makeTransaction
 
@@ -35,7 +36,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 }
                 false -> {
                     fragmentList.add(SplashFragment.newInstance())
-                    this.add(activityBinding.splashFrameLayout.id, fragmentList.first())
+                    this.add(activityBinding.actionFrameLayout.id, fragmentList.first())
                 }
             }
         }
@@ -118,8 +119,25 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                     activityBinding.mainScrollView.scrollTo(0, 0)
 
                     this.add(
-                        activityBinding.detailFrameLayout.id,
+                        activityBinding.actionFrameLayout.id,
                         DetailFragment.newInstance(articleId!!).also { fragmentList.add(it) })
+                }
+            }
+        }
+    }
+
+    // Responsible with waking up the OverviewFragment, or remove.
+    fun initOverview(willDelete: Boolean, overviewId: Int? = null) {
+        this.makeTransaction {
+            when (willDelete) {
+                true -> {
+                    this.remove(fragmentList.removeAt(0))
+                    fragmentList.clear()
+                }
+                false -> {
+                    this.add(
+                        activityBinding.actionFrameLayout.id,
+                        OverviewFragment.newInstance(overviewId!!).also { fragmentList.add(it) })
                 }
             }
         }

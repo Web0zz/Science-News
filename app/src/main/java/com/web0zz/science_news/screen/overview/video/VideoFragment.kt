@@ -1,9 +1,14 @@
 package com.web0zz.science_news.screen.overview.video
 
 import android.os.Bundle
+import android.view.View
+import com.google.android.exoplayer2.MediaItem
+import com.google.android.exoplayer2.SimpleExoPlayer
+import com.google.android.exoplayer2.util.Util
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
 import com.web0zz.science_news.data.dummySource.DummyData
+import com.web0zz.science_news.data.model.ShortVideo
 import com.web0zz.science_news.databinding.ViewVideoOverviewBinding
 import kotlin.properties.Delegates
 
@@ -12,15 +17,74 @@ class VideoFragment : BaseFragment<ViewVideoOverviewBinding>() {
 
     private var shortVideoId by Delegates.notNull<Int>()
     private var overviewId by Delegates.notNull<Int>()
+    private var player: SimpleExoPlayer? = null
+    private lateinit var shortVideo: ShortVideo
+
+    private var playWhenReady = true
+    private var currentWindow = 0
+    private var playbackPosition = 0L
 
     override fun Bundle.getArgumentsToVariable() {
         shortVideoId = this.getInt(CURRENT_OVERVIEW_ID)
         overviewId = this.getInt(CURRENT_VIDEO_ID)
+
+        shortVideo = getShortVideos()
     }
 
     override fun initUi() {
-        fragmentDataBinding.shortVideo = getShortVideos()
-        // TODO will add video player
+        fragmentDataBinding.shortVideo = shortVideo
+    }
+
+    override fun initStart() {
+        if (Util.SDK_INT >= 24) {
+            initializePlayer()
+        }
+    }
+
+    override fun initResume() {
+        if ((Util.SDK_INT < 24) || player == null) {
+            initializePlayer()
+        }
+    }
+
+    override fun initPause() {
+        if (Util.SDK_INT < 24) {
+            releasePlayer()
+        }
+    }
+
+    override fun initStop() {
+        if (Util.SDK_INT >= 24) {
+            releasePlayer()
+        }
+    }
+
+    private fun initializePlayer() {
+        fragmentDataBinding.videoGroup.visibility = View.VISIBLE
+        fragmentDataBinding.loadingProgressBar.visibility = View.GONE
+
+        // TODO will add player event listener
+
+        player = SimpleExoPlayer.Builder(requireContext())
+            .build()
+            .also { exoPlayer ->
+                fragmentDataBinding.shortExoPlayer.player = exoPlayer
+                val mediaItem = MediaItem.fromUri(shortVideo.videoUrl)
+                exoPlayer.setMediaItem(mediaItem)
+                exoPlayer.playWhenReady = playWhenReady
+                exoPlayer.seekTo(currentWindow, playbackPosition)
+                exoPlayer.prepare()
+            }
+    }
+
+    private fun releasePlayer() {
+        player?.run {
+            playbackPosition = this.currentPosition
+            currentWindow = this.currentWindowIndex
+            playWhenReady = this.playWhenReady
+            release()
+        }
+        player = null
     }
 
     companion object {

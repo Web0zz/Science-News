@@ -12,4 +12,13 @@ object FragmentUtil {
             mainActivity.initDetail(false, articleId)
         }
     }
+
+    interface OnClickOverview {
+        val mainActivity: MainActivity
+
+        fun onClickOverview(overviewId: Int) {
+            mainActivity.initHome(true)
+            mainActivity.initOverview(false, overviewId)
+        }
+    }
 }

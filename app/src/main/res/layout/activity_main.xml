@@ -6,8 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/dark_background"
-        android:fitsSystemWindows="false"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        android:fitsSystemWindows="false">
 
         <LinearLayout
             android:id="@+id/main_linearLayout"
@@ -16,12 +16,7 @@
             android:orientation="vertical">
 
             <FrameLayout
-                android:id="@+id/splash_frameLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <FrameLayout
-                android:id="@+id/detail_frameLayout"
+                android:id="@+id/action_frameLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
