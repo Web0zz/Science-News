@@ -18,7 +18,7 @@ class HomeBodyFragment : BaseFragment<ViewHomeBodyBinding>(ViewHomeBodyBinding::
     private fun initRecyclerviewItems() {
         fragmentDataBinding.articleItemsRecyclerView.apply {
             layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             animation =
                 AnimationUtils.loadAnimation(context, R.anim.recyclerview_article_section_anim)
             adapter = BodyRecyclerAdapter(articleData,
