@@ -32,6 +32,8 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewB
         viewPager.adapter = pagerAdapter
         viewPager.setPageTransformer(AdapterUtil.DepthPageTransformer())
 
+        fragmentDataBinding.dotsIndicator.setViewPager2(viewPager)
+
         activity?.onBackPressedDispatcher?.addCallback(
             viewLifecycleOwner,
             object : OnBackPressedCallback(true) {

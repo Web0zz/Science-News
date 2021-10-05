@@ -12,6 +12,7 @@ buildscript {
         lottieVersion = "4.1.0"
         glideVersion = "4.12.0"
         exoVersion = "2.15.1"
+        dotsIndicatorVersion = "4.2"
     }
 
     repositories {
