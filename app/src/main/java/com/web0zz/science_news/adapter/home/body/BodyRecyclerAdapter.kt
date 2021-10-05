@@ -5,16 +5,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.web0zz.science_news.adapter.home.body.viewholder.ShortArticleViewHolder
 import com.web0zz.science_news.adapter.home.body.viewholder.TallArticleViewHolder
 import com.web0zz.science_news.adapter.home.body.viewholder.TallLightArticleViewHolder
-import com.web0zz.science_news.data.model.Article
 import com.web0zz.science_news.data.model.view.ArticleItem
 import com.web0zz.science_news.data.model.view.ArticleItem.Type.*
 import com.web0zz.science_news.data.model.view.ShortArticle
 import com.web0zz.science_news.data.model.view.TallArticle
 import com.web0zz.science_news.data.model.view.TallLightArticle
+import com.web0zz.science_news.util.FragmentUtil
 
 class BodyRecyclerAdapter(
     private var items: List<ArticleItem>,
-    private val onArticleClicked: (Article) -> Unit,
+    private val onArticleClicked: FragmentUtil.OnClickDetail,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemViewType(position: Int) = items[position].getType()
 

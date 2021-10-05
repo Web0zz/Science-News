@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/dark_background"
-        android:onClick="@{_ -> onClickDetail.onClickArticle(article.id)}">
+        android:onClick="@{_ -> onClickDetail.onClickArticle(article)}">
 
         <ImageView
             android:id="@+id/tall_section_thumbnail_imageView"

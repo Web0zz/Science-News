@@ -2,6 +2,7 @@ package com.web0zz.science_news
 
 import androidx.fragment.app.Fragment
 import com.web0zz.science_news.base.BaseActivity
+import com.web0zz.science_news.data.model.Article
 import com.web0zz.science_news.databinding.ActivityMainBinding
 import com.web0zz.science_news.screen.detail.DetailFragment
 import com.web0zz.science_news.screen.home.body.HomeBodyFragment
@@ -30,11 +31,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             when (willDelete) {
                 true -> {
                     this.remove(fragmentList.first())
-                    fragmentList.removeAt(0)
+                    fragmentList.clear()
                 }
                 false -> {
-                    fragmentList.add(SplashFragment.newInstance())
-                    this.add(activityBinding.actionFrameLayout.id, fragmentList.first())
+                    this.add(
+                        activityBinding.actionFrameLayout.id,
+                        SplashFragment.newInstance().also { fragmentList.add(it) }
+                    )
                 }
             }
         }
@@ -72,7 +75,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     // Responsible with waking up the Detail Fragment, or remove.
-    fun initDetail(willDelete: Boolean, articleId: Int? = null) {
+    fun initDetail(willDelete: Boolean, article: Article? = null) {
         this.makeTransaction {
             when (willDelete) {
                 true -> {
@@ -90,7 +93,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
                     this.add(
                         activityBinding.actionFrameLayout.id,
-                        DetailFragment.newInstance(articleId!!).also { fragmentList.add(it) })
+                        DetailFragment.newInstance(article!!).also { fragmentList.add(it) })
                 }
             }
         }

@@ -5,18 +5,19 @@ import androidx.activity.OnBackPressedCallback
 import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.base.BaseFragment
 import com.web0zz.science_news.data.dummySource.DummyData.newsList
+import com.web0zz.science_news.data.model.Article
 import com.web0zz.science_news.databinding.FragmentDetailBinding
 import kotlin.properties.Delegates
 
 class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding::inflate) {
-    private var selectedNewsId by Delegates.notNull<Int>()
+    private lateinit var selectedArticle : Article
 
     override fun Bundle.getArgumentsToVariable() {
-        selectedNewsId = this.getInt(NEWS_ID)
+        selectedArticle = this.getParcelable(ARTICLE)!!
     }
 
     override fun initUi() {
-        fragmentDataBinding.article = getSelectedArticle(selectedNewsId)
+        fragmentDataBinding.article = selectedArticle
         fragmentDataBinding.fragInterface = this
 
         activity?.onBackPressedDispatcher?.addCallback(
@@ -36,15 +37,13 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
     }
 
     companion object {
-        private const val NEWS_ID = "newsId"
+        private const val ARTICLE = "article"
 
-        fun newInstance(newsID: Int): DetailFragment =
+        fun newInstance(article: Article): DetailFragment =
             DetailFragment().apply {
                 arguments = Bundle().apply {
-                    putInt(NEWS_ID, newsID)
+                    putParcelable(ARTICLE, article)
                 }
             }
     }
-
-    private fun getSelectedArticle(id: Int) = newsList[id]
 }

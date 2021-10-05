@@ -1,15 +1,16 @@
 package com.web0zz.science_news.util
 
 import com.web0zz.science_news.MainActivity
+import com.web0zz.science_news.data.model.Article
 
 object FragmentUtil {
 
     interface OnClickDetail {
         val mainActivity: MainActivity
 
-        fun onClickArticle(articleId: Int) {
+        fun onClickArticle(article: Article) {
             mainActivity.initHome(true)
-            mainActivity.initDetail(false, articleId)
+            mainActivity.initDetail(false, article)
         }
     }
 
