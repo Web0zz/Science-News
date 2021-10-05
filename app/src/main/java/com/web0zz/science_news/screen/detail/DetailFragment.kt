@@ -3,15 +3,12 @@ package com.web0zz.science_news.screen.detail
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import com.web0zz.science_news.MainActivity
-import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
 import com.web0zz.science_news.data.dummySource.DummyData.newsList
 import com.web0zz.science_news.databinding.FragmentDetailBinding
 import kotlin.properties.Delegates
 
-class DetailFragment : BaseFragment<FragmentDetailBinding>() {
-    override fun getLayoutId() = R.layout.fragment_detail
-
+class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding::inflate) {
     private var selectedNewsId by Delegates.notNull<Int>()
 
     override fun Bundle.getArgumentsToVariable() {

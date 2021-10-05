@@ -2,7 +2,6 @@ package com.web0zz.science_news.screen.home.sections
 
 
 import com.web0zz.science_news.MainActivity
-import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
 import com.web0zz.science_news.data.dummySource.DummyData
 import com.web0zz.science_news.data.dummySource.DummyData.overviewList
@@ -10,9 +9,8 @@ import com.web0zz.science_news.data.model.ShortVideo
 import com.web0zz.science_news.databinding.ViewOverviewArticleBinding
 import com.web0zz.science_news.util.FragmentUtil
 
-class OverviewArticleFragment : BaseFragment<ViewOverviewArticleBinding>() {
-    override fun getLayoutId() = R.layout.view_overview_article
-
+class OverviewArticleFragment :
+    BaseFragment<ViewOverviewArticleBinding>(ViewOverviewArticleBinding::inflate) {
     override fun initUi() {
         overviewList.let {
             it.forEach { overview ->

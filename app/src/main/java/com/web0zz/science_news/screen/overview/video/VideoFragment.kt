@@ -7,16 +7,13 @@ import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.util.Util
-import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
 import com.web0zz.science_news.data.dummySource.DummyData
 import com.web0zz.science_news.data.model.ShortVideo
 import com.web0zz.science_news.databinding.ViewVideoOverviewBinding
 import kotlin.properties.Delegates
 
-class VideoFragment : BaseFragment<ViewVideoOverviewBinding>() {
-    override fun getLayoutId() = R.layout.view_video_overview
-
+class VideoFragment : BaseFragment<ViewVideoOverviewBinding>(ViewVideoOverviewBinding::inflate) {
     private var shortVideoId by Delegates.notNull<Int>()
     private var overviewId by Delegates.notNull<Int>()
     private var player: SimpleExoPlayer? = null

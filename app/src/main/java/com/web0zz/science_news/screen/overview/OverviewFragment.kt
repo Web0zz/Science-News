@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.web0zz.science_news.MainActivity
-import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
 import com.web0zz.science_news.data.dummySource.DummyData
 import com.web0zz.science_news.data.model.Overview
@@ -15,9 +14,7 @@ import com.web0zz.science_news.screen.overview.video.VideoFragment
 import com.web0zz.science_news.util.AdapterUtil
 import kotlin.properties.Delegates
 
-class OverviewFragment : BaseFragment<FragmentOverviewBinding>() {
-    override fun getLayoutId() = R.layout.fragment_overview
-
+class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewBinding::inflate) {
     private var selectedOverviewId by Delegates.notNull<Int>()
     private lateinit var selectedOverview: Overview
     private lateinit var viewPager: ViewPager2

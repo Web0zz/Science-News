@@ -4,17 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
-abstract class BaseFragment<B : ViewDataBinding> : Fragment() {
+abstract class BaseFragment<B : ViewDataBinding>(
+    private val inflateLayout: (LayoutInflater, ViewGroup?, Boolean) -> B
+) : Fragment() {
     fun getDataBinding() = fragmentDataBinding
 
     private var _fragmentDataBinding: B? = null
     protected val fragmentDataBinding get() = _fragmentDataBinding!!
-
-    abstract fun getLayoutId(): Int
 
     open fun Bundle.getArgumentsToVariable() {}
 
@@ -55,8 +54,7 @@ abstract class BaseFragment<B : ViewDataBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        // View is created using layout Id
-        _fragmentDataBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
+        _fragmentDataBinding = inflateLayout(layoutInflater, container, false)
         return fragmentDataBinding.root
     }
 

@@ -2,15 +2,14 @@ package com.web0zz.science_news.screen.home.sections
 
 import android.os.Bundle
 import com.web0zz.science_news.MainActivity
-import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseFragment
 import com.web0zz.science_news.data.dummySource.DummyData.newsList
 import com.web0zz.science_news.databinding.ViewTallLightArticleBinding
 import com.web0zz.science_news.util.FragmentUtil
 
-class TallLightArticleFragment : BaseFragment<ViewTallLightArticleBinding>() {
-    override fun getLayoutId() = R.layout.view_tall_light_article
-
+class TallLightArticleFragment : BaseFragment<ViewTallLightArticleBinding>(
+    ViewTallLightArticleBinding::inflate
+) {
     private lateinit var articles: List<HashMap<String, Int>>
 
     override fun Bundle.getArgumentsToVariable() {
