@@ -1,4 +1,4 @@
-package com.web0zz.science_news.screen.home.sections
+package com.web0zz.science_news.screen.home.body.sections
 
 import android.os.Bundle
 import com.web0zz.science_news.MainActivity

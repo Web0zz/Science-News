@@ -1,5 +1,9 @@
 package com.web0zz.science_news.data.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Article(
     val id: Int,
     val section: String,
@@ -11,5 +15,6 @@ data class Article(
     val bodySecond: String,
     val contentImage: String,
     val thumbnail: String,
-)
+    var isSaved: Boolean = false
+) : Parcelable
 

@@ -52,7 +52,6 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewB
         }
     }
 
-
     companion object {
         private const val OVERVIEW_ID = "overviewId"
         private const val NUM_PAGES = 5

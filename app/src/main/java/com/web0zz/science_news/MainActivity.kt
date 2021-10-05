@@ -4,10 +4,8 @@ import androidx.fragment.app.Fragment
 import com.web0zz.science_news.base.BaseActivity
 import com.web0zz.science_news.databinding.ActivityMainBinding
 import com.web0zz.science_news.screen.detail.DetailFragment
-import com.web0zz.science_news.screen.home.sections.OverviewArticleFragment
-import com.web0zz.science_news.screen.home.sections.ShortArticleFragment
-import com.web0zz.science_news.screen.home.sections.TallArticleFragment
-import com.web0zz.science_news.screen.home.sections.TallLightArticleFragment
+import com.web0zz.science_news.screen.home.body.HomeBodyFragment
+import com.web0zz.science_news.screen.home.body.sections.OverviewArticleFragment
 import com.web0zz.science_news.screen.home.topbar.TopBarFragment
 import com.web0zz.science_news.screen.overview.OverviewFragment
 import com.web0zz.science_news.screen.splash.SplashFragment
@@ -63,39 +61,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                         activityBinding.overviewFrameLayout.id,
                         OverviewArticleFragment.newInstance().also { fragmentList.add(it) })
 
-                    // Wakes up the Tall Article Section fragment.
+                    // Wakes up the Articles FrameLayout fragment.
                     this.add(
-                        activityBinding.tallArticleFrameLayout1.id,
-                        TallArticleFragment.newInstance(0).also { fragmentList.add(it) })
-                    this.add(
-                        activityBinding.tallArticleFrameLayout2.id,
-                        TallArticleFragment.newInstance(1).also { fragmentList.add(it) })
-
-                    // Wakes up the Short Article Section fragment.
-                    this.add(
-                        activityBinding.shortArticleFrameLayout1.id,
-                        ShortArticleFragment.newInstance(2).also { fragmentList.add(it) })
-                    this.add(
-                        activityBinding.shortArticleFrameLayout2.id,
-                        ShortArticleFragment.newInstance(3).also { fragmentList.add(it) })
-                    this.add(
-                        activityBinding.shortArticleFrameLayout3.id,
-                        ShortArticleFragment.newInstance(4).also { fragmentList.add(it) })
-                    this.add(
-                        activityBinding.shortArticleFrameLayout4.id,
-                        ShortArticleFragment.newInstance(5).also { fragmentList.add(it) })
-                    this.add(
-                        activityBinding.shortArticleFrameLayout5.id,
-                        ShortArticleFragment.newInstance(6).also { fragmentList.add(it) })
-                    this.add(
-                        activityBinding.shortArticleFrameLayout6.id,
-                        ShortArticleFragment.newInstance(7).also { fragmentList.add(it) })
-
-                    // Wakes up the Tall Light Article Section fragment.
-                    this.add(
-                        activityBinding.tallDarkArticleFrameLayout.id,
-                        TallLightArticleFragment.newInstance(8, 9, 10, 11)
-                            .also { fragmentList.add(it) })
+                        activityBinding.articleViewsFrameLayout.id,
+                        HomeBodyFragment.newInstance().also { fragmentList.add(it) }
+                    )
                 }
             }
         }
