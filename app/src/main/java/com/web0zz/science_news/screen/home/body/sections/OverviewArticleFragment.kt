@@ -6,8 +6,8 @@ import com.web0zz.science_news.base.BaseFragment
 import com.web0zz.science_news.data.dummySource.DummyData
 import com.web0zz.science_news.data.dummySource.DummyData.overviewList
 import com.web0zz.science_news.data.model.ShortVideo
-import com.web0zz.science_news.data.model.view.ShortArticle
-import com.web0zz.science_news.data.model.view.TallArticle
+import com.web0zz.science_news.data.model.view.sections.ShortArticle
+import com.web0zz.science_news.data.model.view.sections.TallArticle
 import com.web0zz.science_news.databinding.ViewOverviewArticleBinding
 import com.web0zz.science_news.util.FragmentUtil
 

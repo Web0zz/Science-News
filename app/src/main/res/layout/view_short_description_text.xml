@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shortDescriptionText"
+            type="String" />
+    </data>
+
+    <TextView
+        android:id="@+id/article_short_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_light_italic"
+        android:lineSpacingExtra="4dp"
+        android:text="@{shortDescriptionText}"
+        android:textColor="@color/white"
+        android:textIsSelectable="true"
+        android:textSize="18sp"
+        tools:text="It’s the first firm evidence of a rare cosmic phenomenon" />
+</layout>

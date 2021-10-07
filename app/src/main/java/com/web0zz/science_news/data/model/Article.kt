@@ -11,8 +11,7 @@ data class Article(
     val author: String,
     val title: String,
     val shortBody: String,
-    val bodyFirst: String,
-    val bodySecond: String,
+    val bodyText: List<String>,
     val contentImage: String,
     val thumbnail: String,
     var isSaved: Boolean = false

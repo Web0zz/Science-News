@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bodyText"
+            type="String" />
+    </data>
+
+    <TextView
+        android:id="@+id/article_body_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="15dp"
+        android:fontFamily="@font/roboto_light"
+        android:lineSpacingExtra="4dp"
+        android:text="@{bodyText}"
+        android:textColor="@color/white"
+        android:textIsSelectable="true"
+        android:textSize="18sp"
+        tools:text="@string/body_text_tmp1" />
+</layout>

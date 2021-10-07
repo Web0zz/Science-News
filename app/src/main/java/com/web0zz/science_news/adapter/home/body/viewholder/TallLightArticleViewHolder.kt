@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.web0zz.science_news.R
-import com.web0zz.science_news.data.model.view.TallLightArticle
+import com.web0zz.science_news.data.model.view.sections.TallLightArticle
 import com.web0zz.science_news.databinding.ViewTallLightArticleBinding
 import com.web0zz.science_news.util.FragmentUtil
 

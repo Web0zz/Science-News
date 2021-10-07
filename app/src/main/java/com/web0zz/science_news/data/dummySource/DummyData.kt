@@ -2,9 +2,9 @@ package com.web0zz.science_news.data.dummySource
 
 import com.web0zz.science_news.data.model.Article
 import com.web0zz.science_news.data.model.Overview
-import com.web0zz.science_news.data.model.view.ShortArticle
-import com.web0zz.science_news.data.model.view.TallArticle
-import com.web0zz.science_news.data.model.view.TallLightArticle
+import com.web0zz.science_news.data.model.view.sections.ShortArticle
+import com.web0zz.science_news.data.model.view.sections.TallArticle
+import com.web0zz.science_news.data.model.view.sections.TallLightArticle
 
 object DummyData {
     const val userImageUrl =
@@ -299,6 +299,534 @@ That finding is consistent with data cited in the Intergovernmental Panel on Cli
                     "https://www.sciencenews.org/wp-content/uploads/2021/08/080921_cg_IPCC_feat-1030x580.jpg",
                     "https://www.sciencenews.org/wp-content/uploads/2021/08/082321_CG_europe-floods_feat-1030x580.jpg"
                 )
+            )
+        ),
+        ShortArticle(
+            Article(
+                9,
+                "Astronomy",
+                "August 31, 2021",
+                "Christopher Crockett",
+                "How radio astronomy put new eyes on the cosmos",
+                "Radio telescopes have uncovered quasars and pulsars, and offered up the first pic of a black hole",
+                """One can only imagine what Grote Reber’s neighbors thought when, in 1937, the amateur radio enthusiast erected in his yard a nearly 10-meter-wide shallow bowl of sheet metal, perched atop an adjustable scaffold and topped by an open pyramid of gangly towers. Little could his neighbors have known that they were witnessing the birth of a new way of looking at the cosmos.
+
+Reber was building the world’s first dedicated radio telescope. Unlike traditional telescopes, which use lenses or mirrors to focus visible light, this contraption used metal and circuitry to collect interstellar radio waves, low frequency ripples of electromagnetic radiation. With his homemade device, Reber made the first map of the sky as seen with radio-sensitive eyes and kicked off the field of radio astronomy.
+
+“Radio astronomy is as fundamental to our understanding of the universe as … optical astronomy,” says Karen O’Neil, site director at Green Bank Observatory in West Virginia. “If we want to understand the universe, we really need to make sure we have as many different types of eyes on the universe as we possibly can.”
+
+When astronomers talk about radio waves from space, they aren’t (necessarily) referring to alien broadcasts. More often, they are interested in low-energy light that can emerge when molecules change up their rotation, for example, or when electrons twirl within a magnetic field. Tuning in to interstellar radio waves for the first time was akin to Galileo pointing a modified spyglass at the stars centuries earlier — we could see things in the sky we’d never seen before.
+
+Today, radio astronomy is a global enterprise. More than 100 radio telescopes — from spidery antennas hunkered low to the ground to supersized versions of Reber’s dish that span hundreds of meters — dot the globe. These eyes on the sky have been so game-changing that they’ve been at the center of no fewer than three Nobel Prizes.
+
+Not bad for a field that got started by accident.
+
+In the early 1930s, an engineer at Bell Telephone Laboratories named Karl Jansky was tracking down sources of radio waves that interfered with wireless communication. He stumbled upon a hiss coming from somewhere in the constellation Sagittarius, in the direction of the center of the galaxy.""",
+                """“The basic discovery that there was radio radiation coming from interstellar space confounded theory,” says astronomer Jay Lockman, also of Green Bank. “There was no known way of getting that.”
+
+Bell Labs moved Jansky on to other, more Earthly pursuits. But Reber, a fan of all things radio, read about Jansky’s discovery and wanted to know more. No one had ever built a radio telescope before, so Reber figured it out himself, basing his design on principles used to focus visible light in optical scopes. He improved upon Jansky’s antenna — a bunch of metal tubes held up by a pivoting wooden trestle — and fashioned a parabolic metal dish for focusing incoming radio waves to a point, where an amplifier boosted the feeble signal. The whole contraption sat atop a tilting wooden base that let him scan the sky by swinging the telescope up and down. The same basic design is used today for radio telescopes around the world.
+
+For nearly a decade — thanks partly to the Great Depression and World War II — Reber was largely alone. The field didn’t flourish until after the war, with a crop of scientists brimming with new radio expertise from designing radar systems. Surprises have been coming ever since.
+
+“The discovery of interstellar molecules, that’s a big one,” says Lisa Young, an astronomer at New Mexico Tech in Socorro. Radio telescopes are well suited to peering into the dense, cold clouds where molecules reside and sensing radiation emitted when they lose rotational energy. Today, the list of identified interstellar molecules includes many complex organics, including some thought to be precursors for life.
+
+Radio telescopes also turned up objects previously unimagined. Quasars, the blazing cores of remote galaxies powered by behemoth black holes, first showed up in detailed radio maps from the late 1950s. Pulsars, the ultradense spinning cores of dead stars, made themselves known in 1967 when Jocelyn Bell Burnell noticed that the radio antenna array she helped build was picking up a steady beep … beep … beep from deep space every 1.3 seconds. (She was passed over when the 1974 Nobel Prize in physics honored this discovery — her adviser got the recognition. But an accolade came in 2018, when she was awarded a Special Breakthrough Prize in Fundamental Physics.)
+
+Pulsars are “not only interesting for being a discovery in themselves,” Lockman says. They “are being used now to make tests of general relativity and detect gravitational waves.” That’s because anything that nudges a pulsar — say, a passing ripple in spacetime — alters when its ultraprecise radio beats arrive at Earth. In the early 1990s, such timing variations from one pulsar led to the first confirmed discovery of planets outside the solar system.
+
+More recently, brief blasts of radio energy primarily from other galaxies have captured astronomers’ attention. Discovered in 2007, the causes of these “fast radio bursts” are still unknown. But they are already useful probes of the stuff between galaxies. The light from these eruptions encodes signatures of the atoms encountered while en route to Earth, allowing astronomers to track down lots of matter they thought should be out in the cosmos but hadn’t found yet. “That was the thing that allowed us to weigh the universe and understand where the missing matter is,” says Dan Werthimer, an astronomer at the University of California, Berkeley.""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/100-worlds_spotlight-radio_inline_jansky.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/100-worlds_spotlight-radio_feat_vla-1440x700.jpg",
+            )
+        ),
+        ShortArticle(
+            Article(
+                10,
+                "Physics",
+                "September 2, 2021",
+                "Emily Conover",
+                "New ‘vortex beams’ of atoms and molecules are the first of their kind",
+                "Scientists previously made twisted beams of light and electrons",
+                """Like soft serve ice cream, beams of atoms and molecules now come with a swirl.
+
+Scientists already knew how to dish up spiraling beams of light or electrons, known as vortex beams (SN: 1/14/11). Now, the first vortex beams of atoms and molecules are on the menu, researchers report in the Sept. 3 Science.
+
+Vortex beams made of light or electrons have shown promise for making special types of microscope images and for transmitting information using quantum physics (SN: 8/5/15). But vortex beams of larger particles such as atoms or molecules are so new that the possible applications aren’t yet clear, says physicist Sonja Franke-Arnold of the University of Glasgow in Scotland, who was not involved with the research. “It’s maybe too early to really know what we can do with it.”
+
+In quantum physics, particles are described by a wave function, a wavelike pattern that allows scientists to calculate the probability of finding a particle in a particular place (SN: 6/8/11). But vortex beams’ waves don’t slosh up and down like ripples on water. Instead, the beams’ particles have wave functions that move in a corkscrewing motion as a beam travels through space. That means the beam carries a rotational oomph known as orbital angular momentum. “This is something really very strange, very nonintuitive,” says physicist Edvardas Narevicius of the Weizmann Institute of Science in Rehovot, Israel.""",
+                """Narevicius and colleagues created the new beams by passing helium atoms through a grid of specially shaped slit patterns, each just 600 nanometers wide. The team detected a hallmark of vortex beams: a row of doughnut-shaped rings imprinted on a detector by the atoms, in which each doughnut corresponds to a beam with a different orbital angular momentum.
+
+Another set of doughnuts revealed the presence of vortex beams of helium excimers, molecules created when a helium atom in an excited, or energized, state pairs up with another helium atom.
+
+Next, scientists might investigate what happens when vortex beams of molecules or atoms collide with light, electrons or other atoms or molecules. Such collisions are well-understood for normal particle beams, but not for those with orbital angular momentum. Similar vortex beams made with protons might also serve as a method for probing the subatomic particle’s mysterious innards (SN: 4/18/17).
+
+In physics, “most important things are achieved when we are revisiting known phenomena with a fresh perspective,” says physicist Ivan Madan of EPFL, the Swiss Federal Institute of Technology in Lausanne, who was not involved with the research. “And, for sure, this experiment allows us to do that.”
+
+""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/080521_EC_light-matter_feat.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/09/090221_ec_vortex-beams_feat-1030x580.jpg"
+            )
+        ),
+        TallArticle(
+            Article(
+                11,
+                "Health",
+                "September 3, 2021",
+                "Laura Sanders",
+                "How personalized brain organoids could help us demystify disorders",
+                "Clumps of brain cells made from people with Rett syndrome had abnormal electrical activity",
+                """Clumps of brain cells grown from the stem cells of two people with a neurological syndrome show signs of the disorder. The results, published August 23 in Nature Neuroscience, suggest that personalized brain organoids could be powerful tools to understand complex disorders.
+
+Researchers are eager to create brain organoids, human stem cells coaxed into becoming 3-D blobs of brain cells, because of their ability to mimic human brains in the lab (SN: 2/20/18). In the current study, researchers grew two kinds of brain organoids. One kind, grown from healthy people’s stem cells, produced complex electrical activity that echoed the brain waves a full-sized brain makes. These waves, created by the coordinated firing of many nerve cells, are part of how the brain keeps information moving (SN: 3/13/18).
+
+""",
+                """The researchers also grew organoids using cells from a 25-year-old woman and a 5-year-old girl with Rett syndrome, a developmental disorder marked by seizures, autism and developmental lags. Rett syndrome is thought to be caused by changes in a gene called MECP2, mutations that the lab-grown organoids carried as well.
+
+These organoids looked like those grown from healthy people, but behaved differently in some ways. Their nerve cells fired off signals that were too synchronized and less varied. Some of the brain waves these organoids produced are reminiscent of a brain having a seizure, in which a bolus of electrical activity scrambles normal brain business.
+
+With organoids carrying Rett syndrome mutations, scientists can better understand the syndrome and even begin to test possible treatments. Organoids might yield insights into other disorders, too, says coauthor Bennett Novitch, a developmental neuroscientist at the David Geffen School of Medicine at UCLA. “Work on this front is already under way in labs around the world.”""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/03/100-brain_intro_modernview-702x450.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/082721_LS_brain-organoid_feat-1030x580.jpg"
+            )
+        ),
+        ShortArticle(
+            Article(
+                9,
+                "Astronomy",
+                "August 31, 2021",
+                "Christopher Crockett",
+                "How radio astronomy put new eyes on the cosmos",
+                "Radio telescopes have uncovered quasars and pulsars, and offered up the first pic of a black hole",
+                """One can only imagine what Grote Reber’s neighbors thought when, in 1937, the amateur radio enthusiast erected in his yard a nearly 10-meter-wide shallow bowl of sheet metal, perched atop an adjustable scaffold and topped by an open pyramid of gangly towers. Little could his neighbors have known that they were witnessing the birth of a new way of looking at the cosmos.
+
+Reber was building the world’s first dedicated radio telescope. Unlike traditional telescopes, which use lenses or mirrors to focus visible light, this contraption used metal and circuitry to collect interstellar radio waves, low frequency ripples of electromagnetic radiation. With his homemade device, Reber made the first map of the sky as seen with radio-sensitive eyes and kicked off the field of radio astronomy.
+
+“Radio astronomy is as fundamental to our understanding of the universe as … optical astronomy,” says Karen O’Neil, site director at Green Bank Observatory in West Virginia. “If we want to understand the universe, we really need to make sure we have as many different types of eyes on the universe as we possibly can.”
+
+When astronomers talk about radio waves from space, they aren’t (necessarily) referring to alien broadcasts. More often, they are interested in low-energy light that can emerge when molecules change up their rotation, for example, or when electrons twirl within a magnetic field. Tuning in to interstellar radio waves for the first time was akin to Galileo pointing a modified spyglass at the stars centuries earlier — we could see things in the sky we’d never seen before.
+
+Today, radio astronomy is a global enterprise. More than 100 radio telescopes — from spidery antennas hunkered low to the ground to supersized versions of Reber’s dish that span hundreds of meters — dot the globe. These eyes on the sky have been so game-changing that they’ve been at the center of no fewer than three Nobel Prizes.
+
+Not bad for a field that got started by accident.
+
+In the early 1930s, an engineer at Bell Telephone Laboratories named Karl Jansky was tracking down sources of radio waves that interfered with wireless communication. He stumbled upon a hiss coming from somewhere in the constellation Sagittarius, in the direction of the center of the galaxy.""",
+                """“The basic discovery that there was radio radiation coming from interstellar space confounded theory,” says astronomer Jay Lockman, also of Green Bank. “There was no known way of getting that.”
+
+Bell Labs moved Jansky on to other, more Earthly pursuits. But Reber, a fan of all things radio, read about Jansky’s discovery and wanted to know more. No one had ever built a radio telescope before, so Reber figured it out himself, basing his design on principles used to focus visible light in optical scopes. He improved upon Jansky’s antenna — a bunch of metal tubes held up by a pivoting wooden trestle — and fashioned a parabolic metal dish for focusing incoming radio waves to a point, where an amplifier boosted the feeble signal. The whole contraption sat atop a tilting wooden base that let him scan the sky by swinging the telescope up and down. The same basic design is used today for radio telescopes around the world.
+
+For nearly a decade — thanks partly to the Great Depression and World War II — Reber was largely alone. The field didn’t flourish until after the war, with a crop of scientists brimming with new radio expertise from designing radar systems. Surprises have been coming ever since.
+
+“The discovery of interstellar molecules, that’s a big one,” says Lisa Young, an astronomer at New Mexico Tech in Socorro. Radio telescopes are well suited to peering into the dense, cold clouds where molecules reside and sensing radiation emitted when they lose rotational energy. Today, the list of identified interstellar molecules includes many complex organics, including some thought to be precursors for life.
+
+Radio telescopes also turned up objects previously unimagined. Quasars, the blazing cores of remote galaxies powered by behemoth black holes, first showed up in detailed radio maps from the late 1950s. Pulsars, the ultradense spinning cores of dead stars, made themselves known in 1967 when Jocelyn Bell Burnell noticed that the radio antenna array she helped build was picking up a steady beep … beep … beep from deep space every 1.3 seconds. (She was passed over when the 1974 Nobel Prize in physics honored this discovery — her adviser got the recognition. But an accolade came in 2018, when she was awarded a Special Breakthrough Prize in Fundamental Physics.)
+
+Pulsars are “not only interesting for being a discovery in themselves,” Lockman says. They “are being used now to make tests of general relativity and detect gravitational waves.” That’s because anything that nudges a pulsar — say, a passing ripple in spacetime — alters when its ultraprecise radio beats arrive at Earth. In the early 1990s, such timing variations from one pulsar led to the first confirmed discovery of planets outside the solar system.
+
+More recently, brief blasts of radio energy primarily from other galaxies have captured astronomers’ attention. Discovered in 2007, the causes of these “fast radio bursts” are still unknown. But they are already useful probes of the stuff between galaxies. The light from these eruptions encodes signatures of the atoms encountered while en route to Earth, allowing astronomers to track down lots of matter they thought should be out in the cosmos but hadn’t found yet. “That was the thing that allowed us to weigh the universe and understand where the missing matter is,” says Dan Werthimer, an astronomer at the University of California, Berkeley.""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/100-worlds_spotlight-radio_inline_jansky.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/100-worlds_spotlight-radio_feat_vla-1440x700.jpg",
+            )
+        ),
+        ShortArticle(
+            Article(
+                10,
+                "Physics",
+                "September 2, 2021",
+                "Emily Conover",
+                "New ‘vortex beams’ of atoms and molecules are the first of their kind",
+                "Scientists previously made twisted beams of light and electrons",
+                """Like soft serve ice cream, beams of atoms and molecules now come with a swirl.
+
+Scientists already knew how to dish up spiraling beams of light or electrons, known as vortex beams (SN: 1/14/11). Now, the first vortex beams of atoms and molecules are on the menu, researchers report in the Sept. 3 Science.
+
+Vortex beams made of light or electrons have shown promise for making special types of microscope images and for transmitting information using quantum physics (SN: 8/5/15). But vortex beams of larger particles such as atoms or molecules are so new that the possible applications aren’t yet clear, says physicist Sonja Franke-Arnold of the University of Glasgow in Scotland, who was not involved with the research. “It’s maybe too early to really know what we can do with it.”
+
+In quantum physics, particles are described by a wave function, a wavelike pattern that allows scientists to calculate the probability of finding a particle in a particular place (SN: 6/8/11). But vortex beams’ waves don’t slosh up and down like ripples on water. Instead, the beams’ particles have wave functions that move in a corkscrewing motion as a beam travels through space. That means the beam carries a rotational oomph known as orbital angular momentum. “This is something really very strange, very nonintuitive,” says physicist Edvardas Narevicius of the Weizmann Institute of Science in Rehovot, Israel.""",
+                """Narevicius and colleagues created the new beams by passing helium atoms through a grid of specially shaped slit patterns, each just 600 nanometers wide. The team detected a hallmark of vortex beams: a row of doughnut-shaped rings imprinted on a detector by the atoms, in which each doughnut corresponds to a beam with a different orbital angular momentum.
+
+Another set of doughnuts revealed the presence of vortex beams of helium excimers, molecules created when a helium atom in an excited, or energized, state pairs up with another helium atom.
+
+Next, scientists might investigate what happens when vortex beams of molecules or atoms collide with light, electrons or other atoms or molecules. Such collisions are well-understood for normal particle beams, but not for those with orbital angular momentum. Similar vortex beams made with protons might also serve as a method for probing the subatomic particle’s mysterious innards (SN: 4/18/17).
+
+In physics, “most important things are achieved when we are revisiting known phenomena with a fresh perspective,” says physicist Ivan Madan of EPFL, the Swiss Federal Institute of Technology in Lausanne, who was not involved with the research. “And, for sure, this experiment allows us to do that.”
+
+""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/080521_EC_light-matter_feat.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/09/090221_ec_vortex-beams_feat-1030x580.jpg"
+            )
+        ),
+        TallArticle(
+            Article(
+                11,
+                "Health",
+                "September 3, 2021",
+                "Laura Sanders",
+                "How personalized brain organoids could help us demystify disorders",
+                "Clumps of brain cells made from people with Rett syndrome had abnormal electrical activity",
+                """Clumps of brain cells grown from the stem cells of two people with a neurological syndrome show signs of the disorder. The results, published August 23 in Nature Neuroscience, suggest that personalized brain organoids could be powerful tools to understand complex disorders.
+
+Researchers are eager to create brain organoids, human stem cells coaxed into becoming 3-D blobs of brain cells, because of their ability to mimic human brains in the lab (SN: 2/20/18). In the current study, researchers grew two kinds of brain organoids. One kind, grown from healthy people’s stem cells, produced complex electrical activity that echoed the brain waves a full-sized brain makes. These waves, created by the coordinated firing of many nerve cells, are part of how the brain keeps information moving (SN: 3/13/18).
+
+""",
+                """The researchers also grew organoids using cells from a 25-year-old woman and a 5-year-old girl with Rett syndrome, a developmental disorder marked by seizures, autism and developmental lags. Rett syndrome is thought to be caused by changes in a gene called MECP2, mutations that the lab-grown organoids carried as well.
+
+These organoids looked like those grown from healthy people, but behaved differently in some ways. Their nerve cells fired off signals that were too synchronized and less varied. Some of the brain waves these organoids produced are reminiscent of a brain having a seizure, in which a bolus of electrical activity scrambles normal brain business.
+
+With organoids carrying Rett syndrome mutations, scientists can better understand the syndrome and even begin to test possible treatments. Organoids might yield insights into other disorders, too, says coauthor Bennett Novitch, a developmental neuroscientist at the David Geffen School of Medicine at UCLA. “Work on this front is already under way in labs around the world.”""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/03/100-brain_intro_modernview-702x450.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/082721_LS_brain-organoid_feat-1030x580.jpg"
+            )
+        ),
+        ShortArticle(
+            Article(
+                9,
+                "Astronomy",
+                "August 31, 2021",
+                "Christopher Crockett",
+                "How radio astronomy put new eyes on the cosmos",
+                "Radio telescopes have uncovered quasars and pulsars, and offered up the first pic of a black hole",
+                """One can only imagine what Grote Reber’s neighbors thought when, in 1937, the amateur radio enthusiast erected in his yard a nearly 10-meter-wide shallow bowl of sheet metal, perched atop an adjustable scaffold and topped by an open pyramid of gangly towers. Little could his neighbors have known that they were witnessing the birth of a new way of looking at the cosmos.
+
+Reber was building the world’s first dedicated radio telescope. Unlike traditional telescopes, which use lenses or mirrors to focus visible light, this contraption used metal and circuitry to collect interstellar radio waves, low frequency ripples of electromagnetic radiation. With his homemade device, Reber made the first map of the sky as seen with radio-sensitive eyes and kicked off the field of radio astronomy.
+
+“Radio astronomy is as fundamental to our understanding of the universe as … optical astronomy,” says Karen O’Neil, site director at Green Bank Observatory in West Virginia. “If we want to understand the universe, we really need to make sure we have as many different types of eyes on the universe as we possibly can.”
+
+When astronomers talk about radio waves from space, they aren’t (necessarily) referring to alien broadcasts. More often, they are interested in low-energy light that can emerge when molecules change up their rotation, for example, or when electrons twirl within a magnetic field. Tuning in to interstellar radio waves for the first time was akin to Galileo pointing a modified spyglass at the stars centuries earlier — we could see things in the sky we’d never seen before.
+
+Today, radio astronomy is a global enterprise. More than 100 radio telescopes — from spidery antennas hunkered low to the ground to supersized versions of Reber’s dish that span hundreds of meters — dot the globe. These eyes on the sky have been so game-changing that they’ve been at the center of no fewer than three Nobel Prizes.
+
+Not bad for a field that got started by accident.
+
+In the early 1930s, an engineer at Bell Telephone Laboratories named Karl Jansky was tracking down sources of radio waves that interfered with wireless communication. He stumbled upon a hiss coming from somewhere in the constellation Sagittarius, in the direction of the center of the galaxy.""",
+                """“The basic discovery that there was radio radiation coming from interstellar space confounded theory,” says astronomer Jay Lockman, also of Green Bank. “There was no known way of getting that.”
+
+Bell Labs moved Jansky on to other, more Earthly pursuits. But Reber, a fan of all things radio, read about Jansky’s discovery and wanted to know more. No one had ever built a radio telescope before, so Reber figured it out himself, basing his design on principles used to focus visible light in optical scopes. He improved upon Jansky’s antenna — a bunch of metal tubes held up by a pivoting wooden trestle — and fashioned a parabolic metal dish for focusing incoming radio waves to a point, where an amplifier boosted the feeble signal. The whole contraption sat atop a tilting wooden base that let him scan the sky by swinging the telescope up and down. The same basic design is used today for radio telescopes around the world.
+
+For nearly a decade — thanks partly to the Great Depression and World War II — Reber was largely alone. The field didn’t flourish until after the war, with a crop of scientists brimming with new radio expertise from designing radar systems. Surprises have been coming ever since.
+
+“The discovery of interstellar molecules, that’s a big one,” says Lisa Young, an astronomer at New Mexico Tech in Socorro. Radio telescopes are well suited to peering into the dense, cold clouds where molecules reside and sensing radiation emitted when they lose rotational energy. Today, the list of identified interstellar molecules includes many complex organics, including some thought to be precursors for life.
+
+Radio telescopes also turned up objects previously unimagined. Quasars, the blazing cores of remote galaxies powered by behemoth black holes, first showed up in detailed radio maps from the late 1950s. Pulsars, the ultradense spinning cores of dead stars, made themselves known in 1967 when Jocelyn Bell Burnell noticed that the radio antenna array she helped build was picking up a steady beep … beep … beep from deep space every 1.3 seconds. (She was passed over when the 1974 Nobel Prize in physics honored this discovery — her adviser got the recognition. But an accolade came in 2018, when she was awarded a Special Breakthrough Prize in Fundamental Physics.)
+
+Pulsars are “not only interesting for being a discovery in themselves,” Lockman says. They “are being used now to make tests of general relativity and detect gravitational waves.” That’s because anything that nudges a pulsar — say, a passing ripple in spacetime — alters when its ultraprecise radio beats arrive at Earth. In the early 1990s, such timing variations from one pulsar led to the first confirmed discovery of planets outside the solar system.
+
+More recently, brief blasts of radio energy primarily from other galaxies have captured astronomers’ attention. Discovered in 2007, the causes of these “fast radio bursts” are still unknown. But they are already useful probes of the stuff between galaxies. The light from these eruptions encodes signatures of the atoms encountered while en route to Earth, allowing astronomers to track down lots of matter they thought should be out in the cosmos but hadn’t found yet. “That was the thing that allowed us to weigh the universe and understand where the missing matter is,” says Dan Werthimer, an astronomer at the University of California, Berkeley.""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/100-worlds_spotlight-radio_inline_jansky.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/100-worlds_spotlight-radio_feat_vla-1440x700.jpg",
+            )
+        ),
+        ShortArticle(
+            Article(
+                10,
+                "Physics",
+                "September 2, 2021",
+                "Emily Conover",
+                "New ‘vortex beams’ of atoms and molecules are the first of their kind",
+                "Scientists previously made twisted beams of light and electrons",
+                """Like soft serve ice cream, beams of atoms and molecules now come with a swirl.
+
+Scientists already knew how to dish up spiraling beams of light or electrons, known as vortex beams (SN: 1/14/11). Now, the first vortex beams of atoms and molecules are on the menu, researchers report in the Sept. 3 Science.
+
+Vortex beams made of light or electrons have shown promise for making special types of microscope images and for transmitting information using quantum physics (SN: 8/5/15). But vortex beams of larger particles such as atoms or molecules are so new that the possible applications aren’t yet clear, says physicist Sonja Franke-Arnold of the University of Glasgow in Scotland, who was not involved with the research. “It’s maybe too early to really know what we can do with it.”
+
+In quantum physics, particles are described by a wave function, a wavelike pattern that allows scientists to calculate the probability of finding a particle in a particular place (SN: 6/8/11). But vortex beams’ waves don’t slosh up and down like ripples on water. Instead, the beams’ particles have wave functions that move in a corkscrewing motion as a beam travels through space. That means the beam carries a rotational oomph known as orbital angular momentum. “This is something really very strange, very nonintuitive,” says physicist Edvardas Narevicius of the Weizmann Institute of Science in Rehovot, Israel.""",
+                """Narevicius and colleagues created the new beams by passing helium atoms through a grid of specially shaped slit patterns, each just 600 nanometers wide. The team detected a hallmark of vortex beams: a row of doughnut-shaped rings imprinted on a detector by the atoms, in which each doughnut corresponds to a beam with a different orbital angular momentum.
+
+Another set of doughnuts revealed the presence of vortex beams of helium excimers, molecules created when a helium atom in an excited, or energized, state pairs up with another helium atom.
+
+Next, scientists might investigate what happens when vortex beams of molecules or atoms collide with light, electrons or other atoms or molecules. Such collisions are well-understood for normal particle beams, but not for those with orbital angular momentum. Similar vortex beams made with protons might also serve as a method for probing the subatomic particle’s mysterious innards (SN: 4/18/17).
+
+In physics, “most important things are achieved when we are revisiting known phenomena with a fresh perspective,” says physicist Ivan Madan of EPFL, the Swiss Federal Institute of Technology in Lausanne, who was not involved with the research. “And, for sure, this experiment allows us to do that.”
+
+""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/080521_EC_light-matter_feat.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/09/090221_ec_vortex-beams_feat-1030x580.jpg"
+            )
+        ),
+        TallArticle(
+            Article(
+                11,
+                "Health",
+                "September 3, 2021",
+                "Laura Sanders",
+                "How personalized brain organoids could help us demystify disorders",
+                "Clumps of brain cells made from people with Rett syndrome had abnormal electrical activity",
+                """Clumps of brain cells grown from the stem cells of two people with a neurological syndrome show signs of the disorder. The results, published August 23 in Nature Neuroscience, suggest that personalized brain organoids could be powerful tools to understand complex disorders.
+
+Researchers are eager to create brain organoids, human stem cells coaxed into becoming 3-D blobs of brain cells, because of their ability to mimic human brains in the lab (SN: 2/20/18). In the current study, researchers grew two kinds of brain organoids. One kind, grown from healthy people’s stem cells, produced complex electrical activity that echoed the brain waves a full-sized brain makes. These waves, created by the coordinated firing of many nerve cells, are part of how the brain keeps information moving (SN: 3/13/18).
+
+""",
+                """The researchers also grew organoids using cells from a 25-year-old woman and a 5-year-old girl with Rett syndrome, a developmental disorder marked by seizures, autism and developmental lags. Rett syndrome is thought to be caused by changes in a gene called MECP2, mutations that the lab-grown organoids carried as well.
+
+These organoids looked like those grown from healthy people, but behaved differently in some ways. Their nerve cells fired off signals that were too synchronized and less varied. Some of the brain waves these organoids produced are reminiscent of a brain having a seizure, in which a bolus of electrical activity scrambles normal brain business.
+
+With organoids carrying Rett syndrome mutations, scientists can better understand the syndrome and even begin to test possible treatments. Organoids might yield insights into other disorders, too, says coauthor Bennett Novitch, a developmental neuroscientist at the David Geffen School of Medicine at UCLA. “Work on this front is already under way in labs around the world.”""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/03/100-brain_intro_modernview-702x450.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/082721_LS_brain-organoid_feat-1030x580.jpg"
+            )
+        ),
+        ShortArticle(
+            Article(
+                9,
+                "Astronomy",
+                "August 31, 2021",
+                "Christopher Crockett",
+                "How radio astronomy put new eyes on the cosmos",
+                "Radio telescopes have uncovered quasars and pulsars, and offered up the first pic of a black hole",
+                """One can only imagine what Grote Reber’s neighbors thought when, in 1937, the amateur radio enthusiast erected in his yard a nearly 10-meter-wide shallow bowl of sheet metal, perched atop an adjustable scaffold and topped by an open pyramid of gangly towers. Little could his neighbors have known that they were witnessing the birth of a new way of looking at the cosmos.
+
+Reber was building the world’s first dedicated radio telescope. Unlike traditional telescopes, which use lenses or mirrors to focus visible light, this contraption used metal and circuitry to collect interstellar radio waves, low frequency ripples of electromagnetic radiation. With his homemade device, Reber made the first map of the sky as seen with radio-sensitive eyes and kicked off the field of radio astronomy.
+
+“Radio astronomy is as fundamental to our understanding of the universe as … optical astronomy,” says Karen O’Neil, site director at Green Bank Observatory in West Virginia. “If we want to understand the universe, we really need to make sure we have as many different types of eyes on the universe as we possibly can.”
+
+When astronomers talk about radio waves from space, they aren’t (necessarily) referring to alien broadcasts. More often, they are interested in low-energy light that can emerge when molecules change up their rotation, for example, or when electrons twirl within a magnetic field. Tuning in to interstellar radio waves for the first time was akin to Galileo pointing a modified spyglass at the stars centuries earlier — we could see things in the sky we’d never seen before.
+
+Today, radio astronomy is a global enterprise. More than 100 radio telescopes — from spidery antennas hunkered low to the ground to supersized versions of Reber’s dish that span hundreds of meters — dot the globe. These eyes on the sky have been so game-changing that they’ve been at the center of no fewer than three Nobel Prizes.
+
+Not bad for a field that got started by accident.
+
+In the early 1930s, an engineer at Bell Telephone Laboratories named Karl Jansky was tracking down sources of radio waves that interfered with wireless communication. He stumbled upon a hiss coming from somewhere in the constellation Sagittarius, in the direction of the center of the galaxy.""",
+                """“The basic discovery that there was radio radiation coming from interstellar space confounded theory,” says astronomer Jay Lockman, also of Green Bank. “There was no known way of getting that.”
+
+Bell Labs moved Jansky on to other, more Earthly pursuits. But Reber, a fan of all things radio, read about Jansky’s discovery and wanted to know more. No one had ever built a radio telescope before, so Reber figured it out himself, basing his design on principles used to focus visible light in optical scopes. He improved upon Jansky’s antenna — a bunch of metal tubes held up by a pivoting wooden trestle — and fashioned a parabolic metal dish for focusing incoming radio waves to a point, where an amplifier boosted the feeble signal. The whole contraption sat atop a tilting wooden base that let him scan the sky by swinging the telescope up and down. The same basic design is used today for radio telescopes around the world.
+
+For nearly a decade — thanks partly to the Great Depression and World War II — Reber was largely alone. The field didn’t flourish until after the war, with a crop of scientists brimming with new radio expertise from designing radar systems. Surprises have been coming ever since.
+
+“The discovery of interstellar molecules, that’s a big one,” says Lisa Young, an astronomer at New Mexico Tech in Socorro. Radio telescopes are well suited to peering into the dense, cold clouds where molecules reside and sensing radiation emitted when they lose rotational energy. Today, the list of identified interstellar molecules includes many complex organics, including some thought to be precursors for life.
+
+Radio telescopes also turned up objects previously unimagined. Quasars, the blazing cores of remote galaxies powered by behemoth black holes, first showed up in detailed radio maps from the late 1950s. Pulsars, the ultradense spinning cores of dead stars, made themselves known in 1967 when Jocelyn Bell Burnell noticed that the radio antenna array she helped build was picking up a steady beep … beep … beep from deep space every 1.3 seconds. (She was passed over when the 1974 Nobel Prize in physics honored this discovery — her adviser got the recognition. But an accolade came in 2018, when she was awarded a Special Breakthrough Prize in Fundamental Physics.)
+
+Pulsars are “not only interesting for being a discovery in themselves,” Lockman says. They “are being used now to make tests of general relativity and detect gravitational waves.” That’s because anything that nudges a pulsar — say, a passing ripple in spacetime — alters when its ultraprecise radio beats arrive at Earth. In the early 1990s, such timing variations from one pulsar led to the first confirmed discovery of planets outside the solar system.
+
+More recently, brief blasts of radio energy primarily from other galaxies have captured astronomers’ attention. Discovered in 2007, the causes of these “fast radio bursts” are still unknown. But they are already useful probes of the stuff between galaxies. The light from these eruptions encodes signatures of the atoms encountered while en route to Earth, allowing astronomers to track down lots of matter they thought should be out in the cosmos but hadn’t found yet. “That was the thing that allowed us to weigh the universe and understand where the missing matter is,” says Dan Werthimer, an astronomer at the University of California, Berkeley.""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/100-worlds_spotlight-radio_inline_jansky.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/100-worlds_spotlight-radio_feat_vla-1440x700.jpg",
+            )
+        ),
+        ShortArticle(
+            Article(
+                10,
+                "Physics",
+                "September 2, 2021",
+                "Emily Conover",
+                "New ‘vortex beams’ of atoms and molecules are the first of their kind",
+                "Scientists previously made twisted beams of light and electrons",
+                """Like soft serve ice cream, beams of atoms and molecules now come with a swirl.
+
+Scientists already knew how to dish up spiraling beams of light or electrons, known as vortex beams (SN: 1/14/11). Now, the first vortex beams of atoms and molecules are on the menu, researchers report in the Sept. 3 Science.
+
+Vortex beams made of light or electrons have shown promise for making special types of microscope images and for transmitting information using quantum physics (SN: 8/5/15). But vortex beams of larger particles such as atoms or molecules are so new that the possible applications aren’t yet clear, says physicist Sonja Franke-Arnold of the University of Glasgow in Scotland, who was not involved with the research. “It’s maybe too early to really know what we can do with it.”
+
+In quantum physics, particles are described by a wave function, a wavelike pattern that allows scientists to calculate the probability of finding a particle in a particular place (SN: 6/8/11). But vortex beams’ waves don’t slosh up and down like ripples on water. Instead, the beams’ particles have wave functions that move in a corkscrewing motion as a beam travels through space. That means the beam carries a rotational oomph known as orbital angular momentum. “This is something really very strange, very nonintuitive,” says physicist Edvardas Narevicius of the Weizmann Institute of Science in Rehovot, Israel.""",
+                """Narevicius and colleagues created the new beams by passing helium atoms through a grid of specially shaped slit patterns, each just 600 nanometers wide. The team detected a hallmark of vortex beams: a row of doughnut-shaped rings imprinted on a detector by the atoms, in which each doughnut corresponds to a beam with a different orbital angular momentum.
+
+Another set of doughnuts revealed the presence of vortex beams of helium excimers, molecules created when a helium atom in an excited, or energized, state pairs up with another helium atom.
+
+Next, scientists might investigate what happens when vortex beams of molecules or atoms collide with light, electrons or other atoms or molecules. Such collisions are well-understood for normal particle beams, but not for those with orbital angular momentum. Similar vortex beams made with protons might also serve as a method for probing the subatomic particle’s mysterious innards (SN: 4/18/17).
+
+In physics, “most important things are achieved when we are revisiting known phenomena with a fresh perspective,” says physicist Ivan Madan of EPFL, the Swiss Federal Institute of Technology in Lausanne, who was not involved with the research. “And, for sure, this experiment allows us to do that.”
+
+""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/080521_EC_light-matter_feat.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/09/090221_ec_vortex-beams_feat-1030x580.jpg"
+            )
+        ),
+        TallArticle(
+            Article(
+                11,
+                "Health",
+                "September 3, 2021",
+                "Laura Sanders",
+                "How personalized brain organoids could help us demystify disorders",
+                "Clumps of brain cells made from people with Rett syndrome had abnormal electrical activity",
+                """Clumps of brain cells grown from the stem cells of two people with a neurological syndrome show signs of the disorder. The results, published August 23 in Nature Neuroscience, suggest that personalized brain organoids could be powerful tools to understand complex disorders.
+
+Researchers are eager to create brain organoids, human stem cells coaxed into becoming 3-D blobs of brain cells, because of their ability to mimic human brains in the lab (SN: 2/20/18). In the current study, researchers grew two kinds of brain organoids. One kind, grown from healthy people’s stem cells, produced complex electrical activity that echoed the brain waves a full-sized brain makes. These waves, created by the coordinated firing of many nerve cells, are part of how the brain keeps information moving (SN: 3/13/18).
+
+""",
+                """The researchers also grew organoids using cells from a 25-year-old woman and a 5-year-old girl with Rett syndrome, a developmental disorder marked by seizures, autism and developmental lags. Rett syndrome is thought to be caused by changes in a gene called MECP2, mutations that the lab-grown organoids carried as well.
+
+These organoids looked like those grown from healthy people, but behaved differently in some ways. Their nerve cells fired off signals that were too synchronized and less varied. Some of the brain waves these organoids produced are reminiscent of a brain having a seizure, in which a bolus of electrical activity scrambles normal brain business.
+
+With organoids carrying Rett syndrome mutations, scientists can better understand the syndrome and even begin to test possible treatments. Organoids might yield insights into other disorders, too, says coauthor Bennett Novitch, a developmental neuroscientist at the David Geffen School of Medicine at UCLA. “Work on this front is already under way in labs around the world.”""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/03/100-brain_intro_modernview-702x450.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/082721_LS_brain-organoid_feat-1030x580.jpg"
+            )
+        ),
+        ShortArticle(
+            Article(
+                9,
+                "Astronomy",
+                "August 31, 2021",
+                "Christopher Crockett",
+                "How radio astronomy put new eyes on the cosmos",
+                "Radio telescopes have uncovered quasars and pulsars, and offered up the first pic of a black hole",
+                """One can only imagine what Grote Reber’s neighbors thought when, in 1937, the amateur radio enthusiast erected in his yard a nearly 10-meter-wide shallow bowl of sheet metal, perched atop an adjustable scaffold and topped by an open pyramid of gangly towers. Little could his neighbors have known that they were witnessing the birth of a new way of looking at the cosmos.
+
+Reber was building the world’s first dedicated radio telescope. Unlike traditional telescopes, which use lenses or mirrors to focus visible light, this contraption used metal and circuitry to collect interstellar radio waves, low frequency ripples of electromagnetic radiation. With his homemade device, Reber made the first map of the sky as seen with radio-sensitive eyes and kicked off the field of radio astronomy.
+
+“Radio astronomy is as fundamental to our understanding of the universe as … optical astronomy,” says Karen O’Neil, site director at Green Bank Observatory in West Virginia. “If we want to understand the universe, we really need to make sure we have as many different types of eyes on the universe as we possibly can.”
+
+When astronomers talk about radio waves from space, they aren’t (necessarily) referring to alien broadcasts. More often, they are interested in low-energy light that can emerge when molecules change up their rotation, for example, or when electrons twirl within a magnetic field. Tuning in to interstellar radio waves for the first time was akin to Galileo pointing a modified spyglass at the stars centuries earlier — we could see things in the sky we’d never seen before.
+
+Today, radio astronomy is a global enterprise. More than 100 radio telescopes — from spidery antennas hunkered low to the ground to supersized versions of Reber’s dish that span hundreds of meters — dot the globe. These eyes on the sky have been so game-changing that they’ve been at the center of no fewer than three Nobel Prizes.
+
+Not bad for a field that got started by accident.
+
+In the early 1930s, an engineer at Bell Telephone Laboratories named Karl Jansky was tracking down sources of radio waves that interfered with wireless communication. He stumbled upon a hiss coming from somewhere in the constellation Sagittarius, in the direction of the center of the galaxy.""",
+                """“The basic discovery that there was radio radiation coming from interstellar space confounded theory,” says astronomer Jay Lockman, also of Green Bank. “There was no known way of getting that.”
+
+Bell Labs moved Jansky on to other, more Earthly pursuits. But Reber, a fan of all things radio, read about Jansky’s discovery and wanted to know more. No one had ever built a radio telescope before, so Reber figured it out himself, basing his design on principles used to focus visible light in optical scopes. He improved upon Jansky’s antenna — a bunch of metal tubes held up by a pivoting wooden trestle — and fashioned a parabolic metal dish for focusing incoming radio waves to a point, where an amplifier boosted the feeble signal. The whole contraption sat atop a tilting wooden base that let him scan the sky by swinging the telescope up and down. The same basic design is used today for radio telescopes around the world.
+
+For nearly a decade — thanks partly to the Great Depression and World War II — Reber was largely alone. The field didn’t flourish until after the war, with a crop of scientists brimming with new radio expertise from designing radar systems. Surprises have been coming ever since.
+
+“The discovery of interstellar molecules, that’s a big one,” says Lisa Young, an astronomer at New Mexico Tech in Socorro. Radio telescopes are well suited to peering into the dense, cold clouds where molecules reside and sensing radiation emitted when they lose rotational energy. Today, the list of identified interstellar molecules includes many complex organics, including some thought to be precursors for life.
+
+Radio telescopes also turned up objects previously unimagined. Quasars, the blazing cores of remote galaxies powered by behemoth black holes, first showed up in detailed radio maps from the late 1950s. Pulsars, the ultradense spinning cores of dead stars, made themselves known in 1967 when Jocelyn Bell Burnell noticed that the radio antenna array she helped build was picking up a steady beep … beep … beep from deep space every 1.3 seconds. (She was passed over when the 1974 Nobel Prize in physics honored this discovery — her adviser got the recognition. But an accolade came in 2018, when she was awarded a Special Breakthrough Prize in Fundamental Physics.)
+
+Pulsars are “not only interesting for being a discovery in themselves,” Lockman says. They “are being used now to make tests of general relativity and detect gravitational waves.” That’s because anything that nudges a pulsar — say, a passing ripple in spacetime — alters when its ultraprecise radio beats arrive at Earth. In the early 1990s, such timing variations from one pulsar led to the first confirmed discovery of planets outside the solar system.
+
+More recently, brief blasts of radio energy primarily from other galaxies have captured astronomers’ attention. Discovered in 2007, the causes of these “fast radio bursts” are still unknown. But they are already useful probes of the stuff between galaxies. The light from these eruptions encodes signatures of the atoms encountered while en route to Earth, allowing astronomers to track down lots of matter they thought should be out in the cosmos but hadn’t found yet. “That was the thing that allowed us to weigh the universe and understand where the missing matter is,” says Dan Werthimer, an astronomer at the University of California, Berkeley.""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/100-worlds_spotlight-radio_inline_jansky.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/100-worlds_spotlight-radio_feat_vla-1440x700.jpg",
+            )
+        ),
+        ShortArticle(
+            Article(
+                10,
+                "Physics",
+                "September 2, 2021",
+                "Emily Conover",
+                "New ‘vortex beams’ of atoms and molecules are the first of their kind",
+                "Scientists previously made twisted beams of light and electrons",
+                """Like soft serve ice cream, beams of atoms and molecules now come with a swirl.
+
+Scientists already knew how to dish up spiraling beams of light or electrons, known as vortex beams (SN: 1/14/11). Now, the first vortex beams of atoms and molecules are on the menu, researchers report in the Sept. 3 Science.
+
+Vortex beams made of light or electrons have shown promise for making special types of microscope images and for transmitting information using quantum physics (SN: 8/5/15). But vortex beams of larger particles such as atoms or molecules are so new that the possible applications aren’t yet clear, says physicist Sonja Franke-Arnold of the University of Glasgow in Scotland, who was not involved with the research. “It’s maybe too early to really know what we can do with it.”
+
+In quantum physics, particles are described by a wave function, a wavelike pattern that allows scientists to calculate the probability of finding a particle in a particular place (SN: 6/8/11). But vortex beams’ waves don’t slosh up and down like ripples on water. Instead, the beams’ particles have wave functions that move in a corkscrewing motion as a beam travels through space. That means the beam carries a rotational oomph known as orbital angular momentum. “This is something really very strange, very nonintuitive,” says physicist Edvardas Narevicius of the Weizmann Institute of Science in Rehovot, Israel.""",
+                """Narevicius and colleagues created the new beams by passing helium atoms through a grid of specially shaped slit patterns, each just 600 nanometers wide. The team detected a hallmark of vortex beams: a row of doughnut-shaped rings imprinted on a detector by the atoms, in which each doughnut corresponds to a beam with a different orbital angular momentum.
+
+Another set of doughnuts revealed the presence of vortex beams of helium excimers, molecules created when a helium atom in an excited, or energized, state pairs up with another helium atom.
+
+Next, scientists might investigate what happens when vortex beams of molecules or atoms collide with light, electrons or other atoms or molecules. Such collisions are well-understood for normal particle beams, but not for those with orbital angular momentum. Similar vortex beams made with protons might also serve as a method for probing the subatomic particle’s mysterious innards (SN: 4/18/17).
+
+In physics, “most important things are achieved when we are revisiting known phenomena with a fresh perspective,” says physicist Ivan Madan of EPFL, the Swiss Federal Institute of Technology in Lausanne, who was not involved with the research. “And, for sure, this experiment allows us to do that.”
+
+""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/080521_EC_light-matter_feat.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/09/090221_ec_vortex-beams_feat-1030x580.jpg"
+            )
+        ),
+        TallArticle(
+            Article(
+                11,
+                "Health",
+                "September 3, 2021",
+                "Laura Sanders",
+                "How personalized brain organoids could help us demystify disorders",
+                "Clumps of brain cells made from people with Rett syndrome had abnormal electrical activity",
+                """Clumps of brain cells grown from the stem cells of two people with a neurological syndrome show signs of the disorder. The results, published August 23 in Nature Neuroscience, suggest that personalized brain organoids could be powerful tools to understand complex disorders.
+
+Researchers are eager to create brain organoids, human stem cells coaxed into becoming 3-D blobs of brain cells, because of their ability to mimic human brains in the lab (SN: 2/20/18). In the current study, researchers grew two kinds of brain organoids. One kind, grown from healthy people’s stem cells, produced complex electrical activity that echoed the brain waves a full-sized brain makes. These waves, created by the coordinated firing of many nerve cells, are part of how the brain keeps information moving (SN: 3/13/18).
+
+""",
+                """The researchers also grew organoids using cells from a 25-year-old woman and a 5-year-old girl with Rett syndrome, a developmental disorder marked by seizures, autism and developmental lags. Rett syndrome is thought to be caused by changes in a gene called MECP2, mutations that the lab-grown organoids carried as well.
+
+These organoids looked like those grown from healthy people, but behaved differently in some ways. Their nerve cells fired off signals that were too synchronized and less varied. Some of the brain waves these organoids produced are reminiscent of a brain having a seizure, in which a bolus of electrical activity scrambles normal brain business.
+
+With organoids carrying Rett syndrome mutations, scientists can better understand the syndrome and even begin to test possible treatments. Organoids might yield insights into other disorders, too, says coauthor Bennett Novitch, a developmental neuroscientist at the David Geffen School of Medicine at UCLA. “Work on this front is already under way in labs around the world.”""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/03/100-brain_intro_modernview-702x450.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/082721_LS_brain-organoid_feat-1030x580.jpg"
+            )
+        ),
+        ShortArticle(
+            Article(
+                9,
+                "Astronomy",
+                "August 31, 2021",
+                "Christopher Crockett",
+                "How radio astronomy put new eyes on the cosmos",
+                "Radio telescopes have uncovered quasars and pulsars, and offered up the first pic of a black hole",
+                """One can only imagine what Grote Reber’s neighbors thought when, in 1937, the amateur radio enthusiast erected in his yard a nearly 10-meter-wide shallow bowl of sheet metal, perched atop an adjustable scaffold and topped by an open pyramid of gangly towers. Little could his neighbors have known that they were witnessing the birth of a new way of looking at the cosmos.
+
+Reber was building the world’s first dedicated radio telescope. Unlike traditional telescopes, which use lenses or mirrors to focus visible light, this contraption used metal and circuitry to collect interstellar radio waves, low frequency ripples of electromagnetic radiation. With his homemade device, Reber made the first map of the sky as seen with radio-sensitive eyes and kicked off the field of radio astronomy.
+
+“Radio astronomy is as fundamental to our understanding of the universe as … optical astronomy,” says Karen O’Neil, site director at Green Bank Observatory in West Virginia. “If we want to understand the universe, we really need to make sure we have as many different types of eyes on the universe as we possibly can.”
+
+When astronomers talk about radio waves from space, they aren’t (necessarily) referring to alien broadcasts. More often, they are interested in low-energy light that can emerge when molecules change up their rotation, for example, or when electrons twirl within a magnetic field. Tuning in to interstellar radio waves for the first time was akin to Galileo pointing a modified spyglass at the stars centuries earlier — we could see things in the sky we’d never seen before.
+
+Today, radio astronomy is a global enterprise. More than 100 radio telescopes — from spidery antennas hunkered low to the ground to supersized versions of Reber’s dish that span hundreds of meters — dot the globe. These eyes on the sky have been so game-changing that they’ve been at the center of no fewer than three Nobel Prizes.
+
+Not bad for a field that got started by accident.
+
+In the early 1930s, an engineer at Bell Telephone Laboratories named Karl Jansky was tracking down sources of radio waves that interfered with wireless communication. He stumbled upon a hiss coming from somewhere in the constellation Sagittarius, in the direction of the center of the galaxy.""",
+                """“The basic discovery that there was radio radiation coming from interstellar space confounded theory,” says astronomer Jay Lockman, also of Green Bank. “There was no known way of getting that.”
+
+Bell Labs moved Jansky on to other, more Earthly pursuits. But Reber, a fan of all things radio, read about Jansky’s discovery and wanted to know more. No one had ever built a radio telescope before, so Reber figured it out himself, basing his design on principles used to focus visible light in optical scopes. He improved upon Jansky’s antenna — a bunch of metal tubes held up by a pivoting wooden trestle — and fashioned a parabolic metal dish for focusing incoming radio waves to a point, where an amplifier boosted the feeble signal. The whole contraption sat atop a tilting wooden base that let him scan the sky by swinging the telescope up and down. The same basic design is used today for radio telescopes around the world.
+
+For nearly a decade — thanks partly to the Great Depression and World War II — Reber was largely alone. The field didn’t flourish until after the war, with a crop of scientists brimming with new radio expertise from designing radar systems. Surprises have been coming ever since.
+
+“The discovery of interstellar molecules, that’s a big one,” says Lisa Young, an astronomer at New Mexico Tech in Socorro. Radio telescopes are well suited to peering into the dense, cold clouds where molecules reside and sensing radiation emitted when they lose rotational energy. Today, the list of identified interstellar molecules includes many complex organics, including some thought to be precursors for life.
+
+Radio telescopes also turned up objects previously unimagined. Quasars, the blazing cores of remote galaxies powered by behemoth black holes, first showed up in detailed radio maps from the late 1950s. Pulsars, the ultradense spinning cores of dead stars, made themselves known in 1967 when Jocelyn Bell Burnell noticed that the radio antenna array she helped build was picking up a steady beep … beep … beep from deep space every 1.3 seconds. (She was passed over when the 1974 Nobel Prize in physics honored this discovery — her adviser got the recognition. But an accolade came in 2018, when she was awarded a Special Breakthrough Prize in Fundamental Physics.)
+
+Pulsars are “not only interesting for being a discovery in themselves,” Lockman says. They “are being used now to make tests of general relativity and detect gravitational waves.” That’s because anything that nudges a pulsar — say, a passing ripple in spacetime — alters when its ultraprecise radio beats arrive at Earth. In the early 1990s, such timing variations from one pulsar led to the first confirmed discovery of planets outside the solar system.
+
+More recently, brief blasts of radio energy primarily from other galaxies have captured astronomers’ attention. Discovered in 2007, the causes of these “fast radio bursts” are still unknown. But they are already useful probes of the stuff between galaxies. The light from these eruptions encodes signatures of the atoms encountered while en route to Earth, allowing astronomers to track down lots of matter they thought should be out in the cosmos but hadn’t found yet. “That was the thing that allowed us to weigh the universe and understand where the missing matter is,” says Dan Werthimer, an astronomer at the University of California, Berkeley.""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/100-worlds_spotlight-radio_inline_jansky.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/100-worlds_spotlight-radio_feat_vla-1440x700.jpg",
+            )
+        ),
+        ShortArticle(
+            Article(
+                10,
+                "Physics",
+                "September 2, 2021",
+                "Emily Conover",
+                "New ‘vortex beams’ of atoms and molecules are the first of their kind",
+                "Scientists previously made twisted beams of light and electrons",
+                """Like soft serve ice cream, beams of atoms and molecules now come with a swirl.
+
+Scientists already knew how to dish up spiraling beams of light or electrons, known as vortex beams (SN: 1/14/11). Now, the first vortex beams of atoms and molecules are on the menu, researchers report in the Sept. 3 Science.
+
+Vortex beams made of light or electrons have shown promise for making special types of microscope images and for transmitting information using quantum physics (SN: 8/5/15). But vortex beams of larger particles such as atoms or molecules are so new that the possible applications aren’t yet clear, says physicist Sonja Franke-Arnold of the University of Glasgow in Scotland, who was not involved with the research. “It’s maybe too early to really know what we can do with it.”
+
+In quantum physics, particles are described by a wave function, a wavelike pattern that allows scientists to calculate the probability of finding a particle in a particular place (SN: 6/8/11). But vortex beams’ waves don’t slosh up and down like ripples on water. Instead, the beams’ particles have wave functions that move in a corkscrewing motion as a beam travels through space. That means the beam carries a rotational oomph known as orbital angular momentum. “This is something really very strange, very nonintuitive,” says physicist Edvardas Narevicius of the Weizmann Institute of Science in Rehovot, Israel.""",
+                """Narevicius and colleagues created the new beams by passing helium atoms through a grid of specially shaped slit patterns, each just 600 nanometers wide. The team detected a hallmark of vortex beams: a row of doughnut-shaped rings imprinted on a detector by the atoms, in which each doughnut corresponds to a beam with a different orbital angular momentum.
+
+Another set of doughnuts revealed the presence of vortex beams of helium excimers, molecules created when a helium atom in an excited, or energized, state pairs up with another helium atom.
+
+Next, scientists might investigate what happens when vortex beams of molecules or atoms collide with light, electrons or other atoms or molecules. Such collisions are well-understood for normal particle beams, but not for those with orbital angular momentum. Similar vortex beams made with protons might also serve as a method for probing the subatomic particle’s mysterious innards (SN: 4/18/17).
+
+In physics, “most important things are achieved when we are revisiting known phenomena with a fresh perspective,” says physicist Ivan Madan of EPFL, the Swiss Federal Institute of Technology in Lausanne, who was not involved with the research. “And, for sure, this experiment allows us to do that.”
+
+""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/080521_EC_light-matter_feat.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/09/090221_ec_vortex-beams_feat-1030x580.jpg"
+            )
+        ),
+        TallArticle(
+            Article(
+                11,
+                "Health",
+                "September 3, 2021",
+                "Laura Sanders",
+                "How personalized brain organoids could help us demystify disorders",
+                "Clumps of brain cells made from people with Rett syndrome had abnormal electrical activity",
+                """Clumps of brain cells grown from the stem cells of two people with a neurological syndrome show signs of the disorder. The results, published August 23 in Nature Neuroscience, suggest that personalized brain organoids could be powerful tools to understand complex disorders.
+
+Researchers are eager to create brain organoids, human stem cells coaxed into becoming 3-D blobs of brain cells, because of their ability to mimic human brains in the lab (SN: 2/20/18). In the current study, researchers grew two kinds of brain organoids. One kind, grown from healthy people’s stem cells, produced complex electrical activity that echoed the brain waves a full-sized brain makes. These waves, created by the coordinated firing of many nerve cells, are part of how the brain keeps information moving (SN: 3/13/18).
+
+""",
+                """The researchers also grew organoids using cells from a 25-year-old woman and a 5-year-old girl with Rett syndrome, a developmental disorder marked by seizures, autism and developmental lags. Rett syndrome is thought to be caused by changes in a gene called MECP2, mutations that the lab-grown organoids carried as well.
+
+These organoids looked like those grown from healthy people, but behaved differently in some ways. Their nerve cells fired off signals that were too synchronized and less varied. Some of the brain waves these organoids produced are reminiscent of a brain having a seizure, in which a bolus of electrical activity scrambles normal brain business.
+
+With organoids carrying Rett syndrome mutations, scientists can better understand the syndrome and even begin to test possible treatments. Organoids might yield insights into other disorders, too, says coauthor Bennett Novitch, a developmental neuroscientist at the David Geffen School of Medicine at UCLA. “Work on this front is already under way in labs around the world.”""",
+                "https://www.sciencenews.org/wp-content/uploads/2021/03/100-brain_intro_modernview-702x450.jpg",
+                "https://www.sciencenews.org/wp-content/uploads/2021/08/082721_LS_brain-organoid_feat-1030x580.jpg"
             )
         ),
         ShortArticle(

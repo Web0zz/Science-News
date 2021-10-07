@@ -6,7 +6,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 class VideoSlidePagerAdapter(
     videoFragment: Fragment,
     private val pageCount: Int,
-    private val newVideoInstance : (Int) -> Fragment
+    private val newVideoInstance: (Int) -> Fragment
 ) : FragmentStateAdapter(videoFragment) {
     override fun getItemCount(): Int = pageCount
 

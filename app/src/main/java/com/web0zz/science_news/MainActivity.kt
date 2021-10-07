@@ -12,6 +12,8 @@ import com.web0zz.science_news.screen.overview.OverviewFragment
 import com.web0zz.science_news.screen.splash.SplashFragment
 import com.web0zz.science_news.util.ActivityUtil.makeTransaction
 
+// TODO move viewHolder create function to extension class
+
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
 

@@ -1,6 +1,7 @@
 package com.web0zz.science_news.screen.home.body
 
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.adapter.home.body.BodyRecyclerAdapter
 import com.web0zz.science_news.base.BaseFragment
@@ -22,7 +23,10 @@ class HomeBodyFragment : BaseFragment<ViewHomeBodyBinding>(ViewHomeBodyBinding::
                     override val mainActivity: MainActivity
                         get() = requireActivity() as MainActivity
                 }
-            )
+            ).apply {
+                stateRestorationPolicy =
+                    RecyclerView.Adapter.StateRestorationPolicy.PREVENT_WHEN_EMPTY
+            }
         }
     }
 

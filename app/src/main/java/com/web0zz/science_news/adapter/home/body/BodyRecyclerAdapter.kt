@@ -5,11 +5,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.web0zz.science_news.adapter.home.body.viewholder.ShortArticleViewHolder
 import com.web0zz.science_news.adapter.home.body.viewholder.TallArticleViewHolder
 import com.web0zz.science_news.adapter.home.body.viewholder.TallLightArticleViewHolder
-import com.web0zz.science_news.data.model.view.ArticleItem
-import com.web0zz.science_news.data.model.view.ArticleItem.Type.*
-import com.web0zz.science_news.data.model.view.ShortArticle
-import com.web0zz.science_news.data.model.view.TallArticle
-import com.web0zz.science_news.data.model.view.TallLightArticle
+import com.web0zz.science_news.data.model.view.sections.ArticleItem
+import com.web0zz.science_news.data.model.view.sections.ArticleItem.Type.*
+import com.web0zz.science_news.data.model.view.sections.ShortArticle
+import com.web0zz.science_news.data.model.view.sections.TallArticle
+import com.web0zz.science_news.data.model.view.sections.TallLightArticle
 import com.web0zz.science_news.util.FragmentUtil
 
 class BodyRecyclerAdapter(

@@ -1,4 +1,4 @@
-package com.web0zz.science_news.data.model.view
+package com.web0zz.science_news.data.model.view.sections
 
 import com.web0zz.science_news.data.model.Article
 

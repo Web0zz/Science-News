@@ -29,7 +29,7 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewB
 
         val pagerAdapter =
             VideoSlidePagerAdapter(this, NUM_PAGES)
-                { VideoFragment.newInstance(selectedOverviewId, it) }
+            { VideoFragment.newInstance(selectedOverviewId, it) }
         viewPager.adapter = pagerAdapter
         viewPager.setPageTransformer(AdapterUtil.DepthPageTransformer())
 
