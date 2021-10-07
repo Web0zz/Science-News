@@ -1,9 +1,7 @@
 package com.web0zz.science_news.screen.home.body
 
-import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.web0zz.science_news.MainActivity
-import com.web0zz.science_news.R
 import com.web0zz.science_news.adapter.home.body.BodyRecyclerAdapter
 import com.web0zz.science_news.base.BaseFragment
 import com.web0zz.science_news.data.dummySource.DummyData
@@ -19,8 +17,6 @@ class HomeBodyFragment : BaseFragment<ViewHomeBodyBinding>(ViewHomeBodyBinding::
         fragmentDataBinding.articleItemsRecyclerView.apply {
             layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            animation =
-                AnimationUtils.loadAnimation(context, R.anim.recyclerview_article_section_anim)
             adapter = BodyRecyclerAdapter(articleData,
                 object : FragmentUtil.OnClickDetail {
                     override val mainActivity: MainActivity

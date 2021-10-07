@@ -2,10 +2,9 @@ package com.web0zz.science_news.screen.overview
 
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
-import androidx.fragment.app.Fragment
-import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.web0zz.science_news.MainActivity
+import com.web0zz.science_news.adapter.home.sections.VideoSlidePagerAdapter
 import com.web0zz.science_news.base.BaseFragment
 import com.web0zz.science_news.data.dummySource.DummyData
 import com.web0zz.science_news.data.model.Overview
@@ -28,7 +27,9 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewB
         fragmentDataBinding.overview = selectedOverview
         viewPager = fragmentDataBinding.viewPager2
 
-        val pagerAdapter = VideoSlidePagerAdapter(this)
+        val pagerAdapter =
+            VideoSlidePagerAdapter(this, NUM_PAGES)
+                { VideoFragment.newInstance(selectedOverviewId, it) }
         viewPager.adapter = pagerAdapter
         viewPager.setPageTransformer(AdapterUtil.DepthPageTransformer())
 
@@ -67,12 +68,4 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewB
     }
 
     private fun getSelectedOverview(id: Int) = DummyData.overviewList[id]
-
-    private inner class VideoSlidePagerAdapter(videoFragment: Fragment) :
-        FragmentStateAdapter(videoFragment) {
-        override fun getItemCount(): Int = NUM_PAGES
-
-        override fun createFragment(position: Int): Fragment =
-            VideoFragment.newInstance(selectedOverviewId, position)
-    }
 }

@@ -4,13 +4,11 @@ import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.base.BaseFragment
-import com.web0zz.science_news.data.dummySource.DummyData.newsList
 import com.web0zz.science_news.data.model.Article
 import com.web0zz.science_news.databinding.FragmentDetailBinding
-import kotlin.properties.Delegates
 
 class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding::inflate) {
-    private lateinit var selectedArticle : Article
+    private lateinit var selectedArticle: Article
 
     override fun Bundle.getArgumentsToVariable() {
         selectedArticle = this.getParcelable(ARTICLE)!!

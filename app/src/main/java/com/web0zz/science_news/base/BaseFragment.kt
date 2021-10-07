@@ -10,8 +10,6 @@ import androidx.fragment.app.Fragment
 abstract class BaseFragment<B : ViewDataBinding>(
     private val inflateLayout: (LayoutInflater, ViewGroup?, Boolean) -> B
 ) : Fragment() {
-    fun getDataBinding() = fragmentDataBinding
-
     private var _fragmentDataBinding: B? = null
     protected val fragmentDataBinding get() = _fragmentDataBinding!!
 
@@ -45,7 +43,6 @@ abstract class BaseFragment<B : ViewDataBinding>(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         arguments?.getArgumentsToVariable()
     }
 

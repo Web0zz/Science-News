@@ -5,6 +5,7 @@ import androidx.viewpager2.widget.ViewPager2
 import kotlin.math.abs
 
 object AdapterUtil {
+    // Viewpager Adapter
     private const val MIN_SCALE = 0.75f
 
     class DepthPageTransformer : ViewPager2.PageTransformer {
@@ -44,4 +45,5 @@ object AdapterUtil {
             }
         }
     }
+    ////////////////////////////////////////////////////////////////////////////
 }
