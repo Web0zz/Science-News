@@ -1,6 +1,7 @@
 package com.web0zz.science_news.screen.overview.video
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
@@ -45,18 +46,22 @@ class VideoFragment : BaseFragment<ViewVideoOverviewBinding>(ViewVideoOverviewBi
         if ((Util.SDK_INT < 24) || player == null) {
             initializePlayer()
         }
+        player?.play()
     }
 
     override fun initPause() {
         if (Util.SDK_INT < 24) {
             releasePlayer()
         }
+        player?.pause()
     }
 
     override fun initStop() {
         if (Util.SDK_INT >= 24) {
             releasePlayer()
         }
+        Log.e(null, "stop state")
+        player?.release()
     }
 
     private fun initializePlayer() {

@@ -1,6 +1,7 @@
 package com.web0zz.science_news.screen.overview
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.OnBackPressedCallback
 import androidx.viewpager2.widget.ViewPager2
 import com.web0zz.science_news.MainActivity
@@ -14,6 +15,7 @@ import com.web0zz.science_news.util.AdapterUtil
 import kotlin.properties.Delegates
 
 class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewBinding::inflate) {
+    // TODO create viewPager state listener and give action to video player
     private var selectedOverviewId by Delegates.notNull<Int>()
     private lateinit var selectedOverview: Overview
     private lateinit var viewPager: ViewPager2
@@ -32,6 +34,28 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewB
             { VideoFragment.newInstance(selectedOverviewId, it) }
         viewPager.adapter = pagerAdapter
         viewPager.setPageTransformer(AdapterUtil.DepthPageTransformer())
+
+        /*viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels)
+                val lastFragment = childFragmentManager.findFragmentByTag("f$position")
+                    as VideoFragment
+                lastFragment.pausePlayer()
+                Log.e(null, "Page scrolled $position")
+            }
+
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                val newFragment = childFragmentManager.findFragmentByTag("f$position")
+                        as VideoFragment
+                newFragment.playPlayer()
+                Log.e(null, "Page selected $position")
+            }
+        })*/
 
         fragmentDataBinding.dotsIndicator.setViewPager2(viewPager)
 
