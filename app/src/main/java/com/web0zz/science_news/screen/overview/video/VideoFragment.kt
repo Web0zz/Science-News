@@ -15,18 +15,22 @@ class VideoFragment :
     private var overviewId by Delegates.notNull<Int>()
     private lateinit var shortVideo: ShortVideo
 
-    override val playerView: PlayerView = fragmentDataBinding.shortExoPlayer
-    override val videoUrl: String = shortVideo.videoUrl
+    override lateinit var playerView: PlayerView
+    override lateinit var playVideoUrl: String
 
     override fun Bundle.getArgumentsToVariable() {
         shortVideoId = this.getInt(CURRENT_OVERVIEW_ID)
         overviewId = this.getInt(CURRENT_VIDEO_ID)
 
-        shortVideo = getShortVideos()
+        getShortVideos().apply {
+            shortVideo = this
+            playVideoUrl = videoUrl
+        }
     }
 
     override fun initUi() {
         fragmentDataBinding.shortVideo = shortVideo
+        playerView = fragmentDataBinding.shortExoPlayer
     }
 
     override fun whenPlayerStateReady() {

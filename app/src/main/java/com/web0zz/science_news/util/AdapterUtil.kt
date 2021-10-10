@@ -6,8 +6,6 @@ import kotlin.math.abs
 
 object AdapterUtil {
     // Viewpager Adapter
-    private const val MIN_SCALE = 0.75f
-
     class DepthPageTransformer : ViewPager2.PageTransformer {
 
         override fun transformPage(view: View, position: Float) {
@@ -22,8 +20,6 @@ object AdapterUtil {
                         // Use the default slide transition when moving to the left page
                         alpha = 1f
                         translationX = 0f
-                        scaleX = 1f
-                        scaleY = 1f
                     }
                     position <= 1 -> { // (0,1]
                         // Fade the page out.
@@ -31,11 +27,6 @@ object AdapterUtil {
 
                         // Counteract the default slide transition
                         translationX = pageWidth * -position
-
-                        // Scale the page down (between MIN_SCALE and 1)
-                        val scaleFactor = (MIN_SCALE + (1 - MIN_SCALE) * (1 - abs(position)))
-                        scaleX = scaleFactor
-                        scaleY = scaleFactor
                     }
                     else -> { // (1,+Infinity]
                         // This page is way off-screen to the right.

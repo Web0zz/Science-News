@@ -14,8 +14,8 @@ abstract class BasePlayerFragment<B : ViewDataBinding>(
     inflateLayout: (LayoutInflater, ViewGroup?, Boolean) -> B
 ) : BaseFragment<B>(inflateLayout) {
     private var player: SimpleExoPlayer? = null
-    protected abstract val playerView: PlayerView
-    protected abstract val videoUrl: String
+    protected abstract var playerView: PlayerView
+    protected abstract var playVideoUrl: String
 
     private var playWhenReady = true
     private var currentWindow = 0
@@ -47,7 +47,7 @@ abstract class BasePlayerFragment<B : ViewDataBinding>(
                 playerView.player = exoPlayer
                 exoPlayer.seekTo(currentWindow, playbackPosition)
                 exoPlayer.addListener(playbackStateListener)
-                val mediaItem = MediaItem.fromUri(videoUrl)
+                val mediaItem = MediaItem.fromUri(playVideoUrl)
                 exoPlayer.setMediaItem(mediaItem)
                 exoPlayer.playWhenReady = playWhenReady
                 exoPlayer.seekTo(currentWindow, playbackPosition)
