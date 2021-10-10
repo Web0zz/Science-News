@@ -3,10 +3,12 @@ package com.web0zz.science_news.screen.overview.video
 import android.os.Bundle
 import android.view.View
 import com.google.android.exoplayer2.ui.PlayerView
+import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.base.BasePlayerFragment
 import com.web0zz.science_news.data.dummySource.DummyData
 import com.web0zz.science_news.data.model.ShortVideo
 import com.web0zz.science_news.databinding.ViewVideoOverviewBinding
+import com.web0zz.science_news.util.FragmentUtil
 import kotlin.properties.Delegates
 
 class VideoFragment :
@@ -30,6 +32,10 @@ class VideoFragment :
 
     override fun initUi() {
         fragmentDataBinding.shortVideo = shortVideo
+        fragmentDataBinding.onClickDetail = object : FragmentUtil.OnClickDetail {
+            override val mainActivity: MainActivity
+                get() = (requireActivity() as MainActivity)
+        }
         playerView = fragmentDataBinding.shortExoPlayer
     }
 

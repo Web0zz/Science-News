@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="onClickDetail"
+            type="com.web0zz.science_news.util.FragmentUtil.OnClickDetail" />
+
+        <variable
             name="shortVideo"
             type="com.web0zz.science_news.data.model.ShortVideo" />
     </data>
@@ -13,7 +17,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/dark_background">
+        android:background="@color/dark_background"
+        android:onClick="@{() -> onClickDetail.action(shortVideo.videoArticle)}">
 
         <ProgressBar
             android:id="@+id/loading_progressBar"
@@ -34,7 +39,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:resize_mode="zoom"
+            app:resize_mode="fill"
             app:use_controller="false" />
 
         <TextView
