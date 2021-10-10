@@ -6,6 +6,10 @@
     <data>
 
         <variable
+            name="onClickClose"
+            type="com.web0zz.science_news.util.FragmentUtil.OnClickCloseOnOverview" />
+
+        <variable
             name="overview"
             type="com.web0zz.science_news.data.model.Overview" />
     </data>
@@ -30,12 +34,13 @@
             tools:text="Space" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/close_overview_imageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:background="@null"
             android:contentDescription="@string/close_overview"
+            android:onClick="@{() -> onClickClose.action(null)}"
             android:src="@drawable/ic_close"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tall_top_guideline" />

@@ -4,22 +4,36 @@ import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.data.model.Article
 
 object FragmentUtil {
-
-    interface OnClickDetail {
+    interface ClickAction<T> {
         val mainActivity: MainActivity
+        fun action(data: T?)
+    }
 
-        fun onClickArticle(article: Article) {
+    interface OnClickDetail : ClickAction<Article> {
+        override fun action(data: Article?) {
             mainActivity.initHome(true)
-            mainActivity.initDetail(false, article)
+            mainActivity.initDetail(false, data)
         }
     }
 
-    interface OnClickOverview {
-        val mainActivity: MainActivity
-
-        fun onClickOverview(overviewId: Int) {
+    interface OnClickOverview : ClickAction<Int> {
+        override fun action(data: Int?) {
             mainActivity.initHome(true)
-            mainActivity.initOverview(false, overviewId)
+            mainActivity.initOverview(false, data)
+        }
+    }
+
+    interface OnClickBackOnDetail : ClickAction<Nothing> {
+        override fun action(data: Nothing?) {
+            mainActivity.initDetail(true)
+            mainActivity.initHome(false)
+        }
+    }
+
+    interface OnClickCloseOnOverview : ClickAction<Nothing> {
+        override fun action(data: Nothing?) {
+            mainActivity.initOverview(true)
+            mainActivity.initHome(false)
         }
     }
 }

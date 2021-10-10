@@ -48,7 +48,7 @@
                     android:layout_height="100dp"
                     android:layout_marginHorizontal="5dp"
                     android:background="@drawable/customborder"
-                    android:onClick="@{_ -> onClickOverview.onClickOverview(overviewListData[0].id)}"
+                    android:onClick="@{_ -> onClickOverview.action(overviewListData[0].id)}"
                     android:padding="1dp">
 
                     <ImageView
@@ -80,7 +80,7 @@
                     android:layout_height="100dp"
                     android:layout_marginHorizontal="5dp"
                     android:background="@drawable/customborder"
-                    android:onClick="@{_ -> onClickOverview.onClickOverview(overviewListData[1].id)}"
+                    android:onClick="@{_ -> onClickOverview.action(overviewListData[1].id)}"
                     android:padding="1dp">
 
                     <ImageView
@@ -112,7 +112,7 @@
                     android:layout_height="100dp"
                     android:layout_marginHorizontal="5dp"
                     android:background="@drawable/customborder"
-                    android:onClick="@{_ -> onClickOverview.onClickOverview(overviewListData[2].id)}"
+                    android:onClick="@{_ -> onClickOverview.action(overviewListData[2].id)}"
                     android:padding="1dp">
 
                     <ImageView
@@ -144,7 +144,7 @@
                     android:layout_height="100dp"
                     android:layout_marginHorizontal="5dp"
                     android:background="@drawable/customborder"
-                    android:onClick="@{_ -> onClickOverview.onClickOverview(overviewListData[3].id)}"
+                    android:onClick="@{_ -> onClickOverview.action(overviewListData[3].id)}"
                     android:padding="1dp">
 
                     <ImageView
@@ -176,7 +176,7 @@
                     android:layout_height="100dp"
                     android:layout_marginHorizontal="5dp"
                     android:background="@drawable/customborder"
-                    android:onClick="@{_ -> onClickOverview.onClickOverview(overviewListData[4].id)}"
+                    android:onClick="@{_ -> onClickOverview.action(overviewListData[4].id)}"
                     android:padding="1dp">
 
                     <ImageView

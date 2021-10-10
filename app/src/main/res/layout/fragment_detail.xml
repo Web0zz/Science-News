@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="fragInterface"
-            type="com.web0zz.science_news.screen.detail.DetailFragment" />
+            name="onClickBack"
+            type="com.web0zz.science_news.util.FragmentUtil.OnClickBackOnDetail" />
 
         <variable
             name="article"
@@ -47,7 +47,7 @@
                 android:contentDescription="@string/back_button"
                 android:minWidth="48dp"
                 android:minHeight="48dp"
-                android:onClick="@{() -> fragInterface.moveBack()}"
+                android:onClick="@{() -> onClickBack.action(null)}"
                 android:padding="10dp"
                 android:src="@drawable/ic_back"
                 app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"

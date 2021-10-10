@@ -2,7 +2,6 @@ package com.web0zz.science_news.util
 
 import android.view.View
 import androidx.viewpager2.widget.ViewPager2
-import kotlin.math.abs
 
 object AdapterUtil {
     // Viewpager Adapter

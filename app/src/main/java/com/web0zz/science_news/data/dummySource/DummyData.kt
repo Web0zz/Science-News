@@ -14,7 +14,7 @@ object DummyData {
         Overview(
             0,
             "https://www.sciencenews.org/wp-content/uploads/2021/08/082821_reviews_fringe_feat-1030x580.jpg",
-            "History",
+            "History"
         ),
         Overview(
             1,

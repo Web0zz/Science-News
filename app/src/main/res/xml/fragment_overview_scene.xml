@@ -18,7 +18,7 @@
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="@+id/tall_top_guideline" />
         <Constraint
-            android:id="@+id/imageButton"
+            android:id="@+id/close_overview_imageButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"

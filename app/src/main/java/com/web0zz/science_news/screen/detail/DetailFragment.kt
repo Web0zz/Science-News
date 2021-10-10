@@ -11,6 +11,7 @@ import com.web0zz.science_news.data.model.view.detail.ContentImage
 import com.web0zz.science_news.data.model.view.detail.NormalBody
 import com.web0zz.science_news.data.model.view.detail.ShortDescription
 import com.web0zz.science_news.databinding.FragmentDetailBinding
+import com.web0zz.science_news.util.FragmentUtil
 
 class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding::inflate) {
     private lateinit var selectedArticle: Article
@@ -21,7 +22,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
 
     override fun initUi() {
         fragmentDataBinding.article = selectedArticle
-        fragmentDataBinding.fragInterface = this
+        fragmentDataBinding.onClickBack = onBack()
 
         fragmentDataBinding.bodyRecyclerview.apply {
             layoutManager =
@@ -41,16 +42,14 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
             viewLifecycleOwner,
             object : OnBackPressedCallback(true) {
                 override fun handleOnBackPressed() {
-                    moveBack()
+                    onBack().action(null)
                 }
             })
     }
 
-    fun moveBack() {
-        val mainActivity = (requireActivity() as MainActivity)
-
-        mainActivity.initDetail(true)
-        mainActivity.initHome(false)
+    fun onBack() = object : FragmentUtil.OnClickBackOnDetail {
+        override val mainActivity: MainActivity
+            get() = (requireActivity() as MainActivity)
     }
 
     companion object {

@@ -11,6 +11,7 @@ import com.web0zz.science_news.data.model.Overview
 import com.web0zz.science_news.databinding.FragmentOverviewBinding
 import com.web0zz.science_news.screen.overview.video.VideoFragment
 import com.web0zz.science_news.util.AdapterUtil
+import com.web0zz.science_news.util.FragmentUtil
 import kotlin.properties.Delegates
 
 class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewBinding::inflate) {
@@ -26,6 +27,10 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewB
 
     override fun initUi() {
         fragmentDataBinding.overview = selectedOverview
+        fragmentDataBinding.onClickClose = object : FragmentUtil.OnClickCloseOnOverview {
+            override val mainActivity: MainActivity
+                get() = (requireActivity() as MainActivity)
+        }
         viewPager = fragmentDataBinding.viewPager2
 
         val pagerAdapter =

@@ -51,7 +51,7 @@
                 <LinearLayout
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:onClick="@{_ -> onClickDetail.onClickArticle(articleList[0])}"
+                    android:onClick="@{_ -> onClickDetail.action(articleList[0])}"
                     android:orientation="vertical"
                     android:paddingHorizontal="10dp">
 
@@ -93,7 +93,7 @@
                 <LinearLayout
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:onClick="@{_ -> onClickDetail.onClickArticle(articleList[1])}"
+                    android:onClick="@{_ -> onClickDetail.action(articleList[1])}"
                     android:orientation="vertical"
                     android:paddingHorizontal="10dp">
 
@@ -134,7 +134,7 @@
                 <LinearLayout
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:onClick="@{_ -> onClickDetail.onClickArticle(articleList[2])}"
+                    android:onClick="@{_ -> onClickDetail.action(articleList[2])}"
                     android:orientation="vertical"
                     android:paddingHorizontal="10dp">
 
@@ -175,7 +175,7 @@
                 <LinearLayout
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:onClick="@{_ -> onClickDetail.onClickArticle(articleList[3])}"
+                    android:onClick="@{_ -> onClickDetail.action(articleList[3])}"
                     android:orientation="vertical"
                     android:paddingHorizontal="10dp">
 
