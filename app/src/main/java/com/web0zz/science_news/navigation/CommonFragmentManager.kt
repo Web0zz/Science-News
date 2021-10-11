@@ -1,25 +1,25 @@
 package com.web0zz.science_news.navigation
 
 import androidx.annotation.IdRes
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import com.web0zz.science_news.util.ActivityUtil.makeTransaction
 
-class Navigator(
-    private val activity: AppCompatActivity
+class CommonFragmentManager(
+    private val manager: FragmentManager
 ) {
     private val fragmentList: MutableList<Fragment> = mutableListOf()
 
     fun addFragment(
         @IdRes layoutIdRes: Int,
         fragment: () -> Fragment,
-    ) = activity.makeTransaction {
+    ) = manager.makeTransaction {
         add(layoutIdRes, fragment().also { fragmentList.add(it) })
     }
 
     private fun removeFragments(
         fragment: Fragment
-    ) = activity.makeTransaction {
+    ) = manager.makeTransaction {
         this.remove(fragment)
     }
 

@@ -15,7 +15,7 @@
     </data>
 
     <!-- TODO move hard coded values to res-->
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/dark_background">
@@ -139,5 +139,5 @@
                 app:layout_constraintGuide_end="20dp" />
 
         </androidx.constraintlayout.motion.widget.MotionLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </layout>

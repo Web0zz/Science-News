@@ -13,8 +13,8 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
             override fun onTick(p0: Long) {}
 
             override fun onFinish() {
-                mainActivity.initSplash(true)
-                mainActivity.initHome(false)
+                mainActivity.navigation.initSplash(true)
+                mainActivity.navigation.initHome(false)
             }
         }.start()
     }

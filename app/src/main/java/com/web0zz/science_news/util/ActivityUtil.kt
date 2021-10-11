@@ -1,14 +1,14 @@
 package com.web0zz.science_news.util
 
-import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 
 object ActivityUtil {
 
-    fun AppCompatActivity.makeTransaction(
+    fun FragmentManager.makeTransaction(
         action: (FragmentTransaction.() -> Unit)? = null,
     ) {
-        val transaction = supportFragmentManager.beginTransaction()
+        val transaction = this.beginTransaction()
         action?.let { action(transaction) }
         transaction.commit()
     }

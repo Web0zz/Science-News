@@ -54,8 +54,8 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewB
         if (viewPager.currentItem == 0) {
             val mainActivity = (requireActivity() as MainActivity)
 
-            mainActivity.initOverview(true)
-            mainActivity.initHome(false)
+            mainActivity.navigation.initOverview(true)
+            mainActivity.navigation.initHome(false)
         } else {
             viewPager.currentItem = --viewPager.currentItem
         }

@@ -11,29 +11,29 @@ object FragmentUtil {
 
     interface OnClickDetail : ClickAction<Article> {
         override fun action(data: Article?) {
-            mainActivity.initHome(true)
-            mainActivity.initDetail(false, data)
+            mainActivity.navigation.initHome(true)
+            mainActivity.navigation.initDetail(false, data)
         }
     }
 
     interface OnClickOverview : ClickAction<Int> {
         override fun action(data: Int?) {
-            mainActivity.initHome(true)
-            mainActivity.initOverview(false, data)
+            mainActivity.navigation.initHome(true)
+            mainActivity.navigation.initOverview(false, data)
         }
     }
 
     interface OnClickBackOnDetail : ClickAction<Nothing> {
         override fun action(data: Nothing?) {
-            mainActivity.initDetail(true)
-            mainActivity.initHome(false)
+            mainActivity.navigation.initDetail(true)
+            mainActivity.navigation.initHome(false)
         }
     }
 
     interface OnClickCloseOnOverview : ClickAction<Nothing> {
         override fun action(data: Nothing?) {
-            mainActivity.initOverview(true)
-            mainActivity.initHome(false)
+            mainActivity.navigation.initOverview(true)
+            mainActivity.navigation.initHome(false)
         }
     }
 }
