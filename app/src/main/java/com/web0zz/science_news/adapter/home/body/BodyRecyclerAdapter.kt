@@ -2,6 +2,7 @@ package com.web0zz.science_news.adapter.home.body
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.web0zz.science_news.adapter.home.body.viewholder.OverviewArticleViewHolder
 import com.web0zz.science_news.adapter.home.body.viewholder.ShortArticleViewHolder
 import com.web0zz.science_news.adapter.home.body.viewholder.TallArticleViewHolder
 import com.web0zz.science_news.adapter.home.body.viewholder.TallLightArticleViewHolder
@@ -15,11 +16,13 @@ import com.web0zz.science_news.util.FragmentUtil
 class BodyRecyclerAdapter(
     private var items: List<ArticleItem>,
     private val onArticleClicked: FragmentUtil.OnClickDetail,
+    private val onOverviewClicked: FragmentUtil.OnClickOverview
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemViewType(position: Int) = items[position].getType()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
+            OVERVIEW_ARTICLE.ordinal -> OverviewArticleViewHolder.create(parent, onOverviewClicked)
             SHORT_ARTICLE.ordinal -> ShortArticleViewHolder.create(parent, onArticleClicked)
             TALL_ARTICLE.ordinal -> TallArticleViewHolder.create(parent, onArticleClicked)
             TALL_LIGHT_ARTICLE.ordinal -> TallLightArticleViewHolder.create(
@@ -32,6 +35,7 @@ class BodyRecyclerAdapter(
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
+            is OverviewArticleViewHolder -> holder.bind()
             is ShortArticleViewHolder -> holder.bind(items[position] as ShortArticle)
             is TallArticleViewHolder -> holder.bind(items[position] as TallArticle)
             is TallLightArticleViewHolder -> holder.bind(items[position] as TallLightArticle)

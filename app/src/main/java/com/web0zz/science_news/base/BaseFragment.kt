@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 
@@ -14,6 +15,8 @@ abstract class BaseFragment<B : ViewDataBinding>(
     protected val fragmentDataBinding get() = _fragmentDataBinding!!
 
     open fun Bundle.getArgumentsToVariable() {}
+
+    open var backPressedCallback: OnBackPressedCallback? = null
 
     open fun initUi() {}
     open fun initStart() {}
@@ -44,6 +47,8 @@ abstract class BaseFragment<B : ViewDataBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.getArgumentsToVariable()
+
+        backPressedCallback?.let { requireActivity().onBackPressedDispatcher.addCallback(this, it) }
     }
 
     override fun onCreateView(

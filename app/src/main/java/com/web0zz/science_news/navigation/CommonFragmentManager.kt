@@ -13,20 +13,26 @@ class CommonFragmentManager(
     fun addFragment(
         @IdRes layoutIdRes: Int,
         fragment: () -> Fragment,
+    ) = manager.makeTransaction { add(layoutIdRes, fragment().also { fragmentList.add(it) }) }
+
+    fun toFragmentWithoutBackstack(
+        @IdRes layoutIdRes: Int,
+        fragment: () -> Fragment
+    ) = manager.makeTransaction { replace(layoutIdRes, fragment()) }
+
+    fun toFragmentScreen(
+        @IdRes layoutIdRes: Int,
+        fragment: () -> Fragment
     ) = manager.makeTransaction {
-        add(layoutIdRes, fragment().also { fragmentList.add(it) })
+        addToBackStack(null)
+        replace(layoutIdRes, fragment())
     }
+
+    fun toBack() = manager.popBackStack()
 
     private fun removeFragments(
         fragment: Fragment
-    ) = manager.makeTransaction {
-        this.remove(fragment)
-    }
-
-    fun destroyActiveMainFragment() = fragmentList.apply {
-        removeFragments(first())
-        clear()
-    }
+    ) = manager.makeTransaction { remove(fragment) }
 
     fun destroyAllFragments() = fragmentList.apply {
         forEach { removeFragments(it) }

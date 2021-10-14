@@ -37,20 +37,19 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
             )
             // TODO will find a way to get order of items
         }
-
-        activity?.onBackPressedDispatcher?.addCallback(
-            viewLifecycleOwner,
-            object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    onBack().action(null)
-                }
-            })
     }
 
-    fun onBack() = object : FragmentUtil.OnClickBackOnDetail {
+    private fun onBack() = object : FragmentUtil.OnClickBackOnDetail {
         override val mainActivity: MainActivity
             get() = (requireActivity() as MainActivity)
     }
+
+    override var backPressedCallback: OnBackPressedCallback? =
+        object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                onBack().action(null)
+            }
+        }
 
     companion object {
         private const val ARTICLE = "article"

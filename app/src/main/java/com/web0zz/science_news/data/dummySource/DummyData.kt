@@ -2,6 +2,7 @@ package com.web0zz.science_news.data.dummySource
 
 import com.web0zz.science_news.data.model.Article
 import com.web0zz.science_news.data.model.Overview
+import com.web0zz.science_news.data.model.view.sections.OverviewArticle
 import com.web0zz.science_news.data.model.view.sections.ShortArticle
 import com.web0zz.science_news.data.model.view.sections.TallArticle
 import com.web0zz.science_news.data.model.view.sections.TallLightArticle
@@ -39,6 +40,7 @@ object DummyData {
     )
 
     val newsList = listOf(
+        OverviewArticle(),
         TallArticle(
             Article(
                 0,

@@ -15,7 +15,6 @@ import com.web0zz.science_news.util.FragmentUtil
 import kotlin.properties.Delegates
 
 class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewBinding::inflate) {
-    // TODO create viewPager state listener and give action to video player
     private var selectedOverviewId by Delegates.notNull<Int>()
     private lateinit var selectedOverview: Overview
     private lateinit var viewPager: ViewPager2
@@ -27,10 +26,7 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewB
 
     override fun initUi() {
         fragmentDataBinding.overview = selectedOverview
-        fragmentDataBinding.onClickClose = object : FragmentUtil.OnClickCloseOnOverview {
-            override val mainActivity: MainActivity
-                get() = (requireActivity() as MainActivity)
-        }
+        fragmentDataBinding.onClickClose = closeOverview()
         viewPager = fragmentDataBinding.viewPager2
 
         val pagerAdapter =
@@ -40,26 +36,27 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewB
         viewPager.setPageTransformer(AdapterUtil.DepthPageTransformer())
 
         fragmentDataBinding.dotsIndicator.setViewPager2(viewPager)
+    }
 
-        activity?.onBackPressedDispatcher?.addCallback(
-            viewLifecycleOwner,
-            object : OnBackPressedCallback(true) {
-                override fun handleOnBackPressed() {
-                    onMoveBack()
-                }
-            })
+    private fun closeOverview() = object : FragmentUtil.OnClickCloseOnOverview {
+        override val mainActivity: MainActivity
+            get() = (requireActivity() as MainActivity)
     }
 
     fun onMoveBack() {
         if (viewPager.currentItem == 0) {
-            val mainActivity = (requireActivity() as MainActivity)
-
-            mainActivity.navigation.initOverview(true)
-            mainActivity.navigation.initHome(false)
+            closeOverview().action(null)
         } else {
             viewPager.currentItem = --viewPager.currentItem
         }
     }
+
+    override var backPressedCallback: OnBackPressedCallback? =
+        object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                onMoveBack()
+            }
+        }
 
     companion object {
         private const val OVERVIEW_ID = "overviewId"

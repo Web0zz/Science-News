@@ -10,6 +10,6 @@ object ActivityUtil {
     ) {
         val transaction = this.beginTransaction()
         action?.let { action(transaction) }
-        transaction.commit()
+        transaction.commitAllowingStateLoss()
     }
 }

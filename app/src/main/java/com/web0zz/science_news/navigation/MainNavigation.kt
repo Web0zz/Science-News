@@ -1,8 +1,8 @@
 package com.web0zz.science_news.navigation
 
+import androidx.annotation.IdRes
 import androidx.fragment.app.FragmentManager
 import com.web0zz.science_news.data.model.Article
-import com.web0zz.science_news.databinding.ActivityMainBinding
 import com.web0zz.science_news.screen.detail.DetailFragment
 import com.web0zz.science_news.screen.home.HomeFragment
 import com.web0zz.science_news.screen.overview.OverviewFragment
@@ -10,7 +10,7 @@ import com.web0zz.science_news.screen.splash.SplashFragment
 
 class MainNavigation(
     manager: FragmentManager,
-    private val binding: ActivityMainBinding
+    @IdRes private val hostLayout: Int
 ) {
     private val navigator = CommonFragmentManager(manager)
 
@@ -19,13 +19,8 @@ class MainNavigation(
         navigator.apply {
             decideAction(
                 willDelete,
-                onTrue = { destroyActiveMainFragment() },
-                onFalse = {
-                    addFragment(
-                        binding.hostFrameLayout.id,
-                        SplashFragment::newInstance
-                    )
-                }
+                onTrue = { },
+                onFalse = { toFragmentScreen(hostLayout, SplashFragment::newInstance) }
             )
         }
     }
@@ -35,10 +30,8 @@ class MainNavigation(
         navigator.apply {
             decideAction(
                 willDelete,
-                onTrue = { destroyActiveMainFragment() },
-                onFalse = {
-                    addFragment(binding.hostFrameLayout.id, HomeFragment::newInstance)
-                }
+                onTrue = { },
+                onFalse = { toFragmentWithoutBackstack(hostLayout, HomeFragment::newInstance) }
             )
         }
     }
@@ -48,12 +41,8 @@ class MainNavigation(
         navigator.apply {
             decideAction(
                 willDelete,
-                onTrue = { destroyActiveMainFragment() },
-                onFalse = {
-                    addFragment(binding.hostFrameLayout.id) {
-                        DetailFragment.newInstance(article!!)
-                    }
-                }
+                onTrue = { },
+                onFalse = { toFragmentScreen(hostLayout) { DetailFragment.newInstance(article!!) } }
             )
         }
     }
@@ -63,9 +52,9 @@ class MainNavigation(
         navigator.apply {
             decideAction(
                 willDelete,
-                onTrue = { destroyActiveMainFragment() },
+                onTrue = { },
                 onFalse = {
-                    addFragment(binding.hostFrameLayout.id) {
+                    toFragmentScreen(hostLayout) {
                         OverviewFragment.newInstance(overviewId!!)
                     }
                 }

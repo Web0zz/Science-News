@@ -22,6 +22,10 @@ class HomeBodyFragment : BaseFragment<ViewHomeBodyBinding>(ViewHomeBodyBinding::
                 object : FragmentUtil.OnClickDetail {
                     override val mainActivity: MainActivity
                         get() = requireActivity() as MainActivity
+                },
+                object : FragmentUtil.OnClickOverview {
+                    override val mainActivity: MainActivity
+                        get() = requireActivity() as MainActivity
                 }
             ).apply {
                 stateRestorationPolicy =
