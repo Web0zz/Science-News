@@ -51,9 +51,9 @@
             android:text="@{shortVideo.videoArticle.shortBody}"
             android:textColor="@color/white"
             android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@+id/video_shortBody_textView"
-            app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
-            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            app:layout_constraintBottom_toTopOf="@id/video_shortBody_textView"
+            app:layout_constraintEnd_toStartOf="@id/right_video_overview_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_video_overview_guideline"
             tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
 
         <TextView
@@ -65,9 +65,9 @@
             android:text="@{shortVideo.videoArticle.shortBody}"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/video_short_info_textView"
-            app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
-            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            app:layout_constraintBottom_toTopOf="@id/video_short_info_textView"
+            app:layout_constraintEnd_toStartOf="@id/right_video_overview_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_video_overview_guideline"
             tools:text="It’s the first firm evidence of a rare cosmic phenomenon" />
 
         <TextView
@@ -79,9 +79,9 @@
             android:alpha="0.7"
             android:fontFamily="@font/roboto_light"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
-            app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
-            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
+            app:layout_constraintBottom_toTopOf="@id/bottom_video_overview_guideline"
+            app:layout_constraintEnd_toStartOf="@id/right_video_overview_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_video_overview_guideline"
             tools:text="September 2, 2021 • Joe Bishop" />
 
         <androidx.constraintlayout.widget.Group
@@ -92,21 +92,21 @@
             app:constraint_referenced_ids="video_short_info_textView,video_title_textView,video_shortBody_textView,short_exoPlayer" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_left_guideline"
+            android:id="@+id/left_video_overview_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="10dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_right_guideline"
+            android:id="@+id/right_video_overview_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_end="10dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_bottom"
+            android:id="@+id/bottom_video_overview_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

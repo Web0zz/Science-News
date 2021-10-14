@@ -14,51 +14,17 @@ class MainNavigation(
 ) {
     private val navigator = CommonFragmentManager(manager)
 
-    // Responsible with waking up the Splash Screen Fragment, or remove.
-    fun initSplash(willDelete: Boolean) {
-        navigator.apply {
-            decideAction(
-                willDelete,
-                onTrue = { },
-                onFalse = { toFragmentScreen(hostLayout, SplashFragment::newInstance) }
-            )
-        }
-    }
+    // Responsible with waking up the Splash Fragment.
+    fun initSplash() = navigator.toFragmentScreen(hostLayout, SplashFragment::newInstance)
 
-    // Responsible with waking up the Article Fragments, or remove.
-    fun initHome(willDelete: Boolean) {
-        navigator.apply {
-            decideAction(
-                willDelete,
-                onTrue = { },
-                onFalse = { toFragmentWithoutBackstack(hostLayout, HomeFragment::newInstance) }
-            )
-        }
-    }
+    // Responsible with waking up the Home Fragment.
+    fun initHome() = navigator.toFragmentWithoutBackstack(hostLayout, HomeFragment::newInstance)
 
-    // Responsible with waking up the Detail Fragment, or remove.
-    fun initDetail(willDelete: Boolean, article: Article? = null) {
-        navigator.apply {
-            decideAction(
-                willDelete,
-                onTrue = { },
-                onFalse = { toFragmentScreen(hostLayout) { DetailFragment.newInstance(article!!) } }
-            )
-        }
-    }
+    // Responsible with waking up the Detail Fragment.
+    fun initDetail(article: Article) =
+        navigator.toFragmentScreen(hostLayout) { DetailFragment.newInstance(article) }
 
-    // Responsible with waking up the OverviewFragment, or remove.
-    fun initOverview(willDelete: Boolean, overviewId: Int? = null) {
-        navigator.apply {
-            decideAction(
-                willDelete,
-                onTrue = { },
-                onFalse = {
-                    toFragmentScreen(hostLayout) {
-                        OverviewFragment.newInstance(overviewId!!)
-                    }
-                }
-            )
-        }
-    }
+    // Responsible with waking up the Overview Fragment.
+    fun initOverview(overviewId: Int) =
+        navigator.toFragmentScreen(hostLayout) { OverviewFragment.newInstance(overviewId) }
 }

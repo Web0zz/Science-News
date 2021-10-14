@@ -19,9 +19,5 @@ abstract class BaseActivity<B : ViewBinding> : AppCompatActivity() {
         activityBinding = getViewBinding()
         setContentView(activityBinding.root)
         initUi()
-
-        this.onBackPressedDispatcher.addCallback(this, initBackPressListener())
     }
-
-    abstract fun initBackPressListener(): OnBackPressedCallback
 }

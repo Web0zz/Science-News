@@ -16,13 +16,13 @@
         android:background="@color/dark_background">
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/user_imageView"
             LoadCircleImage="@{user_image}"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:contentDescription="@string/user"
-            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
-            app:layout_constraintTop_toTopOf="@+id/tall_top_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_top_bar_guideline"
+            app:layout_constraintTop_toTopOf="@id/top_top_bar_guideline"
             tools:src="@drawable/news1" />
 
         <TextView
@@ -33,13 +33,13 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="@+id/tall_top_guideline" />
+            app:layout_constraintBottom_toBottomOf="@id/user_imageView"
+            app:layout_constraintEnd_toStartOf="@id/search_imageButton"
+            app:layout_constraintStart_toEndOf="@id/user_imageView"
+            app:layout_constraintTop_toTopOf="@id/top_top_bar_guideline" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/search_imageButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -48,26 +48,26 @@
             android:padding="10dp"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_search"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-            app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
-            app:layout_constraintTop_toTopOf="@+id/tall_top_guideline" />
+            app:layout_constraintBottom_toBottomOf="@id/user_imageView"
+            app:layout_constraintEnd_toStartOf="@id/right_top_bar_guideline"
+            app:layout_constraintTop_toTopOf="@id/top_top_bar_guideline" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_top_guideline"
+            android:id="@+id/top_top_bar_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="5dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_left_guideline"
+            android:id="@+id/left_top_bar_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="10dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_right_guideline"
+            android:id="@+id/right_top_bar_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"

@@ -12,11 +12,5 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         MainNavigation(supportFragmentManager, activityBinding.hostFrameLayout.id)
     }
 
-    override fun initUi() {
-        navigation.initSplash(false)
-    }
-
-    override fun initBackPressListener() = object : OnBackPressedCallback(true) {
-        override fun handleOnBackPressed() {}
-    }
+    override fun initUi() = navigation.initSplash()
 }

@@ -17,7 +17,6 @@ class TallArticleViewHolder(
         binding.article = tall.article
         binding.onClickDetail = onArticleClicked
 
-        // TODO generic viewHolder will be handle animations
         val animationView = AnimationUtils.loadAnimation(
             binding.root.context,
             R.anim.recyclerview_article_section_anim

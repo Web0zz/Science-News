@@ -18,7 +18,6 @@
             type="List&lt;Article&gt;" />
     </data>
 
-    <!-- TODO move hard coded values to res-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,17 +31,17 @@
             android:text="@string/what_to_read"
             android:textColor="@color/white"
             android:textSize="23sp"
-            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
-            app:layout_constraintTop_toTopOf="@+id/tall_top_guideline" />
+            app:layout_constraintStart_toStartOf="@id/left_tall_light_article_guideline"
+            app:layout_constraintTop_toTopOf="@id/top_tall_light_article_guideline" />
 
         <HorizontalScrollView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:scrollbars="none"
-            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
-            app:layout_constraintEnd_toStartOf="@id/tall_right_guideline"
-            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/head_textView">
+            app:layout_constraintBottom_toTopOf="@id/bottom_tall_light_article_guideline"
+            app:layout_constraintEnd_toStartOf="@id/right_tall_light_article_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_tall_light_article_guideline"
+            app:layout_constraintTop_toBottomOf="@id/head_textView">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -217,28 +216,28 @@
         </HorizontalScrollView>
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_top_guideline"
+            android:id="@+id/top_tall_light_article_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="20dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_left_guideline"
+            android:id="@+id/left_tall_light_article_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="10dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_right_guideline"
+            android:id="@+id/right_tall_light_article_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_end="10dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_bottom"
+            android:id="@+id/bottom_tall_light_article_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

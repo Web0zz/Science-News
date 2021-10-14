@@ -6,6 +6,7 @@ import com.google.android.exoplayer2.ui.PlayerView
 import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.base.BasePlayerFragment
 import com.web0zz.science_news.data.dummySource.DummyData
+import com.web0zz.science_news.data.model.Article
 import com.web0zz.science_news.data.model.ShortVideo
 import com.web0zz.science_news.databinding.ViewVideoOverviewBinding
 import com.web0zz.science_news.util.FragmentUtil
@@ -33,8 +34,9 @@ class VideoFragment :
     override fun initUi() {
         fragmentDataBinding.shortVideo = shortVideo
         fragmentDataBinding.onClickDetail = object : FragmentUtil.OnClickDetail {
-            override val mainActivity: MainActivity
-                get() = (requireActivity() as MainActivity)
+            override fun action(data: Article) {
+                (requireActivity() as MainActivity).navigation.initDetail(data)
+            }
         }
         playerView = fragmentDataBinding.shortExoPlayer
     }

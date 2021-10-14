@@ -14,7 +14,6 @@
             type="com.web0zz.science_news.data.model.Article" />
     </data>
 
-    <!-- TODO move hard coded values to res-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,10 +29,10 @@
             android:paddingBottom="10dp"
             android:text="@{article.section}"
             android:textColor="@color/white"
-            app:layout_constraintEnd_toStartOf="@id/text_right_barrier"
+            app:layout_constraintEnd_toStartOf="@id/text_right_short_article_barrier"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
-            app:layout_constraintTop_toTopOf="@+id/tall_top_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_short_article__guideline"
+            app:layout_constraintTop_toTopOf="@+id/top_short_article_guideline"
             tools:text="SPACE" />
 
         <TextView
@@ -45,10 +44,10 @@
             android:text="@{article.title}"
             android:textColor="@color/white"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/title_bottom_barrier"
-            app:layout_constraintEnd_toStartOf="@+id/text_right_barrier"
-            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/tall_section_category_textView"
+            app:layout_constraintBottom_toTopOf="@id/title_bottom_short_article_barrier"
+            app:layout_constraintEnd_toStartOf="@id/text_right_short_article_barrier"
+            app:layout_constraintStart_toStartOf="@id/left_short_article__guideline"
+            app:layout_constraintTop_toBottomOf="@id/tall_section_category_textView"
             tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
 
         <ImageView
@@ -60,10 +59,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/article_thumbnail"
-            app:layout_constraintBottom_toTopOf="@+id/title_bottom_barrier"
+            app:layout_constraintBottom_toTopOf="@id/title_bottom_short_article_barrier"
             app:layout_constraintDimensionRatio="w,16:9"
-            app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
-            app:layout_constraintTop_toTopOf="@+id/tall_top_guideline"
+            app:layout_constraintEnd_toStartOf="@id/right_short_article_guideline"
+            app:layout_constraintTop_toTopOf="@id/top_short_article_guideline"
             app:layout_constraintWidth_max="120dp"
             tools:src="@drawable/news1" />
 
@@ -76,10 +75,10 @@
             android:alpha="0.7"
             android:fontFamily="@font/roboto_light"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
-            app:layout_constraintEnd_toStartOf="@id/text_right_barrier"
-            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
-            app:layout_constraintTop_toTopOf="@+id/tall_save_imageButton"
+            app:layout_constraintBottom_toTopOf="@id/bottom_short_article_guideline"
+            app:layout_constraintEnd_toStartOf="@id/text_right_short_article_barrier"
+            app:layout_constraintStart_toStartOf="@id/left_short_article__guideline"
+            app:layout_constraintTop_toTopOf="@id/tall_save_imageButton"
             tools:text="September 2, 2021 • Joe Bishop" />
 
         <ImageButton
@@ -91,10 +90,10 @@
             android:contentDescription="@string/save_button"
             android:minHeight="48dp"
             android:src="@drawable/ic_save"
-            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
-            app:layout_constraintEnd_toStartOf="@+id/tall_extra_imageButton"
+            app:layout_constraintBottom_toTopOf="@id/bottom_short_article_guideline"
+            app:layout_constraintEnd_toStartOf="@id/tall_extra_imageButton"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/short_info_textView" />
+            app:layout_constraintStart_toEndOf="@id/short_info_textView" />
 
         <ImageButton
             android:id="@+id/tall_extra_imageButton"
@@ -105,42 +104,42 @@
             android:contentDescription="@string/extra_section_button"
             android:minHeight="48dp"
             android:src="@drawable/ic_menu"
-            app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
+            app:layout_constraintBottom_toTopOf="@id/bottom_short_article_guideline"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
+            app:layout_constraintEnd_toStartOf="@id/right_short_article_guideline"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/tall_save_imageButton" />
+            app:layout_constraintStart_toEndOf="@id/tall_save_imageButton" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_top_guideline"
+            android:id="@+id/top_short_article_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="20dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_left_guideline"
+            android:id="@+id/left_short_article__guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="10dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_right_guideline"
+            android:id="@+id/right_short_article_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_end="10dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_bottom"
+            android:id="@+id/bottom_short_article_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_end="20dp" />
 
         <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/text_right_barrier"
+            android:id="@+id/text_right_short_article_barrier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="left"
@@ -149,7 +148,7 @@
             tools:layout_editor_absoluteY="98dp" />
 
         <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/title_bottom_barrier"
+            android:id="@+id/title_bottom_short_article_barrier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="top"

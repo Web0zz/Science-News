@@ -2,6 +2,9 @@ package com.web0zz.science_news.data.dummySource
 
 import com.web0zz.science_news.data.model.Article
 import com.web0zz.science_news.data.model.Overview
+import com.web0zz.science_news.data.model.view.detail.ContentImage
+import com.web0zz.science_news.data.model.view.detail.NormalBody
+import com.web0zz.science_news.data.model.view.detail.ShortDescription
 import com.web0zz.science_news.data.model.view.sections.OverviewArticle
 import com.web0zz.science_news.data.model.view.sections.ShortArticle
 import com.web0zz.science_news.data.model.view.sections.TallArticle
@@ -10,6 +13,14 @@ import com.web0zz.science_news.data.model.view.sections.TallLightArticle
 object DummyData {
     const val userImageUrl =
         "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
+
+    fun defaultDetailBody(selectedArticle: Article) =
+        listOf(
+            ShortDescription(selectedArticle.shortBody),
+            NormalBody(selectedArticle.bodyText[0]),
+            ContentImage(selectedArticle.contentImage),
+            NormalBody(selectedArticle.bodyText[1]),
+        )
 
     val overviewList = listOf(
         Overview(

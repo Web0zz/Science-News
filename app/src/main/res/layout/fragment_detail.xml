@@ -14,7 +14,6 @@
             type="com.web0zz.science_news.data.model.Article" />
     </data>
 
-    <!-- TODO move hard coded values to res-->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -50,8 +49,8 @@
                 android:onClick="@{() -> onClickBack.action(null)}"
                 android:padding="10dp"
                 android:src="@drawable/ic_back"
-                app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
-                app:layout_constraintTop_toTopOf="@+id/tall_top_guideline" />
+                app:layout_constraintStart_toStartOf="@id/left_detail_guideline"
+                app:layout_constraintTop_toTopOf="@id/top_detail_guideline" />
 
             <ImageButton
                 android:id="@+id/extra_button"
@@ -64,8 +63,8 @@
                 android:minHeight="48dp"
                 android:padding="10dp"
                 android:src="@drawable/ic_menu"
-                app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
-                app:layout_constraintTop_toTopOf="@+id/tall_top_guideline" />
+                app:layout_constraintEnd_toStartOf="@id/right_detail_guideline"
+                app:layout_constraintTop_toTopOf="@id/top_detail_guideline" />
 
             <TextView
                 android:id="@+id/dateAuthor_textView"
@@ -80,9 +79,9 @@
                 android:textColor="@color/white"
                 android:textIsSelectable="true"
                 android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="@+id/thumbnail_imageView"
+                app:layout_constraintBottom_toBottomOf="@id/thumbnail_imageView"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintTop_toBottomOf="@+id/thumbnail_imageView"
+                app:layout_constraintTop_toBottomOf="@id/thumbnail_imageView"
                 tools:text="February 14, 2021 • Joe Bishop" />
 
             <TextView
@@ -95,44 +94,44 @@
                 android:textColor="@color/white"
                 android:textIsSelectable="true"
                 android:textSize="26sp"
-                app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
-                app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
-                app:layout_constraintTop_toBottomOf="@+id/dateAuthor_textView"
+                app:layout_constraintEnd_toStartOf="@id/right_detail_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_detail_guideline"
+                app:layout_constraintTop_toBottomOf="@id/dateAuthor_textView"
                 tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/body_recyclerview"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
-                app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
-                app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
-                app:layout_constraintTop_toBottomOf="@+id/title_textView"
+                app:layout_constraintBottom_toTopOf="@id/bottom_detail_guideline"
+                app:layout_constraintEnd_toStartOf="@id/right_detail_guideline"
+                app:layout_constraintStart_toStartOf="@id/left_detail_guideline"
+                app:layout_constraintTop_toBottomOf="@id/title_textView"
                 tools:listitem="@layout/view_normal_body_text" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/tall_top_guideline"
+                android:id="@+id/top_detail_guideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 app:layout_constraintGuide_begin="20dp" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/tall_left_guideline"
+                android:id="@+id/left_detail_guideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_begin="10dp" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/tall_right_guideline"
+                android:id="@+id/right_detail_guideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 app:layout_constraintGuide_end="10dp" />
 
             <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_bottom"
+                android:id="@+id/bottom_detail_guideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"

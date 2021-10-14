@@ -30,7 +30,7 @@
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tall_top_guideline"
+            app:layout_constraintTop_toTopOf="@id/top_overview_guideline"
             tools:text="Space" />
 
         <ImageButton
@@ -43,9 +43,9 @@
             android:onClick="@{() -> onClickClose.action(null)}"
             android:src="@drawable/ic_close"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/tall_top_guideline" />
+            app:layout_constraintTop_toTopOf="@id/top_overview_guideline" />
 
-        <!--TODO will move hard coded values-->
+
         <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
             android:id="@+id/dots_indicator"
             android:layout_width="wrap_content"
@@ -55,7 +55,7 @@
             app:dotsSize="14dp"
             app:dotsSpacing="4dp"
             app:dotsWidthFactor="2.5"
-            app:layout_constraintBottom_toTopOf="@id/guideline2"
+            app:layout_constraintBottom_toTopOf="@id/head_bottom_overview_guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/overview_head_textView"
@@ -66,30 +66,30 @@
             android:id="@+id/viewPager2"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/guideline3"
+            app:layout_constraintBottom_toTopOf="@id/bottom_overview_guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/guideline2" />
+            app:layout_constraintTop_toTopOf="@id/head_bottom_overview_guideline" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
+            android:id="@+id/top_overview_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/head_bottom_overview_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="90dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline3"
+            android:id="@+id/bottom_overview_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_end="80dp" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_top_guideline"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_begin="20dp" />
     </androidx.constraintlayout.motion.widget.MotionLayout>
 </layout>

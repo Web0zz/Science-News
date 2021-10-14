@@ -8,14 +8,10 @@ import com.web0zz.science_news.databinding.FragmentSplashBinding
 
 class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding::inflate) {
     override fun initUi() {
-        val mainActivity = (activity as MainActivity)
-
         object : CountDownTimer(2500, 1000) {
             override fun onTick(p0: Long) {}
 
-            override fun onFinish() {
-                mainActivity.navigation.initHome(false)
-            }
+            override fun onFinish() = (requireActivity() as MainActivity).navigation.initHome()
         }.start()
     }
 

@@ -9,25 +9,19 @@ import com.web0zz.science_news.screen.home.body.HomeBodyFragment
 import com.web0zz.science_news.screen.home.topbar.TopBarFragment
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
-    private val navigator: CommonFragmentManager by lazy {
+    private val fragmentNavigator: CommonFragmentManager by lazy {
         CommonFragmentManager(parentFragmentManager)
     }
 
     override fun initUi() {
-        navigator.apply {
-            decideAction(
-                false,
-                onTrue = {},
-                onFalse = {
-                    addFragment(
-                        fragmentDataBinding.topBarFrameLayout.id,
-                        TopBarFragment::newInstance
-                    )
-                    addFragment(
-                        fragmentDataBinding.articleViewsFrameLayout.id,
-                        HomeBodyFragment::newInstance
-                    )
-                }
+        fragmentNavigator.apply {
+            addFragment(
+                fragmentDataBinding.topBarFrameLayout.id,
+                TopBarFragment::newInstance
+            )
+            addFragment(
+                fragmentDataBinding.articleViewsFrameLayout.id,
+                HomeBodyFragment::newInstance
             )
         }
     }
@@ -41,7 +35,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     override fun onDestroy() {
         super.onDestroy()
-        navigator.destroyAllFragments()
+        fragmentNavigator.destroyAllFragments()
     }
 
     companion object {

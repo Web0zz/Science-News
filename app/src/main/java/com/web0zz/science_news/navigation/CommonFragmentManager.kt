@@ -28,8 +28,6 @@ class CommonFragmentManager(
         replace(layoutIdRes, fragment())
     }
 
-    fun toBack() = manager.popBackStack()
-
     private fun removeFragments(
         fragment: Fragment
     ) = manager.makeTransaction { remove(fragment) }
@@ -37,14 +35,5 @@ class CommonFragmentManager(
     fun destroyAllFragments() = fragmentList.apply {
         forEach { removeFragments(it) }
         clear()
-    }
-
-    fun decideAction(
-        willDelete: Boolean,
-        onTrue: () -> Unit,
-        onFalse: () -> Unit
-    ) = when (willDelete) {
-        true -> onTrue()
-        false -> onFalse()
     }
 }

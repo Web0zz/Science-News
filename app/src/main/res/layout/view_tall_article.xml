@@ -30,10 +30,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/article_thumbnail"
-            app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
+            app:layout_constraintEnd_toStartOf="@id/right_tall_article_guideline"
             app:layout_constraintHeight_min="220dp"
-            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
-            app:layout_constraintTop_toTopOf="@+id/tall_top_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_tall_article_guideline"
+            app:layout_constraintTop_toTopOf="@id/top_tall_article_guideline"
             tools:src="@drawable/news1" />
 
         <TextView
@@ -45,8 +45,8 @@
             android:fontFamily="@font/roboto_bold"
             android:text="@{article.section}"
             android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/tall_section_thumbnail_imageView"
+            app:layout_constraintStart_toStartOf="@id/left_tall_article_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tall_section_thumbnail_imageView"
             tools:text="SPACE" />
 
         <TextView
@@ -57,10 +57,10 @@
             android:fontFamily="@font/roboto_light"
             android:text="@{article.title}"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@id/tall_title_bottom_barrier"
-            app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
-            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
-            app:layout_constraintTop_toBottomOf="@+id/tall_section_category_textView"
+            app:layout_constraintBottom_toTopOf="@id/tall_title_bottom_tall_article_barrier"
+            app:layout_constraintEnd_toStartOf="@id/right_tall_article_guideline"
+            app:layout_constraintStart_toStartOf="@id/left_tall_article_guideline"
+            app:layout_constraintTop_toBottomOf="@id/tall_section_category_textView"
             tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
 
         <TextView
@@ -72,10 +72,10 @@
             android:alpha="0.7"
             android:fontFamily="@font/roboto_light"
             android:textColor="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/tall_bottom_guideline"
-            app:layout_constraintEnd_toStartOf="@+id/buttons_left_barrier"
-            app:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
-            app:layout_constraintTop_toTopOf="@+id/tall_save_imageButton"
+            app:layout_constraintBottom_toTopOf="@id/bottom_tall_article_guideline"
+            app:layout_constraintEnd_toStartOf="@id/buttons_left_tall_article_barrier"
+            app:layout_constraintStart_toStartOf="@id/left_tall_article_guideline"
+            app:layout_constraintTop_toTopOf="@id/tall_save_imageButton"
             tools:text="September 2, 2021 • Joe Bishop" />
 
         <ImageButton
@@ -88,8 +88,8 @@
             android:minHeight="48dp"
             android:padding="5dp"
             android:src="@drawable/ic_save"
-            app:layout_constraintBottom_toTopOf="@+id/tall_bottom_guideline"
-            app:layout_constraintEnd_toStartOf="@+id/tall_extra_imageButton" />
+            app:layout_constraintBottom_toTopOf="@id/bottom_tall_article_guideline"
+            app:layout_constraintEnd_toStartOf="@id/tall_extra_imageButton" />
 
         <ImageButton
             android:id="@+id/tall_extra_imageButton"
@@ -101,46 +101,46 @@
             android:minHeight="48dp"
             android:padding="5dp"
             android:src="@drawable/ic_menu"
-            app:layout_constraintBottom_toTopOf="@+id/tall_bottom_guideline"
-            app:layout_constraintEnd_toStartOf="@+id/tall_right_guideline" />
+            app:layout_constraintBottom_toTopOf="@id/bottom_tall_article_guideline"
+            app:layout_constraintEnd_toStartOf="@id/right_tall_article_guideline" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_top_guideline"
+            android:id="@+id/top_tall_article_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_begin="20dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_left_guideline"
+            android:id="@+id/left_tall_article_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="10dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_right_guideline"
+            android:id="@+id/right_tall_article_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_end="10dp" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/tall_bottom_guideline"
+            android:id="@+id/bottom_tall_article_guideline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_end="20dp" />
 
         <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/buttons_left_barrier"
+            android:id="@+id/buttons_left_tall_article_barrier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="left"
             app:constraint_referenced_ids="tall_save_imageButton" />
 
         <androidx.constraintlayout.widget.Barrier
-            android:id="@+id/tall_title_bottom_barrier"
+            android:id="@+id/tall_title_bottom_tall_article_barrier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="top"
