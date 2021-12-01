@@ -1,23 +1,23 @@
 package com.web0zz.science_news.base
 
 import android.os.Bundle
-import androidx.activity.OnBackPressedCallback
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewbinding.ViewBinding
-import com.web0zz.science_news.navigation.MainNavigation
+import androidx.databinding.ViewDataBinding
 
-abstract class BaseActivity<B : ViewBinding> : AppCompatActivity() {
-    protected lateinit var activityBinding: B
-    abstract val navigation: MainNavigation
+abstract class BaseActivity<B : ViewDataBinding>(
+    private val inflateLayout: (LayoutInflater) -> B
+) : AppCompatActivity() {
+    private lateinit var activityDataBinding: B
 
-    abstract fun getViewBinding(): B
-
+    /*abstract val navigation: MainNavigation*/
     open fun initUi() {}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        activityBinding = getViewBinding()
-        setContentView(activityBinding.root)
+        activityDataBinding = inflateLayout(layoutInflater)
+        setContentView(activityDataBinding.root)
+
         initUi()
     }
 }

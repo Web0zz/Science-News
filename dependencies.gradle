@@ -1,0 +1,45 @@
+ext {
+    compileSdkVersion = 31
+    minSdkVersion = 21
+    targetSdkVersion = 31
+    versionCode = 1
+    versionName = '1.0'
+
+    coreKtxVersion = "1.7.0"
+    appcombatVersion = "1.4.0"
+    materialVersion = "1.4.0"
+    constraintVersion = "2.1.2"
+
+    navigationVersion = "2.4.0-beta02"
+    lottieVersion = "4.1.0"
+    glideVersion = "4.12.0"
+    exoVersion = "2.16.1"
+    dotsIndicatorVersion = "4.2"
+
+    mainDependencies = [
+        // Android
+        coreLib : "androidx.core:core-ktx:$coreKtxVersion",
+        appcompatLib : "androidx.appcompat:appcompat:$appcombatVersion",
+        materialLib : "com.google.android.material:material:$materialVersion",
+
+        // Jetpack
+        constrLayoutLib : "androidx.constraintlayout:constraintlayout:$constraintVersion",
+        navFragLib : "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
+        navUiLib : "androidx.navigation:navigation-ui-ktx:$navigationVersion",
+
+        // Lottie - Airbnb
+        lottieLib : "com.airbnb.android:lottie:$lottieVersion",
+
+        // Glide
+        glideLib : "com.github.bumptech.glide:glide:$glideVersion",
+        glideComplrLib : "com.github.bumptech.glide:compiler:$glideVersion",
+
+        // ExoPlayer
+        exoCoreLib : "com.google.android.exoplayer:exoplayer-core:$exoVersion",
+        exoDashLib : "com.google.android.exoplayer:exoplayer-dash:$exoVersion",
+        exoUiLib : "com.google.android.exoplayer:exoplayer-ui:$exoVersion",
+
+        // Viewpager Indicator
+        dotsindicatorLib : "com.tbuonomo:dotsindicator:$dotsIndicatorVersion"
+    ]
+}

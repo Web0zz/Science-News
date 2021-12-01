@@ -3,17 +3,17 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs'
 }
 
 android {
-    compileSdk 30
+    compileSdk rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.web0zz.science_news"
-        minSdk 21
-        targetSdk 30
-        versionCode 1
-        versionName "1.0"
+        minSdk rootProject.ext.minSdkVersion
+        targetSdk rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -26,6 +26,7 @@ android {
     }
     buildFeatures {
         dataBinding true
+        viewBinding true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -37,27 +38,28 @@ android {
 }
 
 dependencies {
+    // Android
+    implementation mainDependencies.coreLib
+    implementation mainDependencies.appcompatLib
+    implementation mainDependencies.materialLib
 
-    implementation "androidx.core:core-ktx:$coreKtxVersion"
-    implementation "androidx.appcompat:appcompat:$appcombatVersion"
-    implementation "com.google.android.material:material:$materialVersion"
-    implementation "androidx.constraintlayout:constraintlayout:$constraintVersion"
-    testImplementation "junit:junit:$junitVersion"
-    androidTestImplementation "androidx.test.ext:junit:$extJunitVersion"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
+    // Jetpack
+    implementation mainDependencies.constrLayoutLib
+    implementation mainDependencies.navFragLib
+    implementation mainDependencies.navUiLib
 
     // Lottie - Airbnb
-    implementation "com.airbnb.android:lottie:$lottieVersion"
+    implementation mainDependencies.lottieLib
 
     // Glide
-    implementation "com.github.bumptech.glide:glide:$glideVersion"
-    annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+    implementation mainDependencies.glideLib
+    annotationProcessor mainDependencies.glideComplrLib
 
     // ExoPlayer
-    implementation "com.google.android.exoplayer:exoplayer-core:$exoVersion"
-    implementation "com.google.android.exoplayer:exoplayer-dash:$exoVersion"
-    implementation "com.google.android.exoplayer:exoplayer-ui:$exoVersion"
+    implementation mainDependencies.exoCoreLib
+    implementation mainDependencies.exoDashLib
+    implementation mainDependencies.exoUiLib
 
     // Viewpager Indicator
-    implementation "com.tbuonomo:dotsindicator:$dotsIndicatorVersion"
+    implementation mainDependencies.dotsindicatorLib
 }

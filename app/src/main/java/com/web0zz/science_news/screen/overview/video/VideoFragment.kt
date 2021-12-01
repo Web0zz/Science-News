@@ -2,14 +2,17 @@ package com.web0zz.science_news.screen.overview.video
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import com.google.android.exoplayer2.ui.PlayerView
-import com.web0zz.science_news.MainActivity
+import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BasePlayerFragment
 import com.web0zz.science_news.data.dummySource.DummyData
 import com.web0zz.science_news.data.model.Article
 import com.web0zz.science_news.data.model.ShortVideo
 import com.web0zz.science_news.databinding.ViewVideoOverviewBinding
+import com.web0zz.science_news.screen.overview.OverviewFragmentDirections
 import com.web0zz.science_news.util.FragmentUtil
+import com.web0zz.science_news.util.FragmentUtil.getFragmentNavController
 import kotlin.properties.Delegates
 
 class VideoFragment :
@@ -21,7 +24,7 @@ class VideoFragment :
     override lateinit var playerView: PlayerView
     override lateinit var playVideoUrl: String
 
-    override fun Bundle.getArgumentsToVariable() {
+    override fun Bundle.getArgumentsToVariableByBundle() {
         shortVideoId = this.getInt(CURRENT_OVERVIEW_ID)
         overviewId = this.getInt(CURRENT_VIDEO_ID)
 
@@ -33,17 +36,23 @@ class VideoFragment :
 
     override fun initUi() {
         fragmentDataBinding.shortVideo = shortVideo
-        fragmentDataBinding.onClickDetail = object : FragmentUtil.OnClickDetail {
-            override fun action(data: Article) {
-                (requireActivity() as MainActivity).navigation.initDetail(data)
+        fragmentDataBinding.onClickDetail =
+            object : FragmentUtil.OnClickDetail {
+                override fun action(data: Article) {
+                    toArticleDetail(data)
+                }
             }
-        }
         playerView = fragmentDataBinding.shortExoPlayer
     }
 
     override fun whenPlayerStateReady() {
         fragmentDataBinding.videoGroup.visibility = View.VISIBLE
         fragmentDataBinding.loadingProgressBar.visibility = View.GONE
+    }
+
+    private fun toArticleDetail(article: Article) {
+        val action = OverviewFragmentDirections.actionOverviewFragmentToDetailFragment(article)
+        getFragmentNavController(R.id.nav_host_fragmentContainerView)?.navigate(action)
     }
 
     companion object {

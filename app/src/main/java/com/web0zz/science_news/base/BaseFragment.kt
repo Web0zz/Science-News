@@ -14,9 +14,11 @@ abstract class BaseFragment<B : ViewDataBinding>(
     private var _fragmentDataBinding: B? = null
     protected val fragmentDataBinding get() = _fragmentDataBinding!!
 
-    open fun Bundle.getArgumentsToVariable() {}
+    open fun getArgumentsToVariable() {}
+    open fun Bundle.getArgumentsToVariableByBundle() {}
 
     open var backPressedCallback: OnBackPressedCallback? = null
+    open fun handleBackPressed() {}
 
     open fun initUi() {}
     open fun initStart() {}
@@ -46,9 +48,11 @@ abstract class BaseFragment<B : ViewDataBinding>(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.getArgumentsToVariable()
+        arguments?.getArgumentsToVariableByBundle()
+        getArgumentsToVariable()
 
-        backPressedCallback?.let { requireActivity().onBackPressedDispatcher.addCallback(this, it) }
+        handleBackPressed()
+        /*backPressedCallback?.let { requireActivity().onBackPressedDispatcher.addCallback(this, it) }*/
     }
 
     override fun onCreateView(

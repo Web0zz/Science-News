@@ -6,14 +6,13 @@ import androidx.databinding.ViewDataBinding
 import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.Player
-import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.ui.PlayerView
 import com.google.android.exoplayer2.util.Util
 
 abstract class BasePlayerFragment<B : ViewDataBinding>(
     inflateLayout: (LayoutInflater, ViewGroup?, Boolean) -> B
 ) : BaseFragment<B>(inflateLayout) {
-    private var player: SimpleExoPlayer? = null
+    private var player: ExoPlayer? = null
     protected abstract var playerView: PlayerView
     protected abstract var playVideoUrl: String
 
@@ -41,7 +40,7 @@ abstract class BasePlayerFragment<B : ViewDataBinding>(
     }
 
     private fun initializePlayer() {
-        player = SimpleExoPlayer.Builder(requireContext())
+        player = ExoPlayer.Builder(requireContext())
             .build()
             .also { exoPlayer ->
                 playerView.player = exoPlayer
@@ -58,7 +57,7 @@ abstract class BasePlayerFragment<B : ViewDataBinding>(
     private fun releasePlayer() {
         player?.run {
             playbackPosition = this.currentPosition
-            currentWindow = this.currentWindowIndex
+            currentWindow = this.currentMediaItemIndex
             playWhenReady = this.playWhenReady
             removeListener(playbackStateListener)
             release()

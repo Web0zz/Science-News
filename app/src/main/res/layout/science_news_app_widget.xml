@@ -1,0 +1,11 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Widget.ScienceNews.AppWidget.Container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:theme="@style/Theme.ScienceNews.AppWidgetContainer">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deneme" />
+</RelativeLayout>

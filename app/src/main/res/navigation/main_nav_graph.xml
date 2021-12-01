@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.web0zz.science_news.screen.splash.SplashFragment"
+        android:label="SplashFragment">
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.web0zz.science_news.screen.home.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_overviewFragment"
+            app:destination="@id/overviewFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/overviewFragment"
+        android:name="com.web0zz.science_news.screen.overview.OverviewFragment"
+        android:label="OverviewFragment">
+        <action
+            android:id="@+id/action_overviewFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <argument
+            android:name="overviewId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.web0zz.science_news.screen.detail.DetailFragment"
+        android:label="DetailFragment">
+        <argument
+            android:name="article"
+            app:argType="com.web0zz.science_news.data.model.Article" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="www.web0zz.com/science-news/detail/{article}" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.web0zz.science_news.screen.favorites.FavoritesFragment"
+        android:label="FavoritesFragment">
+        <action
+            android:id="@+id/action_favoritesFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.web0zz.science_news.screen.profile.ProfileFragment"
+        android:label="ProfileFragment" />
+</navigation>

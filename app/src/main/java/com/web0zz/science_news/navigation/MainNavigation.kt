@@ -8,6 +8,7 @@ import com.web0zz.science_news.screen.home.HomeFragment
 import com.web0zz.science_news.screen.overview.OverviewFragment
 import com.web0zz.science_news.screen.splash.SplashFragment
 
+/*
 class MainNavigation(
     manager: FragmentManager,
     @IdRes private val hostLayout: Int
@@ -27,4 +28,4 @@ class MainNavigation(
     // Responsible with waking up the Overview Fragment.
     fun initOverview(overviewId: Int) =
         navigator.toFragmentScreen(hostLayout) { OverviewFragment.newInstance(overviewId) }
-}
+}*/

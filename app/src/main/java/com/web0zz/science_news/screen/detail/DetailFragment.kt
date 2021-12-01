@@ -1,23 +1,22 @@
 package com.web0zz.science_news.screen.detail
 
-import android.os.Bundle
-import androidx.activity.OnBackPressedCallback
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.web0zz.science_news.R
 import com.web0zz.science_news.adapter.detail.DetailBodyRecyclerAdapter
 import com.web0zz.science_news.base.BaseFragment
 import com.web0zz.science_news.data.dummySource.DummyData.defaultDetailBody
 import com.web0zz.science_news.data.model.Article
-import com.web0zz.science_news.data.model.view.detail.ContentImage
-import com.web0zz.science_news.data.model.view.detail.NormalBody
-import com.web0zz.science_news.data.model.view.detail.ShortDescription
 import com.web0zz.science_news.databinding.FragmentDetailBinding
 import com.web0zz.science_news.util.FragmentUtil
+import com.web0zz.science_news.util.FragmentUtil.getFragmentNavController
 
 class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding::inflate) {
+    private val safeArgs: DetailFragmentArgs by navArgs()
     private lateinit var selectedArticle: Article
 
-    override fun Bundle.getArgumentsToVariable() {
-        selectedArticle = this.getParcelable(ARTICLE)!!
+    override fun getArgumentsToVariable() {
+        selectedArticle = safeArgs.article
     }
 
     override fun initUi() {
@@ -28,26 +27,24 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
             layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = DetailBodyRecyclerAdapter(defaultDetailBody(selectedArticle))
+            setHasFixedSize(true)
         }
     }
 
     private fun onBack() = object : FragmentUtil.OnClickBackOnDetail {
-        override fun action(data: Nothing?) = parentFragmentManager.popBackStack()
+        override fun action(data: Nothing?) {
+            getFragmentNavController(R.id.nav_host_fragmentContainerView)?.popBackStack()
+        }
     }
 
-    override var backPressedCallback: OnBackPressedCallback? =
-        object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() = onBack().action(null)
-        }
-
-    companion object {
+    /*companion object {
         private const val ARTICLE = "article"
 
-        fun newInstance(article: Article): DetailFragment =
+        *//*fun newInstance(article: Article): DetailFragment =
             DetailFragment().apply {
                 arguments = Bundle().apply {
                     putParcelable(ARTICLE, article)
                 }
-            }
-    }
+            }*//*
+    }*/
 }

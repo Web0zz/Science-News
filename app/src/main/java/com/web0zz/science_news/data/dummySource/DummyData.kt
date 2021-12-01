@@ -5,10 +5,7 @@ import com.web0zz.science_news.data.model.Overview
 import com.web0zz.science_news.data.model.view.detail.ContentImage
 import com.web0zz.science_news.data.model.view.detail.NormalBody
 import com.web0zz.science_news.data.model.view.detail.ShortDescription
-import com.web0zz.science_news.data.model.view.sections.OverviewArticle
-import com.web0zz.science_news.data.model.view.sections.ShortArticle
-import com.web0zz.science_news.data.model.view.sections.TallArticle
-import com.web0zz.science_news.data.model.view.sections.TallLightArticle
+import com.web0zz.science_news.data.model.view.sections.*
 
 object DummyData {
     const val userImageUrl =
@@ -49,6 +46,8 @@ object DummyData {
             "Animals"
         )
     )
+
+    val articleList = listOf<ArticleItem>()
 
     val newsList = listOf(
         OverviewArticle(),
