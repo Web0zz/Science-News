@@ -1,49 +1,49 @@
 package com.web0zz.science_news.screen.home.body
 
+import androidx.navigation.NavArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.web0zz.science_news.R
 import com.web0zz.science_news.adapter.home.body.BodyRecyclerAdapter
-import com.web0zz.science_news.base.BaseFragment
-import com.web0zz.science_news.data.dummySource.DummyData
-import com.web0zz.science_news.data.model.Article
+import com.web0zz.science_news.base.BaseMainFragment
+import com.web0zz.science_news.data.dummySource.DummyDataSource
 import com.web0zz.science_news.databinding.ViewHomeBodyBinding
 import com.web0zz.science_news.screen.home.HomeFragmentDirections
 import com.web0zz.science_news.util.FragmentUtil
 import com.web0zz.science_news.util.FragmentUtil.getFragmentNavController
 
-class HomeBodyFragment : BaseFragment<ViewHomeBodyBinding>(ViewHomeBodyBinding::inflate) {
-    override fun initUi() = initRecyclerviewItems()
+class HomeBodyFragment : BaseMainFragment<ViewHomeBodyBinding>(ViewHomeBodyBinding::inflate) {
+    override val navController by lazy {
+        getFragmentNavController(R.id.nav_host_fragmentContainerView)
+    }
+    override val safeArgs: NavArgs? = null
 
-    private val articleData = DummyData.newsList
+    private val articleData = DummyDataSource().newsList
+
+    override fun initUi() = initRecyclerviewItems()
 
     private fun initRecyclerviewItems() {
         fragmentDataBinding.articleItemsRecyclerView.apply {
             layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            adapter = BodyRecyclerAdapter(articleData,
-                object : FragmentUtil.OnClickDetail {
-                    override fun action(data: Article) {
-                        toDetailArticle(data)
-                    }
-                },
-                object : FragmentUtil.OnClickOverview {
-                    override fun action(data: Int) {
-                        toOverviewArticle(data)
-                    }
-                }
-            )
+            adapter = BodyRecyclerAdapter(articleData, toDetailArticle(), toOverviewArticle())
         }
     }
 
-    private fun toDetailArticle(article: Article) {
-        val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(article)
-        getFragmentNavController(R.id.nav_host_fragmentContainerView)?.navigate(action)
-    }
+    private fun toDetailArticle() = object :
+        FragmentUtil.OnClickDetail {
+            override fun action(data: Int) {
+                val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(data)
+                navController?.navigate(action)
+            }
+        }
 
-    private fun toOverviewArticle(overviewId: Int) {
-        val action = HomeFragmentDirections.actionHomeFragmentToOverviewFragment(overviewId)
-        getFragmentNavController(R.id.nav_host_fragmentContainerView)?.navigate(action)
-    }
+    private fun toOverviewArticle() =
+        object : FragmentUtil.OnClickOverview {
+            override fun action(data: Int) {
+                val action = HomeFragmentDirections.actionHomeFragmentToOverviewFragment(data)
+                navController?.navigate(action)
+            }
+        }
 
     companion object {
         fun newInstance(): HomeBodyFragment =

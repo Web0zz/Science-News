@@ -15,8 +15,8 @@ object FragmentUtil {
         fun action(data: T)
     }
 
-    interface OnClickDetail : ClickAction<Article> {
-        override fun action(data: Article)
+    interface OnClickDetail : ClickAction<Int> {
+        override fun action(data: Int)
     }
 
     interface OnClickFavorites : ClickAction<Nothing?> {

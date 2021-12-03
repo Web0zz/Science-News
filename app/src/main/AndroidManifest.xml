@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ScienceNews">
         <receiver
-            android:name="com.web0zz.science_news.widget.ScienceNewsAppWidget"
+            android:name="com.web0zz.science_news.widget.ScienceNewsAppWidgetProvider"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -26,6 +26,10 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/science_news_app_widget_info" />
         </receiver>
+
+        <service android:name="com.web0zz.science_news.widget.ListWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"
+            android:exported="false" />
 
         <activity
             android:name=".MainActivity"

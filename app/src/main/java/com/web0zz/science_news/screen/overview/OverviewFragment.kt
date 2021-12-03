@@ -1,12 +1,11 @@
 package com.web0zz.science_news.screen.overview
 
 import androidx.activity.OnBackPressedCallback
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
 import com.web0zz.science_news.R
 import com.web0zz.science_news.adapter.home.sections.VideoSlidePagerAdapter
-import com.web0zz.science_news.base.BaseFragment
+import com.web0zz.science_news.base.BaseMainFragment
 import com.web0zz.science_news.data.dummySource.DummyData
 import com.web0zz.science_news.data.model.Overview
 import com.web0zz.science_news.databinding.FragmentOverviewBinding
@@ -16,8 +15,12 @@ import com.web0zz.science_news.util.FragmentUtil
 import com.web0zz.science_news.util.FragmentUtil.getFragmentNavController
 import kotlin.properties.Delegates
 
-class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewBinding::inflate) {
-    private val safeArgs: OverviewFragmentArgs by navArgs()
+class OverviewFragment :
+    BaseMainFragment<FragmentOverviewBinding>(FragmentOverviewBinding::inflate) {
+    override val navController by lazy {
+        getFragmentNavController(R.id.nav_host_fragmentContainerView)
+    }
+    override val safeArgs: OverviewFragmentArgs by navArgs()
 
     private var selectedOverviewId by Delegates.notNull<Int>()
     private lateinit var selectedOverview: Overview
@@ -55,7 +58,7 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewB
 
     private fun closeOverview() = object : FragmentUtil.OnClickCloseOnOverview {
         override fun action(data: Nothing?) {
-            getFragmentNavController(R.id.nav_host_fragmentContainerView)?.popBackStack()
+            navController?.popBackStack()
         }
     }
 
@@ -69,15 +72,7 @@ class OverviewFragment : BaseFragment<FragmentOverviewBinding>(FragmentOverviewB
     }
 
     companion object {
-        /*private const val OVERVIEW_ID = "overviewId"*/
         private const val NUM_PAGES = 5
-
-        /*fun newInstance(overviewID: Int): OverviewFragment =
-            OverviewFragment().apply {
-                arguments = Bundle().apply {
-                    putInt(OVERVIEW_ID, overviewID)
-                }
-            }*/
     }
 
     private fun getSelectedOverview(id: Int) = DummyData.overviewList[id]

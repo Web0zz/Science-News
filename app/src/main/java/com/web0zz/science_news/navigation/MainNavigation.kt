@@ -1,13 +1,5 @@
 package com.web0zz.science_news.navigation
 
-import androidx.annotation.IdRes
-import androidx.fragment.app.FragmentManager
-import com.web0zz.science_news.data.model.Article
-import com.web0zz.science_news.screen.detail.DetailFragment
-import com.web0zz.science_news.screen.home.HomeFragment
-import com.web0zz.science_news.screen.overview.OverviewFragment
-import com.web0zz.science_news.screen.splash.SplashFragment
-
 /*
 class MainNavigation(
     manager: FragmentManager,

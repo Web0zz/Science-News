@@ -11,7 +11,7 @@ import com.google.android.exoplayer2.util.Util
 
 abstract class BasePlayerFragment<B : ViewDataBinding>(
     inflateLayout: (LayoutInflater, ViewGroup?, Boolean) -> B
-) : BaseFragment<B>(inflateLayout) {
+) : BaseSimpleFragment<B>(inflateLayout) {
     private var player: ExoPlayer? = null
     protected abstract var playerView: PlayerView
     protected abstract var playVideoUrl: String

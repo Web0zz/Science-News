@@ -2,7 +2,6 @@ package com.web0zz.science_news.screen.overview.video
 
 import android.os.Bundle
 import android.view.View
-import androidx.navigation.fragment.findNavController
 import com.google.android.exoplayer2.ui.PlayerView
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BasePlayerFragment
@@ -17,6 +16,10 @@ import kotlin.properties.Delegates
 
 class VideoFragment :
     BasePlayerFragment<ViewVideoOverviewBinding>(ViewVideoOverviewBinding::inflate) {
+    private val navController by lazy {
+        getFragmentNavController(R.id.nav_host_fragmentContainerView)
+    }
+
     private var shortVideoId by Delegates.notNull<Int>()
     private var overviewId by Delegates.notNull<Int>()
     private lateinit var shortVideo: ShortVideo
@@ -36,12 +39,7 @@ class VideoFragment :
 
     override fun initUi() {
         fragmentDataBinding.shortVideo = shortVideo
-        fragmentDataBinding.onClickDetail =
-            object : FragmentUtil.OnClickDetail {
-                override fun action(data: Article) {
-                    toArticleDetail(data)
-                }
-            }
+        fragmentDataBinding.onClickDetail = toArticleDetail()
         playerView = fragmentDataBinding.shortExoPlayer
     }
 
@@ -50,9 +48,11 @@ class VideoFragment :
         fragmentDataBinding.loadingProgressBar.visibility = View.GONE
     }
 
-    private fun toArticleDetail(article: Article) {
-        val action = OverviewFragmentDirections.actionOverviewFragmentToDetailFragment(article)
-        getFragmentNavController(R.id.nav_host_fragmentContainerView)?.navigate(action)
+    private fun toArticleDetail() = object : FragmentUtil.OnClickDetail {
+        override fun action(data: Int) {
+            val action = OverviewFragmentDirections.actionOverviewFragmentToDetailFragment(data)
+            navController?.navigate(action)
+        }
     }
 
     companion object {

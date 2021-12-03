@@ -17,29 +17,29 @@ ext {
     dotsIndicatorVersion = "4.2"
 
     mainDependencies = [
-        // Android
-        coreLib : "androidx.core:core-ktx:$coreKtxVersion",
-        appcompatLib : "androidx.appcompat:appcompat:$appcombatVersion",
-        materialLib : "com.google.android.material:material:$materialVersion",
+            // Android
+            coreLib         : "androidx.core:core-ktx:$coreKtxVersion",
+            appcompatLib    : "androidx.appcompat:appcompat:$appcombatVersion",
+            materialLib     : "com.google.android.material:material:$materialVersion",
 
-        // Jetpack
-        constrLayoutLib : "androidx.constraintlayout:constraintlayout:$constraintVersion",
-        navFragLib : "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
-        navUiLib : "androidx.navigation:navigation-ui-ktx:$navigationVersion",
+            // Jetpack
+            constrLayoutLib : "androidx.constraintlayout:constraintlayout:$constraintVersion",
+            navFragLib      : "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
+            navUiLib        : "androidx.navigation:navigation-ui-ktx:$navigationVersion",
 
-        // Lottie - Airbnb
-        lottieLib : "com.airbnb.android:lottie:$lottieVersion",
+            // Lottie - Airbnb
+            lottieLib       : "com.airbnb.android:lottie:$lottieVersion",
 
-        // Glide
-        glideLib : "com.github.bumptech.glide:glide:$glideVersion",
-        glideComplrLib : "com.github.bumptech.glide:compiler:$glideVersion",
+            // Glide
+            glideLib        : "com.github.bumptech.glide:glide:$glideVersion",
+            glideComplrLib  : "com.github.bumptech.glide:compiler:$glideVersion",
 
-        // ExoPlayer
-        exoCoreLib : "com.google.android.exoplayer:exoplayer-core:$exoVersion",
-        exoDashLib : "com.google.android.exoplayer:exoplayer-dash:$exoVersion",
-        exoUiLib : "com.google.android.exoplayer:exoplayer-ui:$exoVersion",
+            // ExoPlayer
+            exoCoreLib      : "com.google.android.exoplayer:exoplayer-core:$exoVersion",
+            exoDashLib      : "com.google.android.exoplayer:exoplayer-dash:$exoVersion",
+            exoUiLib        : "com.google.android.exoplayer:exoplayer-ui:$exoVersion",
 
-        // Viewpager Indicator
-        dotsindicatorLib : "com.tbuonomo:dotsindicator:$dotsIndicatorVersion"
+            // Viewpager Indicator
+            dotsindicatorLib: "com.tbuonomo:dotsindicator:$dotsIndicatorVersion"
     ]
 }

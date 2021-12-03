@@ -1,17 +1,17 @@
 package com.web0zz.science_news.screen.splash
 
 import android.os.CountDownTimer
-import androidx.annotation.IdRes
-import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.NavArgs
 import com.web0zz.science_news.R
-import com.web0zz.science_news.base.BaseFragment
+import com.web0zz.science_news.base.BaseMainFragment
 import com.web0zz.science_news.databinding.FragmentSplashBinding
 import com.web0zz.science_news.util.FragmentUtil.getFragmentNavController
 
-class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding::inflate) {
-    /*private val navController = this.findNavController()*/
+class SplashFragment : BaseMainFragment<FragmentSplashBinding>(FragmentSplashBinding::inflate) {
+    override val navController by lazy {
+        getFragmentNavController(R.id.nav_host_fragmentContainerView)
+    }
+    override val safeArgs: NavArgs? = null
 
     override fun initUi() = countdownToHome()
 
@@ -24,19 +24,6 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
     }
 
     private fun toHome() {
-        getFragmentNavController(R.id.nav_host_fragmentContainerView)?.navigate(R.id.homeFragment)
+        navController?.navigate(R.id.homeFragment)
     }
-
-    /*override var backPressedCallback: OnBackPressedCallback? =
-        object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                (requireActivity() as MainActivity).finish()
-            }
-        }*/
-
-    /*companion object {
-        fun newInstance(): SplashFragment {
-            return SplashFragment()
-        }
-    }*/
 }

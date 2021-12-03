@@ -46,11 +46,9 @@
         android:name="com.web0zz.science_news.screen.detail.DetailFragment"
         android:label="DetailFragment">
         <argument
-            android:name="article"
-            app:argType="com.web0zz.science_news.data.model.Article" />
-        <deepLink
-            android:id="@+id/deepLink"
-            app:uri="www.web0zz.com/science-news/detail/{article}" />
+            android:name="articleId"
+            app:argType="integer" />
+        <deepLink app:uri="science-news://detail?articleId={articleId}" />
     </fragment>
     <fragment
         android:id="@+id/favoritesFragment"

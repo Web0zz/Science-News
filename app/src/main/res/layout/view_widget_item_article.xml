@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_widget_item_relativeLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginVertical="3dp">
+
+    <ImageView
+        android:id="@+id/widget_item_article_thumbnail_imageView"
+        android:layout_width="85dp"
+        android:layout_height="65dp"
+        android:scaleType="centerCrop"
+        android:layout_margin="10dp"
+        android:layout_alignParentStart="true"
+        android:contentDescription="@string/article_thumbnail"
+        tools:src="@drawable/news1"/>
+
+    <TextView
+        android:id="@+id/widget_item_article_title_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/widget_item_article_thumbnail_imageView"
+        android:layout_alignParentEnd="@id/widget_item_article_thumbnail_imageView"
+        android:layout_toEndOf="@+id/widget_item_article_thumbnail_imageView"
+        android:textSize="16sp"
+        tools:text="This is the title" />
+
+    <TextView
+        android:id="@+id/widget_item_article_short_description_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="14sp"
+        android:layout_below="@+id/widget_item_article_title_textView"
+        android:layout_alignParentBottom="@+id/widget_item_article_title_textView"
+        android:layout_alignParentEnd="@id/widget_item_article_thumbnail_imageView"
+        android:layout_toEndOf="@+id/widget_item_article_thumbnail_imageView"
+        tools:text="Hello to short description" />
+</RelativeLayout>
