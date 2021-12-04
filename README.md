@@ -6,7 +6,7 @@
 - Exoplayer : Used for Short videos about articles, like an instagram storie.
 - Navigation : Used for navigation between screens
 - Glide : Used for render the images from internet.
-- Lottie : Used for splash screen logo animation.
+- Lottie : Used for lottie animations.
 - Fragment : Hearth of the application, it's everywhere...
 - Widget : Used for short access to news.
 
