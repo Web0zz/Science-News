@@ -389,7 +389,11 @@ With organoids carrying Rett syndrome mutations, scientists can better understan
             articleList[1],
             RawResourceDataSource.buildRawResourceUri(R.raw.video_black_hole)
         ),
-        ShortVideo(1, articleList[2], RawResourceDataSource.buildRawResourceUri(R.raw.video_kid)),
+        ShortVideo(
+            1,
+            articleList[9],
+            RawResourceDataSource.buildRawResourceUri(R.raw.video_rocket)
+        ),
         ShortVideo(2, articleList[3], RawResourceDataSource.buildRawResourceUri(R.raw.video_fire)),
         ShortVideo(3, articleList[4], RawResourceDataSource.buildRawResourceUri(R.raw.video_atoms)),
         ShortVideo(4, articleList[5], RawResourceDataSource.buildRawResourceUri(R.raw.video_snake)),
