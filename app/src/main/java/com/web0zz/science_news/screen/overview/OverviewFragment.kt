@@ -9,7 +9,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.web0zz.science_news.R
 import com.web0zz.science_news.adapter.overview.VideoSlidePagerAdapter
 import com.web0zz.science_news.base.BaseMainFragment
-import com.web0zz.science_news.data.dummySource.DummyData
+import com.web0zz.science_news.data.dummySource.DummyDataSource
 import com.web0zz.science_news.data.model.Overview
 import com.web0zz.science_news.databinding.FragmentOverviewBinding
 import com.web0zz.science_news.screen.overview.video.VideoFragment
@@ -23,6 +23,7 @@ class OverviewFragment :
     override val navController by lazy {
         getFragmentNavController(R.id.nav_host_fragmentContainerView)
     }
+
     override val safeArgs: OverviewFragmentArgs by navArgs()
 
     private var selectedOverviewId by Delegates.notNull<Int>()
@@ -95,5 +96,5 @@ class OverviewFragment :
         private const val NUM_PAGES = 5
     }
 
-    private fun getSelectedOverview(id: Int) = DummyData.overviewList[id]
+    private fun getSelectedOverview(id: Int) = DummyDataSource().overviewList[id]
 }

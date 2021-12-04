@@ -6,7 +6,7 @@ import android.view.View
 import com.google.android.exoplayer2.ui.PlayerView
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BasePlayerFragment
-import com.web0zz.science_news.data.dummySource.DummyData
+import com.web0zz.science_news.data.dummySource.DummyDataSource
 import com.web0zz.science_news.data.model.ShortVideo
 import com.web0zz.science_news.databinding.ViewVideoOverviewBinding
 import com.web0zz.science_news.screen.overview.OverviewFragmentDirections
@@ -28,8 +28,8 @@ class VideoFragment :
     override lateinit var playVideoUri: Uri
 
     override fun Bundle.getArgumentsToVariableByBundle() {
-        shortVideoId = this.getInt(CURRENT_OVERVIEW_ID)
-        overviewId = this.getInt(CURRENT_VIDEO_ID)
+        shortVideoId = this.getInt(CURRENT_VIDEO_ID)
+        overviewId = this.getInt(CURRENT_OVERVIEW_ID)
 
         getShortVideos().apply {
             shortVideo = this
@@ -68,5 +68,5 @@ class VideoFragment :
             }
     }
 
-    private fun getShortVideos() = DummyData.overviewList[overviewId].videos[shortVideoId]
+    private fun getShortVideos() = DummyDataSource().overviewList[overviewId].videos[shortVideoId]
 }

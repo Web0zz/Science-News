@@ -2,7 +2,7 @@
 <resources>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="indicator_dot">#FFFFFFFF</color>
+    <color name="indicator_dot">#D2D2D2</color>
 
     <color name="dark_background">#121212</color>
     <color name="light_background">#1E1E1E</color>

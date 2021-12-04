@@ -383,7 +383,7 @@ With organoids carrying Rett syndrome mutations, scientists can better understan
         )
     )
 
-    val shortList = listOf(
+    private val shortList = listOf(
         ShortVideo(
             0,
             articleList[1],
@@ -393,6 +393,39 @@ With organoids carrying Rett syndrome mutations, scientists can better understan
         ShortVideo(2, articleList[3], RawResourceDataSource.buildRawResourceUri(R.raw.video_fire)),
         ShortVideo(3, articleList[4], RawResourceDataSource.buildRawResourceUri(R.raw.video_atoms)),
         ShortVideo(4, articleList[5], RawResourceDataSource.buildRawResourceUri(R.raw.video_snake)),
+    )
+
+    val overviewList = listOf(
+        Overview(
+            0,
+            "https://www.sciencenews.org/wp-content/uploads/2021/08/082821_reviews_fringe_feat-1030x580.jpg",
+            "History",
+            shortList
+        ),
+        Overview(
+            1,
+            "https://www.sciencenews.org/wp-content/uploads/2018/02/030318_organoids_main.jpg",
+            "Human",
+            shortList
+        ),
+        Overview(
+            2,
+            "https://www.sciencenews.org/wp-content/uploads/2017/09/091617_reviews_quake_main.jpg",
+            "Earth",
+            shortList
+        ),
+        Overview(
+            3,
+            "https://www.sciencenews.org/wp-content/uploads/2021/09/090221_rc_wildfire-smoke_feat-1030x580.jpg",
+            "Weather",
+            shortList
+        ),
+        Overview(
+            4,
+            "https://www.sciencenews.org/wp-content/uploads/2021/09/090721_jb_metal-mandibles_feat-1030x580.jpg",
+            "Animals",
+            shortList
+        )
     )
 
     val newsList = listOf(
@@ -430,32 +463,4 @@ object DummyData {
             ContentImage(selectedArticle.contentImage),
             NormalBody(selectedArticle.bodyText[1]),
         )
-
-    val overviewList = listOf(
-        Overview(
-            0,
-            "https://www.sciencenews.org/wp-content/uploads/2021/08/082821_reviews_fringe_feat-1030x580.jpg",
-            "History"
-        ),
-        Overview(
-            1,
-            "https://www.sciencenews.org/wp-content/uploads/2018/02/030318_organoids_main.jpg",
-            "Human"
-        ),
-        Overview(
-            2,
-            "https://www.sciencenews.org/wp-content/uploads/2017/09/091617_reviews_quake_main.jpg",
-            "Earth"
-        ),
-        Overview(
-            3,
-            "https://www.sciencenews.org/wp-content/uploads/2021/09/090221_rc_wildfire-smoke_feat-1030x580.jpg",
-            "Weather"
-        ),
-        Overview(
-            4,
-            "https://www.sciencenews.org/wp-content/uploads/2021/09/090721_jb_metal-mandibles_feat-1030x580.jpg",
-            "Animals"
-        )
-    )
 }
