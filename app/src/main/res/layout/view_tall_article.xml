@@ -75,8 +75,21 @@
             app:layout_constraintBottom_toTopOf="@id/bottom_tall_article_guideline"
             app:layout_constraintEnd_toStartOf="@id/buttons_left_tall_article_barrier"
             app:layout_constraintStart_toStartOf="@id/left_tall_article_guideline"
-            app:layout_constraintTop_toTopOf="@id/tall_save_imageButton"
+            app:layout_constraintTop_toTopOf="@id/tall_share_imageButton"
             tools:text="September 2, 2021 • Joe Bishop" />
+
+        <ImageButton
+            android:id="@+id/tall_share_imageButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:background="@null"
+            android:contentDescription="@string/share_button"
+            android:minHeight="48dp"
+            android:padding="5dp"
+            android:src="@drawable/ic_share"
+            app:layout_constraintBottom_toTopOf="@id/bottom_tall_article_guideline"
+            app:layout_constraintEnd_toStartOf="@id/tall_save_imageButton" />
 
         <ImageButton
             android:id="@+id/tall_save_imageButton"
@@ -88,19 +101,6 @@
             android:minHeight="48dp"
             android:padding="5dp"
             android:src="@drawable/ic_save"
-            app:layout_constraintBottom_toTopOf="@id/bottom_tall_article_guideline"
-            app:layout_constraintEnd_toStartOf="@id/tall_extra_imageButton" />
-
-        <ImageButton
-            android:id="@+id/tall_extra_imageButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:alpha="0.7"
-            android:background="@null"
-            android:contentDescription="@string/extra_section_button"
-            android:minHeight="48dp"
-            android:padding="5dp"
-            android:src="@drawable/ic_menu"
             app:layout_constraintBottom_toTopOf="@id/bottom_tall_article_guideline"
             app:layout_constraintEnd_toStartOf="@id/right_tall_article_guideline" />
 
@@ -137,14 +137,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="left"
-            app:constraint_referenced_ids="tall_save_imageButton" />
+            app:constraint_referenced_ids="tall_share_imageButton" />
 
         <androidx.constraintlayout.widget.Barrier
             android:id="@+id/tall_title_bottom_tall_article_barrier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="top"
-            app:constraint_referenced_ids=",tall_save_imageButton,tall_short_info_textView,tall_extra_imageButton"
+            app:constraint_referenced_ids=",tall_share_imageButton,tall_short_info_textView,tall_save_imageButton"
             tools:layout_editor_absoluteY="731dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

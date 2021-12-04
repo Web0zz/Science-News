@@ -17,20 +17,6 @@
             motion:layout_constraintStart_toStartOf="parent"
             motion:layout_constraintTop_toTopOf="parent" />
         <Constraint
-            android:id="@+id/back_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0"
-            motion:layout_constraintStart_toStartOf="@+id/tall_left_guideline"
-            motion:layout_constraintTop_toTopOf="@+id/top_overview_guideline" />
-        <Constraint
-            android:id="@+id/extra_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:alpha="0"
-            motion:layout_constraintEnd_toStartOf="@+id/tall_right_guideline"
-            motion:layout_constraintTop_toTopOf="@+id/top_overview_guideline" />
-        <Constraint
             android:id="@+id/dateAuthor_textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

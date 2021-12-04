@@ -1,5 +1,6 @@
 package com.web0zz.science_news.base
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
@@ -14,7 +15,7 @@ abstract class BasePlayerFragment<B : ViewDataBinding>(
 ) : BaseSimpleFragment<B>(inflateLayout) {
     private var player: ExoPlayer? = null
     protected abstract var playerView: PlayerView
-    protected abstract var playVideoUrl: String
+    protected abstract var playVideoUri: Uri
 
     private var playWhenReady = true
     private var currentWindow = 0
@@ -39,14 +40,14 @@ abstract class BasePlayerFragment<B : ViewDataBinding>(
         }
     }
 
-    private fun initializePlayer() {
+    protected open fun initializePlayer() {
         player = ExoPlayer.Builder(requireContext())
             .build()
             .also { exoPlayer ->
                 playerView.player = exoPlayer
                 exoPlayer.seekTo(currentWindow, playbackPosition)
                 exoPlayer.addListener(playbackStateListener)
-                val mediaItem = MediaItem.fromUri(playVideoUrl)
+                val mediaItem = MediaItem.fromUri(playVideoUri)
                 exoPlayer.setMediaItem(mediaItem)
                 exoPlayer.playWhenReady = playWhenReady
                 exoPlayer.seekTo(currentWindow, playbackPosition)
@@ -54,7 +55,7 @@ abstract class BasePlayerFragment<B : ViewDataBinding>(
             }
     }
 
-    private fun releasePlayer() {
+    protected open fun releasePlayer() {
         player?.run {
             playbackPosition = this.currentPosition
             currentWindow = this.currentMediaItemIndex

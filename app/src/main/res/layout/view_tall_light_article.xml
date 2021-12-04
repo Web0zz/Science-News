@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-
-        <variable
-            name="onClickDetail"
-            type="com.web0zz.science_news.util.FragmentUtil.OnClickDetail" />
-
-        <import type="java.util.List" />
-
-        <import type="com.web0zz.science_news.data.model.Article" />
-
-        <variable
-            name="articleList"
-            type="List&lt;Article&gt;" />
-    </data>
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -34,186 +18,14 @@
             app:layout_constraintStart_toStartOf="@id/left_tall_light_article_guideline"
             app:layout_constraintTop_toTopOf="@id/top_tall_light_article_guideline" />
 
-        <HorizontalScrollView
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/view_tall_extra_recyclerView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:scrollbars="none"
             app:layout_constraintBottom_toTopOf="@id/bottom_tall_light_article_guideline"
             app:layout_constraintEnd_toStartOf="@id/right_tall_light_article_guideline"
             app:layout_constraintStart_toStartOf="@id/left_tall_light_article_guideline"
-            app:layout_constraintTop_toBottomOf="@id/head_textView">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:onClick="@{_ -> onClickDetail.action(articleList[0].id)}"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="10dp">
-
-                    <ImageView
-                        android:id="@+id/section_thumbnail_imageView_1"
-                        CornerRadius="@{30}"
-                        Height="@{650}"
-                        LoadRoundedImage="@{articleList[0].thumbnail}"
-                        Width="@{1000}"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/article_thumbnail"
-                        tools:src="@drawable/news1" />
-
-                    <TextView
-                        android:id="@+id/section_title_textView_1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_light"
-                        android:text="@{articleList[0].title}"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
-
-                    <TextView
-                        android:id="@+id/section_date_author_textView_1"
-                        author="@{articleList[0].author}"
-                        date="@{articleList[0].date}"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:alpha="0.7"
-                        android:fontFamily="@font/roboto_light"
-                        android:paddingTop="10dp"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
-                        tools:text="September 2, 2021 • Joe Bishop" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:onClick="@{_ -> onClickDetail.action(articleList[1].id)}"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="10dp">
-
-                    <ImageView
-                        android:id="@+id/section_thumbnail_imageView_2"
-                        CornerRadius="@{30}"
-                        Height="@{650}"
-                        LoadRoundedImage="@{articleList[1].thumbnail}"
-                        Width="@{1000}"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/article_thumbnail"
-                        tools:src="@drawable/news1" />
-
-                    <TextView
-                        android:id="@+id/section_title_textView_2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_light"
-                        android:text="@{articleList[1].title}"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
-
-                    <TextView
-                        android:id="@+id/section_date_author_textView_2"
-                        author="@{articleList[1].author}"
-                        date="@{articleList[1].date}"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_thin"
-                        android:paddingTop="10dp"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
-                        tools:text="September 2, 2021 • Joe Bishop" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:onClick="@{_ -> onClickDetail.action(articleList[2].id)}"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="10dp">
-
-                    <ImageView
-                        android:id="@+id/section_thumbnail_imageView_3"
-                        CornerRadius="@{30}"
-                        Height="@{650}"
-                        LoadRoundedImage="@{articleList[2].thumbnail}"
-                        Width="@{1000}"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/article_thumbnail"
-                        tools:src="@drawable/news1" />
-
-                    <TextView
-                        android:id="@+id/section_title_textView_3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_light"
-                        android:text="@{articleList[2].title}"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
-
-                    <TextView
-                        android:id="@+id/section_date_author_textView_3"
-                        author="@{articleList[2].author}"
-                        date="@{articleList[2].date}"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_thin"
-                        android:paddingTop="10dp"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
-                        tools:text="September 2, 2021 • Joe Bishop" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:onClick="@{_ -> onClickDetail.action(articleList[3].id)}"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="10dp">
-
-                    <ImageView
-                        android:id="@+id/section_thumbnail_imageView_4"
-                        CornerRadius="@{30}"
-                        Height="@{650}"
-                        LoadRoundedImage="@{articleList[3].thumbnail}"
-                        Width="@{1000}"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:contentDescription="@string/article_thumbnail"
-                        tools:src="@drawable/news1" />
-
-                    <TextView
-                        android:id="@+id/section_title_textView_4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_light"
-                        android:text="@{articleList[3].title}"
-                        android:textColor="@color/white"
-                        android:textSize="16sp"
-                        tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
-
-                    <TextView
-                        android:id="@+id/section_date_author_textView_4"
-                        author="@{articleList[3].author}"
-                        date="@{articleList[3].date}"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_thin"
-                        android:paddingTop="10dp"
-                        android:textColor="@color/white"
-                        android:textSize="14sp"
-                        tools:text="September 2, 2021 • Joe Bishop" />
-                </LinearLayout>
-            </LinearLayout>
-
-        </HorizontalScrollView>
+            app:layout_constraintTop_toBottomOf="@id/head_textView" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/top_tall_light_article_guideline"

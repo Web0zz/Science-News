@@ -1,20 +1,19 @@
 <resources>
     <string name="app_name">Science-News</string>
-    <string name="science_news">Science News</string>
+    <string name="science_news">SCIENCE NEWS</string>
     <string name="thumbnail">Thumbnail</string>
-    <string name="back_button">Back</string>
-    <string name="menu_button">Menu</string>
     <string name="content_image">Content Image</string>
     <string name="save_button">Save</string>
-    <string name="extra_section_button">Extra Section</string>
+    <string name="share_button">Share</string>
     <string name="what_to_read">What to read</string>
-    <string name="user">User</string>
-    <string name="search">Search</string>
     <string name="overview">Overview</string>
     <string name="article_thumbnail">Article Thumbnail</string>
     <string name="close_overview">Close overview</string>
     <string name="app_widget_description">Science and everyday life cannot and should not be separated.</string>
-    <string name="add_widget">Add widget</string>
+    <string name="home">Home</string>
+    <string name="favorites">Favorites</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
 
     <!-- Temp Data For Tools:text -->
     <string name="body_text_tmp1">For the first time, astronomers have captured solid evidence of a rare double cosmic cannibalism — a star swallowing a compact object such as a black hole or neutron star. In turn, that object gobbled the star’s core, causing it to explode and leave behind only a black hole.
@@ -24,8 +23,5 @@ The first hints of the gruesome event, described in the Sept. 3 Science, came fr
 “We thought, ‘Whoa, this is interesting,’” says Dillon Dong, an astronomer at Caltech.
 <br /><br />
 He and his colleagues made follow-up observations of the galaxy using the VLA and one of the telescopes at the W.M. Keck Observatory in Hawaii, which sees in the same optical light as our eyes. The Keck telescope caught a luminous outflow of material spewing in all directions at 3.2 million kilometers per hour from a central location, suggesting that an energetic explosion had occurred there in the past.</string>
-    <string name="scroll_up_to_new_section">Scroll up to new section</string>
-    <string name="scroll_down_to_new_section">Scroll down to new section</string>
-    <string name="latest_news">Latest News</string>
     <!---->
 </resources>

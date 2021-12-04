@@ -8,14 +8,15 @@ import androidx.databinding.ViewDataBinding
 abstract class BaseActivity<B : ViewDataBinding>(
     private val inflateLayout: (LayoutInflater) -> B
 ) : AppCompatActivity() {
-    private lateinit var activityDataBinding: B
+    protected lateinit var activityDataBinding: B
 
-    /*abstract val navigation: MainNavigation*/
+    open fun initTheme() {}
     open fun initUi() {}
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityDataBinding = inflateLayout(layoutInflater)
+        initTheme()
         setContentView(activityDataBinding.root)
 
         initUi()

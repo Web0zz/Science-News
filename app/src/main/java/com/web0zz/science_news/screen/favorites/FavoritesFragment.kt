@@ -1,14 +1,9 @@
 package com.web0zz.science_news.screen.favorites
 
 import androidx.navigation.NavArgs
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.web0zz.science_news.R
-import com.web0zz.science_news.adapter.favorites.FavoritesRecyclerAdapter
 import com.web0zz.science_news.base.BaseMainFragment
-import com.web0zz.science_news.data.model.Article
-import com.web0zz.science_news.data.model.view.sections.ArticleItem
 import com.web0zz.science_news.databinding.FragmentFavoritesBinding
-import com.web0zz.science_news.util.FragmentUtil
 import com.web0zz.science_news.util.FragmentUtil.getFragmentNavController
 
 class FavoritesFragment :
@@ -18,6 +13,7 @@ class FavoritesFragment :
     }
     override val safeArgs: NavArgs? = null
 
+    /*
     override fun initUi() = initRecyclerViewItems()
 
     // TODO will come from ViewModel that holds article contents
@@ -37,5 +33,5 @@ class FavoritesFragment :
             val action = FavoritesFragmentDirections.actionFavoritesFragmentToDetailFragment(data)
             navController?.navigate(action)
         }
-    }
+    }*/
 }

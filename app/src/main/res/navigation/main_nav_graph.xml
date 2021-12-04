@@ -2,21 +2,11 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/navigation"
-    app:startDestination="@id/splashFragment">
-    <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.web0zz.science_news.screen.splash.SplashFragment"
-        android:label="SplashFragment">
-        <action
-            android:id="@+id/action_splashFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
-            app:popUpTo="@id/splashFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
+    app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.web0zz.science_news.screen.home.HomeFragment"
-        android:label="HomeFragment">
+        android:label="Home">
         <action
             android:id="@+id/action_homeFragment_to_overviewFragment"
             app:destination="@id/overviewFragment" />
@@ -33,7 +23,7 @@
     <fragment
         android:id="@+id/overviewFragment"
         android:name="com.web0zz.science_news.screen.overview.OverviewFragment"
-        android:label="OverviewFragment">
+        android:label="Overview">
         <action
             android:id="@+id/action_overviewFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
@@ -44,7 +34,7 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.web0zz.science_news.screen.detail.DetailFragment"
-        android:label="DetailFragment">
+        android:label="Detail">
         <argument
             android:name="articleId"
             app:argType="integer" />
@@ -53,7 +43,7 @@
     <fragment
         android:id="@+id/favoritesFragment"
         android:name="com.web0zz.science_news.screen.favorites.FavoritesFragment"
-        android:label="FavoritesFragment">
+        android:label="Favorites">
         <action
             android:id="@+id/action_favoritesFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
@@ -61,5 +51,5 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.web0zz.science_news.screen.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="Profile" />
 </navigation>

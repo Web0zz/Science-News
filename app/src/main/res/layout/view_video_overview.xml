@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:fontFamily="@font/roboto_bold"
-            android:text="@{shortVideo.videoArticle.shortBody}"
+            android:text="@{shortVideo.videoArticle.title}"
             android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@id/video_shortBody_textView"

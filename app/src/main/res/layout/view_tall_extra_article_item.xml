@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="articleData"
+            type="com.web0zz.science_news.data.model.Article" />
+
+        <variable
+            name="onClickDetail"
+            type="com.web0zz.science_news.util.FragmentUtil.OnClickDetail" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:onClick="@{_ -> onClickDetail.action(articleData.id)}"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        tools:background="@color/dark_background">
+
+        <ImageView
+            android:id="@+id/section_thumbnail_imageView_1"
+            CornerRadius="@{30}"
+            Height="@{650}"
+            LoadRoundedImage="@{articleData.thumbnail}"
+            Width="@{1000}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/article_thumbnail"
+            tools:src="@drawable/news1" />
+
+        <TextView
+            android:id="@+id/section_title_textView_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light"
+            android:text="@{articleData.title}"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            tools:text="Astronomers may have seen a star gulp down a black hole and explode" />
+
+        <TextView
+            android:id="@+id/section_date_author_textView_1"
+            author="@{articleData.author}"
+            date="@{articleData.date}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:fontFamily="@font/roboto_light"
+            android:paddingTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            tools:text="September 2, 2021 • Joe Bishop" />
+    </LinearLayout>
+</layout>

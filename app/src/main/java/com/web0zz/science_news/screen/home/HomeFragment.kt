@@ -1,31 +1,46 @@
 package com.web0zz.science_news.screen.home
 
-import com.web0zz.science_news.base.BaseSimpleFragment
+import androidx.navigation.NavArgs
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.web0zz.science_news.R
+import com.web0zz.science_news.adapter.home.body.BodyRecyclerAdapter
+import com.web0zz.science_news.base.BaseMainFragment
+import com.web0zz.science_news.data.dummySource.DummyDataSource
 import com.web0zz.science_news.databinding.FragmentHomeBinding
-import com.web0zz.science_news.navigation.CommonFragmentManager
-import com.web0zz.science_news.screen.home.body.HomeBodyFragment
-import com.web0zz.science_news.screen.home.topbar.TopBarFragment
+import com.web0zz.science_news.util.FragmentUtil
+import com.web0zz.science_news.util.FragmentUtil.getFragmentNavController
 
-class HomeFragment : BaseSimpleFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
-    private val fragmentNavigator: CommonFragmentManager by lazy {
-        CommonFragmentManager(parentFragmentManager)
+class HomeFragment : BaseMainFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
+    override val navController by lazy {
+        getFragmentNavController(R.id.nav_host_fragmentContainerView)
     }
+    override val safeArgs: NavArgs? = null
 
-    override fun initUi() {
-        fragmentNavigator.apply {
-            addFragment(
-                fragmentDataBinding.topBarFrameLayout.id,
-                TopBarFragment::newInstance
-            )
-            addFragment(
-                fragmentDataBinding.articleViewsFrameLayout.id,
-                HomeBodyFragment::newInstance
-            )
+    private val articleData = DummyDataSource().newsList
+
+    override fun initUi() = initRecyclerviewItems()
+
+    private fun initRecyclerviewItems() {
+        fragmentDataBinding.articleItemsRecyclerView.apply {
+            layoutManager =
+                LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+            adapter = BodyRecyclerAdapter(articleData, toDetailArticle(), toOverviewArticle())
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        fragmentNavigator.destroyAllFragments()
+    private fun toDetailArticle() = object :
+        FragmentUtil.OnClickDetail {
+        override fun action(data: Int) {
+            val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(data)
+            navController?.navigate(action)
+        }
     }
+
+    private fun toOverviewArticle() =
+        object : FragmentUtil.OnClickOverview {
+            override fun action(data: Int) {
+                val action = HomeFragmentDirections.actionHomeFragmentToOverviewFragment(data)
+                navController?.navigate(action)
+            }
+        }
 }

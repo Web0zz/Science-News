@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="overviewItem"
+            type="com.web0zz.science_news.data.model.Overview" />
+
+        <variable
+            name="onClickOverview"
+            type="com.web0zz.science_news.util.FragmentUtil.OnClickOverview" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginHorizontal="5dp"
+        android:background="@drawable/customborder"
+        android:onClick="@{_ -> onClickOverview.action(overviewItem.id)}"
+        android:padding="1dp">
+
+        <ImageView
+            CornerRadius="@{18}"
+            Height="@{100}"
+            LoadRoundedImage="@{overviewItem.thumbnail_image}"
+            Width="@{100}"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/article_thumbnail"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:background="@color/text_background"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@{overviewItem.name}"
+            android:textColor="@color/white"
+            tools:text="Space" />
+    </RelativeLayout>
+</layout>

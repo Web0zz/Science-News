@@ -1,12 +1,12 @@
 package com.web0zz.science_news.screen.overview.video
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import com.google.android.exoplayer2.ui.PlayerView
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BasePlayerFragment
 import com.web0zz.science_news.data.dummySource.DummyData
-import com.web0zz.science_news.data.model.Article
 import com.web0zz.science_news.data.model.ShortVideo
 import com.web0zz.science_news.databinding.ViewVideoOverviewBinding
 import com.web0zz.science_news.screen.overview.OverviewFragmentDirections
@@ -25,7 +25,7 @@ class VideoFragment :
     private lateinit var shortVideo: ShortVideo
 
     override lateinit var playerView: PlayerView
-    override lateinit var playVideoUrl: String
+    override lateinit var playVideoUri: Uri
 
     override fun Bundle.getArgumentsToVariableByBundle() {
         shortVideoId = this.getInt(CURRENT_OVERVIEW_ID)
@@ -33,7 +33,7 @@ class VideoFragment :
 
         getShortVideos().apply {
             shortVideo = this
-            playVideoUrl = videoUrl
+            playVideoUri = videoUrl
         }
     }
 

@@ -2,6 +2,7 @@ package com.web0zz.science_news.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.navigation.NavArgs
@@ -14,6 +15,13 @@ abstract class BaseMainFragment<B : ViewDataBinding>(
     protected abstract val navController: NavController?
 
     open fun getArgumentsToVariable() {}
+
+    open fun Menu.updateOptionsMenu() {}
+
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+        menu.updateOptionsMenu()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

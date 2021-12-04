@@ -1,8 +1,11 @@
 package com.web0zz.science_news.screen.overview
 
+import android.view.View
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.widget.Toolbar
 import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.web0zz.science_news.R
 import com.web0zz.science_news.adapter.home.sections.VideoSlidePagerAdapter
 import com.web0zz.science_news.base.BaseMainFragment
@@ -26,12 +29,29 @@ class OverviewFragment :
     private lateinit var selectedOverview: Overview
     private lateinit var viewPager2: ViewPager2
 
+    private fun firstSetupLayout(onCreate: Boolean) {
+        // TODO access via dataBinding
+        val navbar =
+            requireActivity().findViewById<BottomNavigationView>(R.id.nav_bottomNavigationView)
+        val toolbar = requireActivity().findViewById<Toolbar>(R.id.main_toolbar)
+
+        if (onCreate) {
+            navbar.visibility = View.GONE
+            toolbar.visibility = View.GONE
+        } else {
+            navbar.visibility = View.VISIBLE
+            toolbar.visibility = View.VISIBLE
+        }
+    }
+
     override fun getArgumentsToVariable() {
         selectedOverviewId = safeArgs.overviewId
         selectedOverview = getSelectedOverview(selectedOverviewId)
     }
 
     override fun initUi() {
+        firstSetupLayout(true)
+
         fragmentDataBinding.overview = selectedOverview
         fragmentDataBinding.onClickClose = closeOverview()
 
@@ -59,6 +79,7 @@ class OverviewFragment :
     private fun closeOverview() = object : FragmentUtil.OnClickCloseOnOverview {
         override fun action(data: Nothing?) {
             navController?.popBackStack()
+            firstSetupLayout(false)
         }
     }
 

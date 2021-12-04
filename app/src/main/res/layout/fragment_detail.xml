@@ -6,10 +6,6 @@
     <data>
 
         <variable
-            name="onClickBack"
-            type="com.web0zz.science_news.util.FragmentUtil.OnClickBackOnDetail" />
-
-        <variable
             name="article"
             type="com.web0zz.science_news.data.model.Article" />
     </data>
@@ -37,34 +33,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:src="@drawable/news1" />
-
-            <ImageButton
-                android:id="@+id/back_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:contentDescription="@string/back_button"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:onClick="@{() -> onClickBack.action(null)}"
-                android:padding="10dp"
-                android:src="@drawable/ic_back"
-                app:layout_constraintStart_toStartOf="@id/left_detail_guideline"
-                app:layout_constraintTop_toTopOf="@id/top_detail_guideline" />
-
-            <ImageButton
-                android:id="@+id/extra_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:background="@null"
-                android:contentDescription="@string/menu_button"
-                android:minWidth="48dp"
-                android:minHeight="48dp"
-                android:padding="10dp"
-                android:src="@drawable/ic_menu"
-                app:layout_constraintEnd_toStartOf="@id/right_detail_guideline"
-                app:layout_constraintTop_toTopOf="@id/top_detail_guideline" />
 
             <TextView
                 android:id="@+id/dateAuthor_textView"

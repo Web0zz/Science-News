@@ -1,5 +1,8 @@
 package com.web0zz.science_news.adapter.favorites
 
+/*
+TODO coming soon
+
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.web0zz.science_news.adapter.home.body.viewholder.ShortArticleViewHolder
@@ -46,4 +49,4 @@ class FavoritesRecyclerAdapter(
     }
 
     override fun getItemCount() = items.size
-}
+}*/

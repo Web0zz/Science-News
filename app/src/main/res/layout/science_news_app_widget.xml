@@ -9,17 +9,16 @@
         android:id="@+id/widget_head_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
+        android:fontFamily="@font/garet"
+        android:padding="5dp"
         android:text="@string/science_news"
-        android:textColor="@color/white"
-        android:fontFamily="@font/pinto"
         android:textAlignment="center"
-        android:padding="5dp" />
+        android:textColor="@color/white"
+        android:textSize="18sp" />
 
     <ListView
         android:id="@+id/widget_article_listView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:dividerHeight="1dp">
-    </ListView>
+        android:dividerHeight="1dp" />
 </LinearLayout>

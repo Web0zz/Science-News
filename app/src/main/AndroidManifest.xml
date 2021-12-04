@@ -4,7 +4,6 @@
     package="com.web0zz.science_news">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -27,19 +26,20 @@
                 android:resource="@xml/science_news_app_widget_info" />
         </receiver>
 
-        <service android:name="com.web0zz.science_news.widget.ListWidgetService"
-            android:permission="android.permission.BIND_REMOTEVIEWS"
-            android:exported="false" />
+        <service
+            android:name="com.web0zz.science_news.widget.ListWidgetService"
+            android:exported="false"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme"
             tools:ignore="LockedOrientationActivity">
             <nav-graph android:value="@navigation/main_nav_graph" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

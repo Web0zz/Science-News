@@ -5,19 +5,13 @@ import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.widget.ArrayAdapter
 import android.widget.RemoteViews
-import android.widget.RemoteViewsService
-import android.widget.Toast
 import androidx.navigation.NavDeepLinkBuilder
 import com.web0zz.science_news.MainActivity
 import com.web0zz.science_news.R
-import com.web0zz.science_news.data.dummySource.DummyData
-import com.web0zz.science_news.data.model.Article
 
 const val DETAIL_ACTION = "com.web0zz.android.listwidget.DETAIL_ACTION"
 const val ARTICLE_ID = "com.web0zz.android.listwidget.ARTICLE_ID"
@@ -36,7 +30,7 @@ class ScienceNewsAppWidgetProvider : AppWidgetProvider() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
         if (intent?.action == DETAIL_ACTION) {
-            val articleID = intent.getIntExtra(ARTICLE_ID,0)
+            val articleID = intent.getIntExtra(ARTICLE_ID, 0)
 
             val args = Bundle()
             args.putInt("articleId", articleID)
@@ -45,6 +39,7 @@ class ScienceNewsAppWidgetProvider : AppWidgetProvider() {
                 .setGraph(R.navigation.main_nav_graph)
                 .setDestination(R.id.detailFragment)
                 .setArguments(args)
+                .setComponentName(MainActivity::class.java)
                 .createPendingIntent()
                 .send()
         }
@@ -76,7 +71,9 @@ internal fun updateAppWidget(
         toDetailIntent,
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             PendingIntent.FLAG_IMMUTABLE or PendingIntent.FLAG_UPDATE_CURRENT
-        } else { PendingIntent.FLAG_UPDATE_CURRENT }
+        } else {
+            PendingIntent.FLAG_UPDATE_CURRENT
+        }
     )
 
     views.setPendingIntentTemplate(R.id.widget_article_listView, toDetailPendingIntent)
