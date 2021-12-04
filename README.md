@@ -1,5 +1,5 @@
 # Science News
-<i>Made for Kekod Android Weekly Challange.</i>
+<i>Made for Kekod Android Weekly Challenge.</i>
 <br><br>
 
 ### Features
