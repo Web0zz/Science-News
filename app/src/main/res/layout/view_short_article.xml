@@ -103,7 +103,7 @@
             android:background="@null"
             android:contentDescription="@string/save_button"
             android:minHeight="48dp"
-            android:src="@drawable/ic_save"
+            android:src="@drawable/ic_unsaved"
             app:layout_constraintBottom_toTopOf="@id/bottom_short_article_guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@id/right_short_article_guideline"

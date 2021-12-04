@@ -42,6 +42,16 @@
             app:resize_mode="fill"
             app:use_controller="false" />
 
+        <!-- TODO This is temporary solution to readable text -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/image_shadow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
         <TextView
             android:id="@+id/video_title_textView"
             android:layout_width="0dp"

@@ -18,6 +18,7 @@ abstract class BaseFragment<B : ViewDataBinding>(
     open fun handleBackPressed() {}
 
     open fun initUi() {}
+    open fun initCreate() {}
     open fun initStart() {}
     open fun initResume() {}
     open fun initPause() {}
@@ -46,6 +47,7 @@ abstract class BaseFragment<B : ViewDataBinding>(
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         handleBackPressed()
+        initCreate()
     }
 
     override fun onCreateView(

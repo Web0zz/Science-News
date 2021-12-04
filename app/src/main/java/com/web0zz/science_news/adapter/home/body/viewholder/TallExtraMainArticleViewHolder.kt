@@ -11,7 +11,7 @@ import com.web0zz.science_news.data.model.view.sections.TallLightArticle
 import com.web0zz.science_news.databinding.ViewTallLightArticleBinding
 import com.web0zz.science_news.util.FragmentUtil
 
-class TallLightArticleViewHolder(
+class TallExtraMainArticleViewHolder(
     private val binding: ViewTallLightArticleBinding,
     private val onArticleClicked: FragmentUtil.OnClickDetail,
 ) : RecyclerView.ViewHolder(binding.root) {
@@ -33,10 +33,10 @@ class TallLightArticleViewHolder(
         fun create(
             parent: ViewGroup,
             onArticleClicked: FragmentUtil.OnClickDetail
-        ): TallLightArticleViewHolder {
+        ): TallExtraMainArticleViewHolder {
             val view = ViewTallLightArticleBinding
                 .inflate(LayoutInflater.from(parent.context), parent, false)
-            return TallLightArticleViewHolder(view, onArticleClicked)
+            return TallExtraMainArticleViewHolder(view, onArticleClicked)
         }
     }
 }

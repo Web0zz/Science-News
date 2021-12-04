@@ -100,7 +100,7 @@
             android:contentDescription="@string/save_button"
             android:minHeight="48dp"
             android:padding="5dp"
-            android:src="@drawable/ic_save"
+            android:src="@drawable/ic_unsaved"
             app:layout_constraintBottom_toTopOf="@id/bottom_tall_article_guideline"
             app:layout_constraintEnd_toStartOf="@id/right_tall_article_guideline" />
 

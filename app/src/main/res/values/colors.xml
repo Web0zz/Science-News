@@ -10,7 +10,7 @@
     <color name="border">#D1A317</color>
 
     <color name="selected_item">#FFFFFFFF</color>
-    <color name="unselected_item">#90FFFFFF</color>
+    <color name="unselected_item">#5CFFFFFF</color>
 
     <color name="text_background">#19222222</color>
     <color name="light_blue_50">#FFE1F5FE</color>

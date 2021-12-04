@@ -50,7 +50,8 @@ While theorists have previously envisioned such a scenario, dubbed a merger-trig
 The final stages of these systems are exactly what observatories like the Advanced Laser Interferometer Gravitational-Wave Observatory, or LIGO, detect when capturing spacetime’s ripples, Dong says (SN: 8/4/21). Now that astronomers know to look for these multiple lines of evidence, he expects them to find more examples this strange phenomenon.""",
             ),
             "https://www.sciencenews.org/wp-content/uploads/2021/08/080321_ec_gravitational-waves_feat.jpg",
-            "https://www.sciencenews.org/wp-content/uploads/2021/09/090221_am_new-supernova_feat-1030x580.jpg"
+            "https://www.sciencenews.org/wp-content/uploads/2021/09/090221_am_new-supernova_feat-1030x580.jpg",
+            shareLink = "https://www.sciencenews.org/article/astronomy-star-swallow-black-hole-supernova-cosmology"
         ),
         Article(
             1,
@@ -70,7 +71,8 @@ Finding such a huge supermassive black hole so early in the universe’s history
 A gargantuan seed black hole may have formed through the direct collapse of vast amounts of primordial hydrogen gas, says study coauthor Xiaohui Fan, also an astronomer at the University of Arizona in Tucson. Or perhaps J0313-1806’s seed started out small, forming through stellar collapse, and black holes can grow a lot faster than scientists think. “Both possibilities exist, but neither is proven,” Fan says. “We have to look much earlier [in the universe] and look for much less massive black holes to see how these things grow.”""",
             ),
             "https://www.sciencenews.org/wp-content/uploads/2021/07/071621_mt_event-horizon_feat-1028x580.jpg",
-            "https://www.sciencenews.org/wp-content/uploads/2021/01/011421_mt_quasar_feat-1030x580.jpg"
+            "https://www.sciencenews.org/wp-content/uploads/2021/01/011421_mt_quasar_feat-1030x580.jpg",
+            shareLink = "https://www.sciencenews.org/article/most-ancient-supermassive-black-hole-quasar-bafflingly-big"
         ),
         Article(
             2,
@@ -108,7 +110,8 @@ Still, the research provides a good starting place, she says. “Studying these 
 """
             ),
             "https://www.sciencenews.org/wp-content/uploads/2020/09/091220_BB_reviews_feat-1028x579.jpg",
-            "https://www.sciencenews.org/wp-content/uploads/2021/09/090721_cw_babylaugh_feat-1030x580.jpg"
+            "https://www.sciencenews.org/wp-content/uploads/2021/09/090721_cw_babylaugh_feat-1030x580.jpg",
+            shareLink = "https://www.sciencenews.org/article/infant-laugh-babies-apes-evolution-bonding"
         ),
         Article(
             3,
@@ -140,7 +143,8 @@ Previous studies conducted in the Amazon have shown that “smoke will make the 
 Wildfires in the western United States have been breaking records in recent years — increasing in number and size due to climate change — a trend that scientists think will get worse as the globe continues to warm (SN: 12/21/20). As a result, Twohy says, it’s increasingly important that researchers continue to monitor these fires’ influence on the atmosphere.""",
             ),
             "https://www.sciencenews.org/wp-content/uploads/2020/11/092520_CM_50YA_cloud-microbes-1028x579.jpg",
-            "https://www.sciencenews.org/wp-content/uploads/2021/09/090221_rc_wildfire-smoke_feat-1030x580.jpg"
+            "https://www.sciencenews.org/wp-content/uploads/2021/09/090221_rc_wildfire-smoke_feat-1030x580.jpg",
+            shareLink = "https://www.sciencenews.org/?s=Clouds+affected+by+wildfire+smoke+may+produce+less+rain"
         ),
         Article(
             4,
@@ -180,7 +184,8 @@ But so far scientists have created only tiny specks of the material at high pres
 Still, “the temperature is not a limit anymore,” says Somayazulu, of Argonne National Laboratory in Lemont, Ill., who was not involved with the new research. Instead, physicists now have a new aim: to create a room-temperature superconductor that works without putting on the squeeze, Somayazulu says. “That’s the next big step we have to do.”""",
             ),
             "https://www.sciencenews.org/wp-content/uploads/2021/07/072421_weinberg_closecrop.jpg",
-            "https://www.sciencenews.org/wp-content/uploads/2020/10/101320_ec_superconductor_feat-1028x579.jpg"
+            "https://www.sciencenews.org/wp-content/uploads/2020/10/101320_ec_superconductor_feat-1028x579.jpg",
+            shareLink = "https://www.sciencenews.org/article/physics-first-room-temperature-superconductor-discovery"
         ),
         Article(
             5,
@@ -202,7 +207,8 @@ Compared with the three other boa species found on the island, the Hispaniolan v
 But the species may already be in trouble. All serpents that the team found were within one kilometer of each other. That’s “a little bit alarming in the sense that they might be restricted to a very small area,” Reynolds says. Agricultural activities such as charcoal burning threaten the species’ habitat. The team’s next steps will be to figure out the boa’s true range and how big individuals can get.   """,
             ),
             "https://www.sciencenews.org/wp-content/uploads/2021/01/010821_mt_climbing-snakes_feat.jpg",
-            "https://www.sciencenews.org/wp-content/uploads/2021/09/090821_EG_boa_feat-1030x580.jpg"
+            "https://www.sciencenews.org/wp-content/uploads/2021/09/090821_EG_boa_feat-1030x580.jpg",
+            shareLink = "https://www.sciencenews.org/article/boa-snake-caribbean-hispaniolan-vineboa"
         ),
         Article(
             6,
@@ -220,7 +226,8 @@ For fish and other underwater life, a sensitivity to chemicals plays the same ro
 Chemical pollution — from sewage and agricultural runoff to pharmaceutical waste — muddles aquatic animals’ senses with potentially dire effects, decades of research has shown. A chemical used to treat sewage seems to limit some fish species’ abilities to form schools, making the fish vulnerable to predators (SN: 10/27/07, p. 262). Drug-tainted waters can have a variety of effects on fish, including suppressing their appetites (SN: 12/20/08, p. 15). A plastic chemical also appears to confuse senses: Its scent can lure sea turtles into eating plastic debris (SN: 3/28/20, p. 14).""",
             ),
             "https://www.sciencenews.org/wp-content/uploads/2021/07/071221_jl_froghopper_feat-1030x580.jpg",
-            "https://www.sciencenews.org/wp-content/uploads/2021/09/081321_aa_50ya-chemical-pollution_feat-1030x580.jpg"
+            "https://www.sciencenews.org/wp-content/uploads/2021/09/081321_aa_50ya-chemical-pollution_feat-1030x580.jpg",
+            shareLink = "https://www.sciencenews.org/article/50-years-ago-chemical-pollutants-animal-behavior"
         ),
         Article(
             7,
@@ -256,7 +263,8 @@ Ancient DNA usually has been degraded into tiny fragments and researchers have p
 Or it could go the other way. As more genomes are deciphered from Neandertals, Denisovans and other extinct hominids, researchers may discover that some of what now seems like uniquely human DNA was also carried by those extinct relatives, Harris says. “This estimate of the amount of uniquely human regions is only going to go down.”""",
             ),
             "https://www.sciencenews.org/wp-content/uploads/2021/06/060421_eg_dna-packaging_feat.jpg",
-            "https://www.sciencenews.org/wp-content/uploads/2021/07/071621_ts_dna_feat.jpg"
+            "https://www.sciencenews.org/wp-content/uploads/2021/07/071621_ts_dna_feat.jpg",
+            shareLink = "https://www.sciencenews.org/article/only-a-tiny-fraction-of-our-dna-is-uniquely-human"
         ),
         Article(
             8,
@@ -276,7 +284,8 @@ That intense rainfall might occur once every 400 years under current climate con
 That finding is consistent with data cited in the Intergovernmental Panel on Climate Change’s sixth assessment report, which notes that as global temperatures continue to rise, western and central Europe will see more intense rainfall events (SN: 8/9/21).""",
             ),
             "https://www.sciencenews.org/wp-content/uploads/2021/08/080921_cg_IPCC_feat-1030x580.jpg",
-            "https://www.sciencenews.org/wp-content/uploads/2021/08/082321_CG_europe-floods_feat-1030x580.jpg"
+            "https://www.sciencenews.org/wp-content/uploads/2021/08/082321_CG_europe-floods_feat-1030x580.jpg",
+            shareLink = "https://www.sciencenews.org/article/climate-change-europe-flash-flood-rain-july"
         ),
         Article(
             9,
@@ -315,6 +324,7 @@ More recently, brief blasts of radio energy primarily from other galaxies have c
             ),
             "https://www.sciencenews.org/wp-content/uploads/2021/08/100-worlds_spotlight-radio_inline_jansky.jpg",
             "https://www.sciencenews.org/wp-content/uploads/2021/08/100-worlds_spotlight-radio_feat_vla-1440x700.jpg",
+            shareLink = "https://www.sciencenews.org/article/radio-astronomy-history-cosmos-black-hole-planet-universe"
         ),
         Article(
             10,
@@ -342,7 +352,8 @@ In physics, “most important things are achieved when we are revisiting known p
 """,
             ),
             "https://www.sciencenews.org/wp-content/uploads/2021/08/080521_EC_light-matter_feat.jpg",
-            "https://www.sciencenews.org/wp-content/uploads/2021/09/090221_ec_vortex-beams_feat-1030x580.jpg"
+            "https://www.sciencenews.org/wp-content/uploads/2021/09/090221_ec_vortex-beams_feat-1030x580.jpg",
+            shareLink = "https://www.sciencenews.org/article/vortex-beam-atom-molecule-quantum-physics"
         ),
         Article(
             11,
@@ -364,7 +375,8 @@ These organoids looked like those grown from healthy people, but behaved differe
 With organoids carrying Rett syndrome mutations, scientists can better understand the syndrome and even begin to test possible treatments. Organoids might yield insights into other disorders, too, says coauthor Bennett Novitch, a developmental neuroscientist at the David Geffen School of Medicine at UCLA. “Work on this front is already under way in labs around the world.”""",
             ),
             "https://www.sciencenews.org/wp-content/uploads/2021/03/100-brain_intro_modernview-702x450.jpg",
-            "https://www.sciencenews.org/wp-content/uploads/2021/08/082721_LS_brain-organoid_feat-1030x580.jpg"
+            "https://www.sciencenews.org/wp-content/uploads/2021/08/082721_LS_brain-organoid_feat-1030x580.jpg",
+            shareLink = "https://www.sciencenews.org/article/brain-human-organoids-personalized-cluster-cells-study-disorders"
         )
     )
 

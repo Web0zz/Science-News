@@ -3,11 +3,14 @@ package com.web0zz.science_news.adapter.home.body.viewholder
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.web0zz.science_news.R
 import com.web0zz.science_news.data.model.view.sections.ShortArticle
 import com.web0zz.science_news.databinding.ViewShortArticleBinding
+import com.web0zz.science_news.util.ActivityUtil.shareArticleLink
 import com.web0zz.science_news.util.FragmentUtil
+import com.web0zz.science_news.util.ViewUtil.setSaveButton
 
 class ShortArticleViewHolder(
     private val binding: ViewShortArticleBinding,
@@ -16,6 +19,28 @@ class ShortArticleViewHolder(
     fun bind(short: ShortArticle) {
         binding.article = short.article
         binding.onClickDetail = onArticleClicked
+
+        binding.shortShareImageButton.setOnClickListener {
+            it.context.shareArticleLink(short.article.shareLink)
+        }
+
+        binding.tallSaveImageButton.apply {
+            setSaveButton(short.article.isSaved)
+            setOnClickListener {
+                when (short.article.isSaved) {
+                    true -> {
+                        setSaveButton(false)
+                        short.article.isSaved = false
+                        Toast.makeText(context, "Article Unsaved", Toast.LENGTH_SHORT).show()
+                    }
+                    false -> {
+                        setSaveButton(true)
+                        short.article.isSaved = true
+                        Toast.makeText(context, "Article Saved", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
 
         val animationView = AnimationUtils.loadAnimation(
             binding.root.context,

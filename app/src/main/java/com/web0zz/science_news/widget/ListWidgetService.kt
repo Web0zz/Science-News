@@ -43,8 +43,8 @@ class ListWidgetServiceFactory(
 
             setTextViewText(R.id.widget_item_article_title_textView, widgetItems[p0].title)
             setTextViewText(
-                R.id.widget_item_article_short_description_textView,
-                widgetItems[p0].shortBody
+                R.id.widget_item_article_author_textView,
+                widgetItems[p0].author
             )
             setImageViewBitmap(R.id.widget_item_article_thumbnail_imageView, imageBitmap)
 

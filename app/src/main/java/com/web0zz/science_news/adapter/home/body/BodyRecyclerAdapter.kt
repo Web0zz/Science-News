@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.web0zz.science_news.adapter.home.body.viewholder.OverviewArticleViewHolder
 import com.web0zz.science_news.adapter.home.body.viewholder.ShortArticleViewHolder
 import com.web0zz.science_news.adapter.home.body.viewholder.TallArticleViewHolder
-import com.web0zz.science_news.adapter.home.body.viewholder.TallLightArticleViewHolder
+import com.web0zz.science_news.adapter.home.body.viewholder.TallExtraMainArticleViewHolder
 import com.web0zz.science_news.data.model.view.sections.ArticleItem
 import com.web0zz.science_news.data.model.view.sections.ArticleItem.Type.*
 import com.web0zz.science_news.data.model.view.sections.ShortArticle
@@ -25,7 +25,7 @@ class BodyRecyclerAdapter(
             OVERVIEW_ARTICLE.ordinal -> OverviewArticleViewHolder.create(parent, onOverviewClicked)
             SHORT_ARTICLE.ordinal -> ShortArticleViewHolder.create(parent, onArticleClicked)
             TALL_ARTICLE.ordinal -> TallArticleViewHolder.create(parent, onArticleClicked)
-            TALL_LIGHT_ARTICLE.ordinal -> TallLightArticleViewHolder.create(
+            TALL_LIGHT_ARTICLE.ordinal -> TallExtraMainArticleViewHolder.create(
                 parent,
                 onArticleClicked
             )
@@ -38,7 +38,7 @@ class BodyRecyclerAdapter(
             is OverviewArticleViewHolder -> holder.bind()
             is ShortArticleViewHolder -> holder.bind(items[position] as ShortArticle)
             is TallArticleViewHolder -> holder.bind(items[position] as TallArticle)
-            is TallLightArticleViewHolder -> holder.bind(items[position] as TallLightArticle)
+            is TallExtraMainArticleViewHolder -> holder.bind(items[position] as TallLightArticle)
             else -> throw Exception("Unknown view type exception")
         }
     }

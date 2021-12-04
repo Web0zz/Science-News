@@ -38,7 +38,7 @@
         <argument
             android:name="articleId"
             app:argType="integer" />
-        <deepLink app:uri="science-news://detail?articleId={articleId}" />
+        <deepLink app:uri="web0zz://science-news/detail?articleId={articleId}" />
     </fragment>
     <fragment
         android:id="@+id/favoritesFragment"

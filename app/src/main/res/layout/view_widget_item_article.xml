@@ -5,14 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginVertical="3dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:background="@color/light_background">
 
     <ImageView
         android:id="@+id/widget_item_article_thumbnail_imageView"
         android:layout_width="85dp"
         android:layout_height="65dp"
         android:layout_alignParentStart="true"
-        android:layout_margin="10dp"
+        android:layout_margin="8dp"
         android:contentDescription="@string/article_thumbnail"
         android:scaleType="centerCrop"
         tools:src="@drawable/news1" />
@@ -24,11 +25,15 @@
         android:layout_alignTop="@+id/widget_item_article_thumbnail_imageView"
         android:layout_alignParentEnd="@id/widget_item_article_thumbnail_imageView"
         android:layout_toEndOf="@+id/widget_item_article_thumbnail_imageView"
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_medium"
+        android:maxLength="90"
+        android:textColor="@color/white"
         android:textSize="16sp"
         tools:text="This is the title" />
 
     <TextView
-        android:id="@+id/widget_item_article_short_description_textView"
+        android:id="@+id/widget_item_article_author_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/widget_item_article_title_textView"
@@ -36,6 +41,10 @@
         android:layout_alignParentBottom="@+id/widget_item_article_title_textView"
         android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/widget_item_article_thumbnail_imageView"
-        android:textSize="14sp"
-        tools:text="Hello to short description" />
+        android:ellipsize="end"
+        android:fontFamily="@font/roboto_thin"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        tools:text="Carl Sagan" />
 </RelativeLayout>
