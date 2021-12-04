@@ -1,6 +1,7 @@
 # Science News
 <i>Made for Kekod Android Weekly Challenge.</i>
 <br><br>
+![ic_launcher](https://user-images.githubusercontent.com/61796073/144723776-8c9b5693-e0d4-4169-98a7-aaceb327398c.png)
 
 ### Features
 - Exoplayer : Used for Short videos about articles, like an instagram storie.
