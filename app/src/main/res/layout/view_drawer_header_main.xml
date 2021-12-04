@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/extra_light_background"
+        android:paddingVertical="20dp">
+
+        <ImageView
+            android:id="@+id/head_profile_imageView"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:contentDescription="@string/user_profile"
+            android:src="@drawable/profile_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/profile_name_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/profile_dummy_name"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/head_profile_imageView"
+            app:layout_constraintTop_toBottomOf="@+id/head_profile_imageView" />
+
+        <TextView
+            android:id="@+id/profile_email_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/roboto_light"
+            android:text="@string/profile_dummy_email"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/profile_name_textView"
+            app:layout_constraintTop_toBottomOf="@+id/profile_name_textView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

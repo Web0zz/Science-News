@@ -7,7 +7,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.web0zz.science_news.R
-import com.web0zz.science_news.adapter.home.sections.VideoSlidePagerAdapter
+import com.web0zz.science_news.adapter.overview.VideoSlidePagerAdapter
 import com.web0zz.science_news.base.BaseMainFragment
 import com.web0zz.science_news.data.dummySource.DummyData
 import com.web0zz.science_news.data.model.Overview
@@ -30,7 +30,6 @@ class OverviewFragment :
     private lateinit var viewPager2: ViewPager2
 
     private fun firstSetupLayout(onCreate: Boolean) {
-        // TODO access via dataBinding
         val navbar =
             requireActivity().findViewById<BottomNavigationView>(R.id.nav_bottomNavigationView)
         val toolbar = requireActivity().findViewById<Toolbar>(R.id.main_toolbar)

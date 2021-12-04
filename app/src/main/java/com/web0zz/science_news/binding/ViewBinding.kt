@@ -32,15 +32,6 @@ object ViewBinding {
     }
 
     @JvmStatic
-    @BindingAdapter("LoadCircleImage")
-    fun ImageView.bindLoadCircleImage(user_image_url: String) {
-        Glide.with(this.context)
-            .load(user_image_url)
-            .apply(RequestOptions().circleCrop())
-            .into(this)
-    }
-
-    @JvmStatic
     @BindingAdapter(value = ["date", "author"], requireAll = true)
     fun TextView.setDateAuthorText(date: String, author: String) {
         val dateAuthor = "$date • $author"

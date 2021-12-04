@@ -1,7 +1,10 @@
 package com.web0zz.science_news.data.dummySource
 
+import com.google.android.exoplayer2.upstream.RawResourceDataSource
+import com.web0zz.science_news.R
 import com.web0zz.science_news.data.model.Article
 import com.web0zz.science_news.data.model.Overview
+import com.web0zz.science_news.data.model.ShortVideo
 import com.web0zz.science_news.data.model.view.detail.ContentImage
 import com.web0zz.science_news.data.model.view.detail.NormalBody
 import com.web0zz.science_news.data.model.view.detail.ShortDescription
@@ -380,6 +383,18 @@ With organoids carrying Rett syndrome mutations, scientists can better understan
         )
     )
 
+    val shortList = listOf(
+        ShortVideo(
+            0,
+            articleList[1],
+            RawResourceDataSource.buildRawResourceUri(R.raw.video_black_hole)
+        ),
+        ShortVideo(1, articleList[2], RawResourceDataSource.buildRawResourceUri(R.raw.video_kid)),
+        ShortVideo(2, articleList[3], RawResourceDataSource.buildRawResourceUri(R.raw.video_fire)),
+        ShortVideo(3, articleList[4], RawResourceDataSource.buildRawResourceUri(R.raw.video_atoms)),
+        ShortVideo(4, articleList[5], RawResourceDataSource.buildRawResourceUri(R.raw.video_snake)),
+    )
+
     val newsList = listOf(
         OverviewArticle(),
         TallArticle(articleList[0]),
@@ -408,9 +423,6 @@ With organoids carrying Rett syndrome mutations, scientists can better understan
 
 
 object DummyData {
-    const val userImageUrl =
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80"
-
     fun defaultDetailBody(selectedArticle: Article) =
         listOf(
             ShortDescription(selectedArticle.shortBody),

@@ -23,5 +23,8 @@ The first hints of the gruesome event, described in the Sept. 3 Science, came fr
 “We thought, ‘Whoa, this is interesting,’” says Dillon Dong, an astronomer at Caltech.
 <br /><br />
 He and his colleagues made follow-up observations of the galaxy using the VLA and one of the telescopes at the W.M. Keck Observatory in Hawaii, which sees in the same optical light as our eyes. The Keck telescope caught a luminous outflow of material spewing in all directions at 3.2 million kilometers per hour from a central location, suggesting that an energetic explosion had occurred there in the past.</string>
+    <string name="user_profile">User Profile</string>
+    <string name="profile_dummy_name">Jim Lindsay</string>
+    <string name="profile_dummy_email">JimLandsay@gmail.com</string>
     <!---->
 </resources>

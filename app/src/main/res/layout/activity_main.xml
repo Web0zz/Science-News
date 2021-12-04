@@ -25,6 +25,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="start"
             android:background="@color/light_background"
+            app:headerLayout="@layout/view_drawer_header_main"
             app:itemTextColor="@color/white"
             app:menu="@menu/drawer_menu" />
 
