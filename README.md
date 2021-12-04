@@ -8,7 +8,7 @@
 - Glide : Used for render the images from internet.
 - Lottie : Used for splash screen logo animation.
 - Fragment : Hearth of the application, it's everywhere...
-- Widget : USed for short access to news.
+- Widget : Used for short access to news.
 
 ## Screenshots
 <div>
