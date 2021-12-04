@@ -3,7 +3,7 @@
 <br><br>
 
 ### Features
-- Exoplayer : Used for Short videos about articles, like a instagram stories.
+- Exoplayer : Used for Short videos about articles, like an instagram storie.
 - Navigation : Used for navigation between screens
 - Glide : Used for render the images from internet.
 - Lottie : Used for splash screen logo animation.
