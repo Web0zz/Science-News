@@ -3,6 +3,7 @@ package com.web0zz.science_news.screen.overview.video
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.Navigation
 import com.google.android.exoplayer2.ui.PlayerView
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BasePlayerFragment
@@ -11,13 +12,14 @@ import com.web0zz.science_news.data.model.ShortVideo
 import com.web0zz.science_news.databinding.ViewVideoOverviewBinding
 import com.web0zz.science_news.screen.overview.OverviewFragmentDirections
 import com.web0zz.science_news.util.FragmentUtil
-import com.web0zz.science_news.util.FragmentUtil.getFragmentNavController
 import kotlin.properties.Delegates
 
 class VideoFragment :
     BasePlayerFragment<ViewVideoOverviewBinding>(ViewVideoOverviewBinding::inflate) {
     private val navController by lazy {
-        getFragmentNavController(R.id.nav_host_fragmentContainerView)
+        activity?.let {
+            return@let Navigation.findNavController(it, R.id.nav_host_fragmentContainerView)
+        }
     }
 
     private var shortVideoId by Delegates.notNull<Int>()

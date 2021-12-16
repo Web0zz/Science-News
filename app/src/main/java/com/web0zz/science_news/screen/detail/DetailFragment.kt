@@ -3,6 +3,7 @@ package com.web0zz.science_news.screen.detail
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.web0zz.science_news.R
@@ -12,12 +13,13 @@ import com.web0zz.science_news.data.dummySource.DummyData.defaultDetailBody
 import com.web0zz.science_news.data.dummySource.DummyDataSource
 import com.web0zz.science_news.data.model.Article
 import com.web0zz.science_news.databinding.FragmentDetailBinding
-import com.web0zz.science_news.util.ActivityUtil.shareArticleLink
-import com.web0zz.science_news.util.FragmentUtil.getFragmentNavController
+import com.web0zz.science_news.util.shareArticleLink
 
 class DetailFragment : BaseMainFragment<FragmentDetailBinding>(FragmentDetailBinding::inflate) {
     override val navController by lazy {
-        getFragmentNavController(R.id.nav_host_fragmentContainerView)
+        activity?.let {
+            return@let Navigation.findNavController(it, R.id.nav_host_fragmentContainerView)
+        }
     }
     override val safeArgs: DetailFragmentArgs by navArgs()
     private lateinit var selectedArticle: Article

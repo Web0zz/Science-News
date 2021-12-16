@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.web0zz.science_news.R
 import com.web0zz.science_news.data.model.view.sections.TallArticle
 import com.web0zz.science_news.databinding.ViewTallArticleBinding
-import com.web0zz.science_news.util.ActivityUtil.shareArticleLink
 import com.web0zz.science_news.util.FragmentUtil
-import com.web0zz.science_news.util.ViewUtil.setSaveButton
+import com.web0zz.science_news.util.setSaveButton
+import com.web0zz.science_news.util.shareArticleLink
 
 class TallArticleViewHolder(
     private val binding: ViewTallArticleBinding,

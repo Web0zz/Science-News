@@ -27,9 +27,7 @@ class ListWidgetServiceFactory(
 
     override fun onDataSetChanged() {}
 
-    override fun onDestroy() {
-        widgetItems.clear()
-    }
+    override fun onDestroy() {}
 
     override fun getCount(): Int = widgetItems.size
 

@@ -1,15 +1,17 @@
 package com.web0zz.science_news.screen.favorites
 
 import androidx.navigation.NavArgs
+import androidx.navigation.Navigation
 import com.web0zz.science_news.R
 import com.web0zz.science_news.base.BaseMainFragment
 import com.web0zz.science_news.databinding.FragmentFavoritesBinding
-import com.web0zz.science_news.util.FragmentUtil.getFragmentNavController
 
 class FavoritesFragment :
     BaseMainFragment<FragmentFavoritesBinding>(FragmentFavoritesBinding::inflate) {
     override val navController by lazy {
-        getFragmentNavController(R.id.nav_host_fragmentContainerView)
+        activity?.let {
+            return@let Navigation.findNavController(it, R.id.nav_host_fragmentContainerView)
+        }
     }
     override val safeArgs: NavArgs? = null
 

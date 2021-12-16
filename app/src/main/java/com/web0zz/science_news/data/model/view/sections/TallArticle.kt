@@ -4,6 +4,6 @@ import com.web0zz.science_news.data.model.Article
 
 data class TallArticle(
     val article: Article
-) : ArticleItem() {
-    override fun getType() = Type.TALL_ARTICLE.ordinal
+) : ArticleItem {
+    override fun getType() = ArticleItem.Type.TALL_ARTICLE.ordinal
 }
