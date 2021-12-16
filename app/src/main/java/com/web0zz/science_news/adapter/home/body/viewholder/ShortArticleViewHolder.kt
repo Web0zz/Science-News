@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.web0zz.science_news.R
 import com.web0zz.science_news.data.model.view.sections.ShortArticle
 import com.web0zz.science_news.databinding.ViewShortArticleBinding
-import com.web0zz.science_news.util.shareArticleLink
 import com.web0zz.science_news.util.FragmentUtil
 import com.web0zz.science_news.util.setSaveButton
+import com.web0zz.science_news.util.shareArticleLink
 
 class ShortArticleViewHolder(
     private val binding: ViewShortArticleBinding,
