@@ -3,7 +3,7 @@
 <br><br>
 ![ic_launcher](https://user-images.githubusercontent.com/61796073/144723776-8c9b5693-e0d4-4169-98a7-aaceb327398c.png)
 
-### Features
+### Libraries & Tools
 - Exoplayer : Used for Short videos about articles, like an instagram storie.
 - Navigation : Used for navigation between screens
 - Glide : Used for render the images from internet.
