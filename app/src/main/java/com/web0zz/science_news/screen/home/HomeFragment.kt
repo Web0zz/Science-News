@@ -28,6 +28,7 @@ class HomeFragment : BaseMainFragment<FragmentHomeBinding>(FragmentHomeBinding::
             layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             adapter = BodyRecyclerAdapter(articleData, toDetailArticle(), toOverviewArticle())
+            setHasFixedSize(false)
         }
     }
 

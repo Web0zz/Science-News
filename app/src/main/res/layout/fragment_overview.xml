@@ -14,12 +14,11 @@
             type="com.web0zz.science_news.data.model.Overview" />
     </data>
 
-    <androidx.constraintlayout.motion.widget.MotionLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/video_motionLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/dark_background"
-        app:layoutDescription="@xml/fragment_overview_scene">
+        android:background="@color/dark_background">
 
         <TextView
             android:id="@+id/overview_head_textView"
@@ -85,5 +84,5 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_end="80dp" />
-    </androidx.constraintlayout.motion.widget.MotionLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

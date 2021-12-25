@@ -24,7 +24,7 @@ class ShortArticleViewHolder(
             it.context.shareArticleLink(short.article.shareLink)
         }
 
-        binding.tallSaveImageButton.apply {
+        binding.shortSaveImageButton.apply {
             setSaveButton(short.article.isSaved)
             setOnClickListener {
                 when (short.article.isSaved) {

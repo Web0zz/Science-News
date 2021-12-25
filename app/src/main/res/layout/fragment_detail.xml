@@ -72,6 +72,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:overScrollMode="never"
+                android:nestedScrollingEnabled="false"
                 app:layout_constraintBottom_toTopOf="@id/bottom_detail_guideline"
                 app:layout_constraintEnd_toStartOf="@id/right_detail_guideline"
                 app:layout_constraintStart_toStartOf="@id/left_detail_guideline"
