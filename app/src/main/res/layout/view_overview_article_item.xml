@@ -9,7 +9,7 @@
 
         <variable
             name="onClickOverview"
-            type="com.web0zz.science_news.util.FragmentUtil.OnClickOverview" />
+            type="com.web0zz.science_news.presentation.extras.ClickActionTypes" />
     </data>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"

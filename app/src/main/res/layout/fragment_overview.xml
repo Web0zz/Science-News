@@ -7,7 +7,7 @@
 
         <variable
             name="onClickClose"
-            type="com.web0zz.science_news.util.FragmentUtil.OnClickCloseOnOverview" />
+            type="com.web0zz.science_news.presentation.extras.ClickActionTypes" />
 
         <variable
             name="overview"

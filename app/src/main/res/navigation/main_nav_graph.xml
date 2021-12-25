@@ -5,7 +5,7 @@
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.web0zz.science_news.screen.home.HomeFragment"
+        android:name="com.web0zz.science_news.presentation.screen.home.HomeFragment"
         android:label="Home">
         <action
             android:id="@+id/action_homeFragment_to_overviewFragment"
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/overviewFragment"
-        android:name="com.web0zz.science_news.screen.overview.OverviewFragment"
+        android:name="com.web0zz.science_news.presentation.screen.overview.OverviewFragment"
         android:label="Overview">
         <action
             android:id="@+id/action_overviewFragment_to_detailFragment"
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.web0zz.science_news.screen.detail.DetailFragment"
+        android:name="com.web0zz.science_news.presentation.screen.detail.DetailFragment"
         android:label="Detail">
         <argument
             android:name="articleId"
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/favoritesFragment"
-        android:name="com.web0zz.science_news.screen.favorites.FavoritesFragment"
+        android:name="com.web0zz.science_news.presentation.screen.favorites.FavoritesFragment"
         android:label="Favorites">
         <action
             android:id="@+id/action_favoritesFragment_to_detailFragment"
@@ -50,6 +50,6 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.web0zz.science_news.screen.profile.ProfileFragment"
+        android:name="com.web0zz.science_news.presentation.screen.profile.ProfileFragment"
         android:label="Profile" />
 </navigation>

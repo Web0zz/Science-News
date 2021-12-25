@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+    id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs'
 }
 
@@ -61,4 +62,20 @@ dependencies {
 
     // Viewpager Indicator
     implementation mainDependencies.dotsindicatorLib
+
+    // Room
+    implementation mainDependencies.roomRuntimeLib
+    kapt mainDependencies.roomCompilerLib
+
+    // Retrofit
+    implementation mainDependencies.retrofitLib
+    implementation mainDependencies.retrofitGsonConv
+
+    // Hilt
+    implementation mainDependencies.hiltAndroidLib
+    kapt mainDependencies.hiltCompilerLib
+
+    // Kotlin-Result
+    implementation mainDependencies.ktResultLib
+    implementation mainDependencies.ktResultCoroutinesLib
 }

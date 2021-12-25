@@ -10,7 +10,7 @@
 
         <variable
             name="onClickDetail"
-            type="com.web0zz.science_news.util.FragmentUtil.OnClickDetail" />
+            type="com.web0zz.science_news.presentation.extras.ClickActionTypes" />
     </data>
 
     <LinearLayout

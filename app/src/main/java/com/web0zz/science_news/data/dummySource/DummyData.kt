@@ -2,16 +2,16 @@ package com.web0zz.science_news.data.dummySource
 
 import com.google.android.exoplayer2.upstream.RawResourceDataSource
 import com.web0zz.science_news.R
-import com.web0zz.science_news.data.model.Article
-import com.web0zz.science_news.data.model.Overview
-import com.web0zz.science_news.data.model.ShortVideo
-import com.web0zz.science_news.data.model.view.detail.ContentImage
-import com.web0zz.science_news.data.model.view.detail.NormalBody
-import com.web0zz.science_news.data.model.view.detail.ShortDescription
-import com.web0zz.science_news.data.model.view.sections.OverviewArticle
-import com.web0zz.science_news.data.model.view.sections.ShortArticle
-import com.web0zz.science_news.data.model.view.sections.TallArticle
-import com.web0zz.science_news.data.model.view.sections.TallLightArticle
+import com.web0zz.science_news.domain.model.Article
+import com.web0zz.science_news.domain.model.Overview
+import com.web0zz.science_news.domain.model.ShortVideo
+import com.web0zz.science_news.domain.model.view.detail.ContentImage
+import com.web0zz.science_news.domain.model.view.detail.NormalBody
+import com.web0zz.science_news.domain.model.view.detail.ShortDescription
+import com.web0zz.science_news.domain.model.view.sections.OverviewArticle
+import com.web0zz.science_news.domain.model.view.sections.ShortArticle
+import com.web0zz.science_news.domain.model.view.sections.TallArticle
+import com.web0zz.science_news.domain.model.view.sections.TallLightArticle
 
 class DummyDataSource {
     val articleList = listOf(

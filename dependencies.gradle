@@ -16,6 +16,11 @@ ext {
     exoVersion = "2.16.1"
     dotsIndicatorVersion = "4.2"
 
+    roomVersion = "2.3.0"
+    retrofitVersion = "2.9.0"
+    hiltVersion = "2.38.1"
+    ktResultVersion = "1.1.13"
+
     mainDependencies = [
             // Android
             coreLib         : "androidx.core:core-ktx:$coreKtxVersion",
@@ -40,6 +45,24 @@ ext {
             exoUiLib        : "com.google.android.exoplayer:exoplayer-ui:$exoVersion",
 
             // Viewpager Indicator
-            dotsindicatorLib: "com.tbuonomo:dotsindicator:$dotsIndicatorVersion"
+            dotsindicatorLib: "com.tbuonomo:dotsindicator:$dotsIndicatorVersion",
+
+            // Room
+            roomRuntimeLib  : "androidx.room:room-runtime:$roomVersion",
+            roomCompilerLib : "androidx.room:room-compiler:$roomVersion",
+
+            // Retrofit
+            retrofitLib     : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitGsonConv : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+
+            // Hilt
+            hiltAndroidLib  : "com.google.dagger:hilt-android:$hiltVersion",
+            hiltCompilerLib : "com.google.dagger:hilt-compiler:$hiltVersion",
+
+            // KtResult
+            ktResultLib     : "com.michael-bull.kotlin-result:kotlin-result:$ktResultVersion",
+            ktResultCoroutinesLib :
+                    "com.michael-bull.kotlin-result:kotlin-result-coroutines:$ktResultVersion"
+
     ]
 }

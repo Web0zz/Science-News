@@ -6,6 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MainApplication"
         android:allowBackup="true"
         android:fullBackupOnly="true"
         android:icon="@mipmap/ic_launcher"
@@ -15,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ScienceNews">
         <receiver
-            android:name="com.web0zz.science_news.widget.ScienceNewsAppWidgetProvider"
+            android:name="com.web0zz.science_news.presentation.widget.ScienceNewsAppWidgetProvider"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -27,12 +28,12 @@
         </receiver>
 
         <service
-            android:name="com.web0zz.science_news.widget.ListWidgetService"
+            android:name="com.web0zz.science_news.presentation.widget.ListWidgetService"
             android:exported="false"
             android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"
