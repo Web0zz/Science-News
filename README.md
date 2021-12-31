@@ -1,17 +1,19 @@
-# Science News
+<div align="center"><img src="https://user-images.githubusercontent.com/61796073/144723776-8c9b5693-e0d4-4169-98a7-aaceb327398c.png"></div>
+
+# Science News 📰
 <i>Made for Kekod Android Weekly Challenge.</i>
 <br><br>
-![ic_launcher](https://user-images.githubusercontent.com/61796073/144723776-8c9b5693-e0d4-4169-98a7-aaceb327398c.png)
+News about Science includes short videos and a widget that gives a chance to never miss out on anything.
 
-### Libraries & Tools
-- Exoplayer : Used for Short videos about articles, like an instagram storie.
-- Navigation : Used for navigation between screens
-- Glide : Used for render the images from internet.
-- Lottie : Used for lottie animations.
-- Fragment : Hearth of the application, it's everywhere...
-- Widget : Used for short access to news.
+### Libraries & Tools 🛠️
+- [Kotlin](https://kotlinlang.org/docs/home.html)
+- [Exoplayer](https://github.com/google/ExoPlayer) : Used for Short videos about articles, like an instagram storie.
+- [Jetpack Components](https://developer.android.com/jetpack)
+  - [Navigation](https://developer.android.com/guide/navigation/navigation-getting-started)
+- [Glide](https://github.com/bumptech/glide)
+- [Lottie](http://airbnb.io/lottie/#/android)
 
-## Screenshots
+## Screenshots 📱
 <div>
 <img width="25%" alt="splash-screen" src="https://user-images.githubusercontent.com/61796073/144723316-8ae656b1-341f-42d4-950e-e6bb8f069ca2.jpg" />
 <img width="25%" alt="home-screen" src="https://user-images.githubusercontent.com/61796073/144723320-4e67e527-1e94-4ac6-bdca-87c3eacf664c.jpg" />
