@@ -24,6 +24,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+            <include android:id="@+id/progress_include" layout="@layout/view_progress"/>
         </com.google.android.material.appbar.AppBarLayout>
 
         <include

@@ -1,6 +1,8 @@
 package com.web0zz.science_news.presentation
 
 import android.view.Menu
+import android.view.View
+import android.widget.ProgressBar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -10,6 +12,8 @@ import com.web0zz.science_news.presentation.base.BaseActivity
 import com.web0zz.science_news.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+    lateinit var progressBar: View
+
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
 
@@ -19,6 +23,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
     }
 
     override fun initUi() {
+        progressBar = activityDataBinding.progressInclude.progress
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController

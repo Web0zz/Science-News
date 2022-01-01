@@ -23,6 +23,7 @@ abstract class BaseFragment<B : ViewDataBinding>(
     open fun initResume() {}
     open fun initPause() {}
     open fun initStop() {}
+    open fun initDestroyView() {}
 
     override fun onStart() {
         super.onStart()
@@ -67,5 +68,6 @@ abstract class BaseFragment<B : ViewDataBinding>(
     override fun onDestroyView() {
         super.onDestroyView()
         _fragmentDataBinding = null
+        initDestroyView()
     }
 }

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="onClickDetail"
+            type="com.web0zz.science_news.presentation.extras.ClickActionTypes.OnClickDetail" />
+
+        <variable
+            name="article"
+            type="com.web0zz.science_news.domain.model.Article" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{_ -> onClickDetail.action(article.id)}"/>
+</layout>

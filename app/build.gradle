@@ -40,6 +40,8 @@ android {
 dependencies {
     // Android
     implementation mainDependencies.coreLib
+    implementation mainDependencies.coroutinesLib
+    implementation mainDependencies.lifecycleKtxLib
     implementation mainDependencies.appcompatLib
     implementation mainDependencies.materialLib
 
