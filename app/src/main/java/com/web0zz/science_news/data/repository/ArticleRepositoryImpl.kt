@@ -7,10 +7,6 @@ import com.web0zz.science_news.domain.repository.ArticleRepository
 import kotlinx.coroutines.flow.Flow
 
 class ArticleRepositoryImpl : ArticleRepository {
-    override suspend fun getAllArticle(): Flow<Result<List<Article>, Failure>> {
-        TODO("Not yet implemented")
-    }
-
     override suspend fun getFavoriteArticles(): Flow<Result<List<Article>, Failure>> {
         TODO("Not yet implemented")
     }

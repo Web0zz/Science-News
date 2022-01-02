@@ -4,7 +4,7 @@ import androidx.lifecycle.viewModelScope
 import com.web0zz.science_news.domain.exception.Failure
 import com.web0zz.science_news.domain.model.Article
 import com.web0zz.science_news.domain.usecase.UseCase
-import com.web0zz.science_news.domain.usecase.article.GetFavoriteArticlesUseCase
+import com.web0zz.science_news.domain.usecase.news.GetFavoriteArticlesUseCase
 import com.web0zz.science_news.presentation.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -53,5 +53,4 @@ class FavoritesViewModel @Inject constructor(
             currentUiState.copy(errorMessage = failure.message)
         }
     }
-
 }

@@ -5,9 +5,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.NavArgs
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.web0zz.science_news.R
 import com.web0zz.science_news.presentation.base.BaseMainFragment
 import com.web0zz.science_news.databinding.FragmentFavoritesBinding
@@ -15,7 +15,6 @@ import com.web0zz.science_news.domain.model.Article
 import com.web0zz.science_news.presentation.MainActivity
 import com.web0zz.science_news.presentation.adapter.favorite.FavoritesRecyclerAdapter
 import com.web0zz.science_news.presentation.extras.ClickActionTypes
-import com.web0zz.science_news.presentation.screen.home.HomeFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.flow.collect
@@ -25,7 +24,6 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class FavoritesFragment :
     BaseMainFragment<FragmentFavoritesBinding, FavoritesViewModel>(FragmentFavoritesBinding::inflate) {
-    private val safeArgs: NavArgs? = null
     private val navController by lazy {
         activity?.let {
             return@let Navigation.findNavController(it, R.id.nav_host_fragmentContainerView)
@@ -33,6 +31,7 @@ class FavoritesFragment :
     }
 
     private var favoritesRecyclerAdapter: FavoritesRecyclerAdapter? = null
+    private var favoritesRecyclerView: RecyclerView? = null
 
     override val progressBar: View = (requireActivity() as MainActivity).progressBar
     override val viewModel: FavoritesViewModel by viewModels()
@@ -47,26 +46,33 @@ class FavoritesFragment :
                         showErrorDialog("Error on Favorites", it)
                     }
 
-                    handleArticleList()
+                    handleArticleList(uiState.favoriteArticles)
                 }
             }
         }
     }
 
+    private fun handleArticleList(articleData: List<Article>) {
+        initRecyclerViewItems(articleData)
+    }
+
     private fun initRecyclerViewItems(articleData: List<Article>) {
-        if (favoritesRecyclerAdapter == null) {
-            fragmentDataBinding.articleFavoritesRecyclerView.apply {
-                layoutManager =
-                    LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-                adapter = FavoritesRecyclerAdapter(listOf(), toArticleDetail())
-            }
+        if (favoritesRecyclerView == null || favoritesRecyclerAdapter == null) {
+            initRecyclerView()
         } else {
-            favoritesRecyclerAdapter.submit
+            favoritesRecyclerAdapter!!.differ.submitList(articleData)
         }
     }
 
-    private fun handleArticleList() {
+    private fun initRecyclerView() {
+        with(fragmentDataBinding.articleFavoritesRecyclerView) {
+            layoutManager = LinearLayoutManager(context)
+            adapter = favoritesRecyclerAdapter ?: FavoritesRecyclerAdapter(toArticleDetail()).also {
+                favoritesRecyclerAdapter = it
+            }
 
+            favoritesRecyclerView = favoritesRecyclerView ?: this
+        }
     }
 
     private fun toArticleDetail() = object : ClickActionTypes.OnClickDetail {

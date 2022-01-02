@@ -1,4 +1,4 @@
-package com.web0zz.science_news.domain.usecase.article
+package com.web0zz.science_news.domain.usecase.news
 
 import com.github.michaelbull.result.Result
 import com.web0zz.science_news.di.MainDispatcher
@@ -10,10 +10,10 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class GetAllArticleUseCase @Inject constructor(
+class GetArticleByIdUseCase @Inject constructor(
     private val articleRepository: ArticleRepository,
     @MainDispatcher mainDispatcher: CoroutineDispatcher
-) : UseCase<List<Article>, Failure, UseCase.None>(mainDispatcher) {
-    override suspend fun run(params: None): Flow<Result<List<Article>, Failure>> =
-        articleRepository.getAllArticle()
+) : UseCase<Article, Failure, Int>(mainDispatcher) {
+    override suspend fun run(params: Int): Flow<Result<Article, Failure>> =
+        articleRepository.getArticleById(params)
 }

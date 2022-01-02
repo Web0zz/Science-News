@@ -11,6 +11,7 @@ data class Article(
     val contentImage: String,
     val thumbnail: String,
     var isSaved: Boolean = false,
-    val shareLink: String
+    val shareLink: String,
+    val contentType: ContentType = ContentType.SHORT_ARTICLE
 )
 

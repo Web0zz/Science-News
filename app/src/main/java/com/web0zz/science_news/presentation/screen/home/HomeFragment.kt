@@ -1,25 +1,25 @@
 package com.web0zz.science_news.presentation.screen.home
 
-import androidx.navigation.NavArgs
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.web0zz.science_news.R
-import com.web0zz.science_news.presentation.adapter.home.body.BodyRecyclerAdapter
+import com.web0zz.science_news.presentation.adapter.home.body.NewsRecyclerAdapter
 import com.web0zz.science_news.presentation.base.BaseMainFragment
-import com.web0zz.science_news.data.dummySource.DummyDataSource
 import com.web0zz.science_news.databinding.FragmentHomeBinding
 import com.web0zz.science_news.presentation.extras.ClickActionTypes
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.DelicateCoroutinesApi
 
-class HomeFragment : BaseMainFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
-    override val navController by lazy {
+@DelicateCoroutinesApi
+@AndroidEntryPoint
+class HomeFragment : BaseMainFragment<FragmentHomeBinding, HomeViewModel>(FragmentHomeBinding::inflate) {
+    private val navController by lazy {
         activity?.let {
             return@let Navigation.findNavController(it, R.id.nav_host_fragmentContainerView)
         }
     }
 
-    override val safeArgs: NavArgs? = null
-
-    private val articleData = DummyDataSource().newsList
+    private var newsRecyclerAdapter: NewsRecyclerAdapter? = null
 
     override fun initUi() = initRecyclerviewItems()
 
@@ -27,7 +27,7 @@ class HomeFragment : BaseMainFragment<FragmentHomeBinding>(FragmentHomeBinding::
         fragmentDataBinding.articleItemsRecyclerView.apply {
             layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            adapter = BodyRecyclerAdapter(articleData, toDetailArticle(), toOverviewArticle())
+            adapter = NewsRecyclerAdapter(articleData, toDetailArticle(), toOverviewArticle())
             setHasFixedSize(false)
         }
     }
