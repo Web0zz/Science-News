@@ -7,7 +7,7 @@ News about Science includes short videos and a widget that gives a chance to nev
 
 ## Libraries & Tools 🛠️
 - [Kotlin](https://kotlinlang.org/docs/home.html)
-- [Exoplayer](https://github.com/google/ExoPlayer) : Used for Short videos about articles, like an instagram storie.
+- [Exoplayer](https://github.com/google/ExoPlayer) 
 - [Jetpack Components](https://developer.android.com/jetpack)
   - [Navigation](https://developer.android.com/guide/navigation/navigation-getting-started)
 - [Glide](https://github.com/bumptech/glide)
