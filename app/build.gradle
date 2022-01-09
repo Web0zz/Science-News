@@ -49,6 +49,7 @@ dependencies {
     implementation mainDependencies.constrLayoutLib
     implementation mainDependencies.navFragLib
     implementation mainDependencies.navUiLib
+    implementation mainDependencies.pagingLib
 
     // Lottie - Airbnb
     implementation mainDependencies.lottieLib

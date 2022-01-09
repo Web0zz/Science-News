@@ -9,6 +9,8 @@ import com.web0zz.science_news.R
 import com.web0zz.science_news.domain.model.view.sections.TallArticle
 import com.web0zz.science_news.databinding.ViewTallArticleBinding
 import com.web0zz.science_news.presentation.extras.ClickActionTypes
+import com.web0zz.science_news.util.setSaveButton
+import com.web0zz.science_news.util.shareArticleLink
 
 class TallArticleViewHolder(
     private val binding: ViewTallArticleBinding,

@@ -6,5 +6,6 @@ import com.web0zz.science_news.domain.model.ContentType
 data class TallLightArticle(
     val articleList: List<Article>
 ) : ArticleItem {
+    override val itemId: Int = articleList.first().id
     override fun getType() = ContentType.TALL_LIGHT_ARTICLE.ordinal
 }

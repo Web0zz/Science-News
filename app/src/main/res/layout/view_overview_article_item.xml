@@ -5,11 +5,11 @@
 
         <variable
             name="overviewItem"
-            type="com.web0zz.science_news.data.model.Overview" />
+            type="com.web0zz.science_news.domain.model.Overview" />
 
         <variable
             name="onClickOverview"
-            type="com.web0zz.science_news.presentation.extras.ClickActionTypes" />
+            type="com.web0zz.science_news.presentation.extras.ClickActionTypes.OnClickOverview" />
     </data>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"

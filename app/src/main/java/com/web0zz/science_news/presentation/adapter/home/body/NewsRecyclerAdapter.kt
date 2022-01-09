@@ -41,9 +41,9 @@ class NewsRecyclerAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (holder) {
             is OverviewArticleViewHolder -> holder.bind()
-            is ShortArticleViewHolder -> holder.bind(items[position] as ShortArticle)
-            is TallArticleViewHolder -> holder.bind(items[position] as TallArticle)
-            is TallExtraMainArticleViewHolder -> holder.bind(items[position] as TallLightArticle)
+            is ShortArticleViewHolder -> holder.bind(differ.currentList[position] as ShortArticle)
+            is TallArticleViewHolder -> holder.bind(differ.currentList[position] as TallArticle)
+            is TallExtraMainArticleViewHolder -> holder.bind(differ.currentList[position] as TallLightArticle)
             else -> throw Exception("Unknown view type exception")
         }
     }
@@ -53,7 +53,7 @@ class NewsRecyclerAdapter(
     companion object {
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<ArticleItem>() {
             override fun areItemsTheSame(oldItem: ArticleItem, newItem: ArticleItem) = oldItem == newItem
-            override fun areContentsTheSame(oldItem: ArticleItem, newItem: ArticleItem) = oldItem == newItem
+            override fun areContentsTheSame(oldItem: ArticleItem, newItem: ArticleItem) = oldItem.itemId == newItem.itemId
         }
     }
 }

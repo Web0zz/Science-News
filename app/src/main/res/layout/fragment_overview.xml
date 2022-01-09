@@ -7,11 +7,11 @@
 
         <variable
             name="onClickClose"
-            type="com.web0zz.science_news.presentation.extras.ClickActionTypes" />
+            type="com.web0zz.science_news.presentation.extras.ClickActionTypes.OnClickCloseOnOverview" />
 
         <variable
             name="overview"
-            type="com.web0zz.science_news.data.model.Overview" />
+            type="com.web0zz.science_news.domain.model.Overview" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

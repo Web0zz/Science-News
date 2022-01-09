@@ -7,11 +7,11 @@
 
         <variable
             name="onClickDetail"
-            type="com.web0zz.science_news.presentation.extras.ClickActionTypes" />
+            type="com.web0zz.science_news.presentation.extras.ClickActionTypes.OnClickDetail" />
 
         <variable
             name="article"
-            type="com.web0zz.science_news.data.model.Article" />
+            type="com.web0zz.science_news.domain.model.Article" />
     </data>
 
     <!-- TODO move hard coded values to res-->
