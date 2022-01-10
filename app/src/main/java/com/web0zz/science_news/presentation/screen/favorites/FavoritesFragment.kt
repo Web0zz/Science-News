@@ -33,8 +33,13 @@ class FavoritesFragment :
     private var favoritesRecyclerAdapter: FavoritesRecyclerAdapter? = null
     private var favoritesRecyclerView: RecyclerView? = null
 
-    override val progressBar: View = (requireActivity() as MainActivity).progressBar
     override val viewModel: FavoritesViewModel by viewModels()
+    override val progressBar: View = (requireActivity() as MainActivity).progressBar
+
+    override fun initCreate() {
+        viewModel.getFavoriteArticles()
+        super.initCreate()
+    }
 
     override fun initUi() {
         lifecycleScope.launch {

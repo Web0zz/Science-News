@@ -7,7 +7,7 @@
 
         <variable
             name="onClickDetail"
-            type="com.web0zz.science_news.presentation.extras.ClickActionTypes" />
+            type="com.web0zz.science_news.presentation.extras.ClickActionTypes.OnClickDetail" />
 
         <variable
             name="shortVideo"

@@ -1,6 +1,7 @@
 package com.web0zz.science_news.presentation.screen.favorites
 
 import androidx.lifecycle.viewModelScope
+import com.github.michaelbull.result.mapBoth
 import com.web0zz.science_news.domain.exception.Failure
 import com.web0zz.science_news.domain.model.Article
 import com.web0zz.science_news.domain.usecase.UseCase
@@ -8,10 +9,7 @@ import com.web0zz.science_news.domain.usecase.news.GetFavoriteArticlesUseCase
 import com.web0zz.science_news.presentation.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.onStart
-import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
